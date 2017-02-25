@@ -1,0 +1,47 @@
+{
+  "name": "soul_food",
+  "description": "Soul Food Thessaloniki Project",
+  "main": "app.js",
+  "authors": [
+    "Kostis Tsafaris"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "soul",
+    "food",
+    "soulFood"
+  ],
+  "homepage": "https://github.com/tsafou/soulFood",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-bootstrap-lightbox": "^0.12.0",
+    "angular-loading-bar": "^0.9.0",
+    "angular-material": "^1.1.1",
+    "angular-material-data-table": "^0.10.9",
+    "angular-material-icons": "^0.7.0",
+    "angular-loader": "~1.5.0",
+    "angular-sanitize": "^1.5.8",
+    "angular-ui-router": "*",
+    "please-wait": "^0.0.5",
+    "bootstrap": "^3.3.6",
+    "SpinKit": "spinkit#^1.2.5",
+    "jquery": "^3.1.1"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.css",
+        "less/bootstrap.less"
+      ]
+    }
+  }
+}

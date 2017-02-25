@@ -1,0 +1,399 @@
+<!--<md-content flex layout="row" layout-align="center center" layout-padding class="about-top-padding">-->
+<div flex="80" flex-xs="100" layout="column">
+
+    <div md-theme="tabs" layout-margin>
+
+        <!--DJs Schedule Start-->
+        <h3 class="dimgrey">Πρόγραμμα Διημέρου</h3>
+        <!--<p>DJ sets Flea Market</p>-->
+
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="DJ Flea Music">
+                <md-content class="md-padding">
+                    <md-table-container>
+
+                        <table md-table ng-model="selected" md-progress="promise">
+                            <thead md-head md-order="myOrder">
+                            <tr md-row>
+                                <th md-column></th>
+                                <th md-column md-order-by="sat"><span>ΣΑΒΒΑΤΟ</span></th>
+                                <th md-column md-order-by="sun"><span>ΚΥΡΙΑΚΗ</span></th>
+                            </tr>
+                            </thead>
+                            <tbody md-body>
+                            <tr md-row md-select="merchant" md-select-id="name" md-auto-select
+                                ng-repeat="dj in infoCtrl.dj | orderBy: myOrder">
+                                <td md-cell class="bold">{{dj.time}}</td>
+                                <td md-cell>{{dj.sat}}</td>
+                                <td md-cell>{{dj.sun}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </md-table-container>
+                </md-content>
+            </md-tab>
+
+            <md-tab label="Kids in the Flea">
+                <md-content class="md-padding">
+                    <md-table-container>
+
+                        <table md-table ng-model="selected" md-progress="promise">
+                            <thead md-head md-order="myOrder">
+                            <tr md-row>
+                                <th md-column md-order-by="sat" class="two-columns"><span>ΣΑΒΒΑΤΟ</span></th>
+                                <th md-column md-order-by="sun" class="two-columns"><span>ΚΥΡΙΑΚΗ</span></th>
+                            </tr>
+                            </thead>
+                            <tbody md-body>
+                            <tr md-row md-select="merchant" md-select-id="name" md-auto-select
+                                ng-repeat="event in infoCtrl.schedule | orderBy: myOrder">
+                                <td md-cell>
+                                    <span class="bold">{{event.sat.time}}</span> <br/>
+                                    <span>{{event.sat.desc}}</span> <br/>
+                                    <md-button ng-if="event.sat.id" class="md-primary"
+                                               ng-click="showPrerenderedDialog($event, event.sat.id)">
+                                        <span class="event-details">Λεπτομερειες</span>
+                                    </md-button>
+                                </td>
+                                <td md-cell>
+                                    <span class="bold">{{event.sun.time}}</span> <br/>
+                                    <span>{{event.sun.desc}}</span> <br/>
+                                    <md-button ng-if="event.sun.id" class="md-primary"
+                                               ng-click="showPrerenderedDialog($event, event.sun.id)">
+                                        <span class="event-details">Λεπτομερειες</span>
+                                    </md-button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <p class="event-description">Και πολλές ακόμα εκπλήξεις για τους μικρούς φίλους του Flea
+                            Market…</p>
+                        <p>* Η συμμετοχή σε όλα τα εργαστήρια, τις παραστάσεις και τις παρουσιάσεις είναι
+                            ελεύθερη για όλα τα παιδιά. Θα τηρηθεί σειρά προτεραιότητας, με βάση της
+                            παρουσίας τους, τις μέρες της εκδήλωσης.</p>
+
+                    </md-table-container>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+
+        <div style="visibility: hidden">
+            <div class="md-dialog-container" id="Robotixlab">
+                <md-dialog layout-padding>
+                    <p>Όνομα ομάδας: ROBOTIXLAB</p>
+
+                    <p>Τίτλος εργαστηρίου: Τί κάνουν τα ρομπότ της Robotixlab στο flea market?</p>
+
+                    <p>Περιγραφή:  Τι είναι τα βιορομπότ και η βιομιμιτική? Πως λειτουργεί ο αισθητήρας
+
+                        υπερήχων? Τι ζωγραφίζουν τα ρομπότ? Τι είναι αλγόριθμος?
+
+                        Τα ρομπότ της Robotixlab  επισκέπτονται το Labattoire για το δεύτερο flea market για να
+
+                        γνωρίσουν μικρούς περίεργους αναζητητές και να τους βοηθήσουν να απαντήσουν
+
+                        ερωτήματα γύρω από το αντικείμενο της ρομποτικής και της τεχνολογίας. Ρομποτικοί
+
+                        βραχίονες και 3D printers, φωτοφοβικά ρομπότ, ρομπότ που παίζουν μουσική και φυσικά η
+
+                        διάσημη Maya, το πιό πολυταξιδεμένο ρομπότ της Robotixlab με δράσεις στην Βαρκελώνη,
+
+                        το Λονδίνο και το Ωστιν του Τέξας.</p>
+
+                    <p>Ηλικίες: Για αγόρια και κορίτσια δημοτικού.</p>
+
+                    <p>Αριθμός συμμετεχόντων: χωρίς κάποιον περιορισμό στον αριθμό των συμμετοχών</p>
+
+                    <p>Διάρκεια: 120’</p>
+
+                    <p>Ώρες παρουσίασης: Σάββατο &amp; Κυριακή 10.00 – 12.00</p>
+
+                    <p>Σχεδιασμός &amp; υλοποίηση: Την δράση σχεδιάζει και υλοποιεί ο μηχανικός Ρομποτικής Α. Κάνουρας
+                        και η εταιρία Robotixlab.</p>
+
+                    <img src="assets/img/kids/robotix.jpg" />
+                </md-dialog>
+            </div>
+        </div>
+
+        <div style="visibility: hidden">
+            <div class="md-dialog-container" id="Vanilla-Gelateria">
+                <md-dialog layout-padding>
+                    <p>Όνομα ομάδας: Vanilla Gelateria</p>
+
+                    <p>Τίτλος εργαστηρίου: Μπισκοτένια στολίδια με ζαχαρόπαστα</p>
+
+                    <p>Περιγραφή:  Το Σάββατο στις 10/12 περιμένουμε τους μικρούς μας φίλους να
+
+                        συμμετάσχουν σε ένα δημιουργικό και γευστικό παιχνίδι! Όλοι μαζί παρέα θα
+
+                        ανακαλύψουμε και θα φτιάξουμε τα πιο νόστιμα μπισκοτένια στολίδια. Να είστε όλοι εκεί.</p>
+
+                    <p>Ηλικίες: άνω των 5 ετών</p>
+
+                    <p>Αριθμός συμμετεχόντων: 15-20 παιδάκια</p>
+
+                    <p>Διάρκεια: 60’</p>
+
+                    <p>Ώρες παρουσίασης: Σάββατο 12:00 – 13:00</p>
+
+                    <p>Σχεδιασμός &amp; υλοποίηση: Ελένη Κωνσταντινίδου. (Ζαχαροπλάστης και τεχνολογος
+
+                        γεωπονος)</p>
+
+                    <img src="assets/img/kids/gelateria.jpg" />
+
+                </md-dialog>
+            </div>
+        </div>
+
+        <div style="visibility: hidden">
+            <div class="md-dialog-container" id="Elysian-Xrwmata">
+                <md-dialog layout-padding>
+                    <p>Όνομα ομάδας: Elysian</p>
+
+                    <p>Τίτλος εργαστηρίου: Τα χρώματα των Χριστουγέννων</p>
+
+                    <p>Περιγραφή:  Πώς βλέπουν τα Χριστούγεννα οι μεγάλοι ζωγράφοι; Θα το μάθουμε μέσα
+
+                        από διαφορετικές απεικονίσεις της αγαπημένης γιορτής μεγάλων και μικρών! Έπειτα, θα
+
+                        δημιουργήσουμε το δικό μας χριστουγεννιάτικο δέντρο παίρνοντας έμπνευση από
+
+                        διάσημους πίνακες.</p>
+
+                    <p>Ηλικίες: Άνω των 4ετών</p>
+
+                    <p>Αριθμός συμμετεχόντων: μέχρι 15 παιδάκια</p>
+
+                    <p>Διάρκεια: περίπου 45&#39;</p>
+
+                    <p>Ώρες παρουσίασης: Σάββατο 16:00 – 17:00 &amp; Κυριακή 12:00 – 13:00</p>
+
+                    <p>Σχεδιασμός &amp; υλοποίηση: Μελίνα Παπαγεωργίου, Αλεξία Σουλιώτη, Βάγια Τσιούτσιουλα</p>
+
+                    <img src="assets/img/kids/xrwmata.jpg" />
+
+                </md-dialog>
+            </div>
+        </div>
+
+        <div style="visibility: hidden">
+            <div class="md-dialog-container" id="Kirko">
+                <md-dialog layout-padding>
+                    <p>Όνομα ομάδας: KIRKO</p>
+
+                    <p>Τίτλος εργαστηρίου: Christmas Upcycling - Χριστουγεννιάτικες Κατασκευές από την
+
+                        επαναχρησιμοποίηση υλικών</p>
+
+                    <p>Περιγραφή:  Κανένα αντικείμενο δεν είναι άχρηστο. Αρκούν λίγη θέληση, πολύ δημιουργικότητα και
+
+                        ατέλειωτη φαντασία για να δώσουν ζωή στα υλικά που συνήθως καταλήγουν στα σκουπίδια.
+
+                        Καπάκια μπουκαλιών, παλιές κάλτσες, υφάσματα, κουμπιά, μανταλάκια, ακόμα και παλιά έπιπλα και
+
+                        πολλά άλλα υλικά καθημερινής χρήσης μετατρέπονται αυτή τη φορά από τα παιδιά σε χρηστικά
+
+                        αντικείμενα και σε χριστουγεννιάτικα στολίδια!</p>
+
+                    <p>Ηλικίες: άνω των 5ετών</p>
+
+                    <p>Αριθμός συμμετεχόντων: 20 άτομα ανά ώρα</p>
+
+                    <p>Διάρκεια: 60'</p>
+
+                    <p>Ώρες παρουσίασης: Σάββατο 13.00 - 14.00 / 14:00 – 15:00 &amp; Κυριακή15.00 -16.00 / 16:00 –
+
+                        17:00</p>
+
+                    <p>Σχεδιασμός &amp; υλοποίηση:
+
+                        Χριστίνα Πασχαλίδου, Μαρία Θεοδοσιάδου, Ροδάνθη Χαλάτσογλου, Ανδρεάνα Λιόρα, Πετρούλα
+
+                        Λιόρα</p>
+
+                    <img src="assets/img/kids/xmasUpcycling.jpg" />
+
+                </md-dialog>
+            </div>
+        </div>
+
+        <div style="visibility: hidden">
+            <div class="md-dialog-container" id="Epomenos-Stathmos">
+                <md-dialog layout-padding>
+                    <p>Όνομα ομάδας: ΕΠΟΜΕΝΟΣ ΣΤΑΘΜΟΣ</p>
+
+                    <p>Τίτλος εργαστηρίου: Κάτω από το Μαξιλάρι</p>
+
+                    <p>Περιγραφή:  Ο συγγραφέας μας μεταφέρει στο μακρινό Μελιβράδυ και μοιράζεται μαζί
+
+                        μας την ιστορία του μικρού Ντριμήτρη του μεγαλύτερου υπναρά του κόσμου! Δεν τον
+
+                        γνωρίζετε;
+
+                        Μα η φήμη του φτάνει από το Κρύο ντε Τζανέιρο μέχρι το εξωτικό Ντουμπάι Μπάι Μπάι!
+
+                        Ο μικρός Ντριμήτρης παρότι πρωταθλητής ύπνου έχει ένα παράπονο, δεν μπορεί να δει
+
+                        όνειρα! Μέχρι που την ημέρα των γενεθλίων του κάτι απρόσμενο συμβαίνει…
+
+                        Σας περιμένουμε μαζί με τα αγαπημένα μαξιλάρια σας για να ονειρευτούμε, να
+
+                        χασμουρηθούμε, να φανταστούμε τρικούβερτους ύπνους και τεμπέλικες μεσημεριανές
+
+                        ξάπλες!</p>
+
+                    <p>Ηλικίες: 5-9 ετών</p>
+
+                    <p>Αριθμός συμμετεχόντων: χωρίς περιορισμό</p>
+
+                    <p>Διάρκεια: περίπου 45’</p>
+
+                    <p>Ώρες παρουσίασης: Κυριακή 13:00 – 14:00</p>
+
+                    <p>Σχεδιασμός &amp; υλοποίηση: Γιώργος Γεωργιάδης και Παιδιά εν Δράσει</p>
+
+                    <img src="assets/img/kids/katoAptoMaksilari.jpg" />
+
+                </md-dialog>
+            </div>
+        </div>
+
+        <div style="visibility: hidden">
+            <div class="md-dialog-container" id="Marionetes">
+                <md-dialog layout-padding>
+                    <p>Όνομα ομάδας:  Μαριονέτες εν δράσει</p>
+
+                    <p>Τίτλος παράστασης: &quot;Ταξίδι στον Εκφοβυθό&quot;</p>
+
+                    <p>Περιγραφή:  Μία παράσταση με κούκλες για τον σχολικό εκφοβισμό και τη διαφορετικότητα με
+
+                        χειροποίητες κούκλες.
+
+                        Η μέδουσα Λόλα είχε μάθει να ζει πάντοτε στον «αφρό» και να έχει ό,τι ζητήσει. Το μεγαλύτερο της
+
+                        όνειρο όμως είναι να αποκτήσει την αιώνια λάμψη. Να λάμπει και να φωσφορίζει στο βυθό για
+
+                        πάντα. Αυτή και η παρέα της είναι μάλλον οι νταήδες του σχολείου. Αγαπημένο τους «θύμα» η Έλλη
+
+                        το Χέλι μία ευγενική, ήρεμη και αρκετά ντροπαλή μαθήτρια του ίδιου σχολείου. Η Έλλη υπομένει
+
+                        σχεδόν καθημερινά πειράγματα και κοροϊδίες, σπρωξίματα και στριφογυρίσματα από την φοβερή
+
+                        παρέα, χωρίς κανένας να την βοηθάει. Θα βρει το θάρρος να τους αντιμετωπίσει; θα την βοηθήσει
+
+                        κάποιος;</p>
+
+                    <p>Ηλικίες: άνω των 3ετών</p>
+
+                    <p>Αριθμός συμμετεχόντων: μέχρι 30 παιδάκια</p>
+
+                    <p>Διάρκεια: 35’</p>
+
+                    <p>Ώρες παρουσίασης: Σάββατο 17.00 - 18.00 &amp; Κυριακή 14.00 -15.00</p>
+
+                    <p>Σχεδιασμός &amp; υλοποίηση:  Παίζουν και συντονίζουν: Χριστίνα Πασχαλίδου, Μαρία Θεοδοσιάδου,
+
+                        Ροδάνθη Χαλάτσογλου, Ανδρεάνα Λιόρα, Πετρούλα Λιόρα
+
+                        Προϋποθέσεις: Μοκέτα ή μαξιλάρια για να μπορέσουν τα παιδιά να κάτσουν στο δάπεδο,
+
+                        ηχητική κάλυψη ανάλογα με τον χώρο με έξοδο σε υπολογιστή.</p>
+
+                    <md-divider></md-divider>
+
+                    <p>Μετά το τέλος της παράστασης, τα παιδιά θα έχουν τη δυνατότητα να συμμετέχουν σε ένα
+
+                        βιωματικό εργαστήριο το οποίο βασίζεται πάνω στις αρχές της μη τυπικής μάθησης και θα
+
+                        περιλαμβάνει βιωματικά παιχνίδια. Στόχοι του εργαστηρίου είναι η κατανόηση της παράστασης και
+
+                        η αποτύπωση της στην καθημερινότητα των παιδιών, η ευαισθητοποίηση τους σε θέματα
+
+                        ανθρωπίνων δικαιωμάτων, η καταπολέμηση κάθε μορφής διακρίσεων αλλά και η ανάπτυξη
+
+                        ατομικών δεξιοτήτων, η καλλιέργεια της δημιουργικότητας και η ανάπτυξη κριτικής συνείδησης.</p>
+
+                    <p>Αριθμός συμμετεχόντων: μέχρι 25 παιδάκια</p>
+
+                    <p>Ηλικίες: άνω των 5 ετών</p>
+
+                    <p>Διάρκεια: 20-30 λεπτά</p>
+
+                    <p>Ώρες παρουσίασης: Σάββατο 17.00 - 18.00 &amp; Κυριακή 14.00 -15.00</p>
+
+                    <img src="assets/img/kids/ekfovitho.jpg" />
+
+                </md-dialog>
+            </div>
+        </div>
+
+        <div style="visibility: hidden">
+            <div class="md-dialog-container" id="Kouklotheatro">
+                <md-dialog layout-padding>
+                    <p>Όνομα ομάδας: Το Κουκλοθέατρο των ονείρων με τη Σαρλότ</p>
+
+                    <p>Τίτλος εργαστηρίου: Διαδραστική Παρουσίαση βιβλίου.</p>
+
+                    <p>Περιγραφή:  Η συγγραφέας Έλλη Πόλα και η ηθοποιός Χριστίνα Μπιρμπίλη χρωματίζουν
+
+                        μαζί με τα παιδιά,  το παιδικό ποίημα ‘Το κουκλοθέατρο των ονείρων με τη Σαρλότ’ με
+
+                        μουσική, χορό, ζωγραφιές και αύρα Χριστουγέννων.</p>
+
+                    <p>Ηλικίες: 0-7 ετών</p>
+
+                    <p>Αριθμός συμμετεχόντων: χωρίς περιορισμό συμμετοχών</p>
+
+                    <p>Διάρκεια: 50’</p>
+
+                    <p>Ώρες παρουσίασης: Σάββατο 18.00 – 19:00</p>
+
+                    <img src="assets/img/kids/kouklotheatro.jpg" />
+
+                </md-dialog>
+            </div>
+        </div>
+
+        <!--Schedule Temp Start-->
+        <!--<h3 class="dimgrey margin-top">Πρόγραμμα</h3>-->
+        <!--<p>Το λεπτομερές πρόγραμμα του διημέρου Θα ανακοινωθεί σύντομα!</p>-->
+        <!--Schedule Temp End-->
+
+    </div>
+
+    <div flex layout-margin>
+        <!--Video Start-->
+        <!--<iframe width="100%" height="100%" src="https://www.youtube.com/embed/50gXH505arQ?rel=0&amp;showinfo=0&autoplay=1"-->
+        <!--frameborder="0" allowfullscreen></iframe>-->
+        <!--Video End-->
+
+        <h3 class="dimgrey margin-top">Gallery</h3>
+
+        <div flex layout-xs="column" layout-gt-xs="row">
+            <div flex>
+                <md-grid-list
+                        md-cols-xs="3" md-cols-sm="4" md-cols-md="5" md-cols-gt-md="6"
+                        md-row-height-gt-md="1:1" md-row-height="1:1"
+                        md-gutter="12px" md-gutter-gt-sm="8px">
+
+                    <md-grid-tile ng-repeat="image in infoCtrl.gallery">
+                        <a ng-click="openLightboxModal($index)">
+                            <img ng-src="{{image.url}}" class="img-thumbnail kt-thumbnail">
+                        </a>
+                        <!--<md-grid-tile-footer>-->
+                        <!--<h3>#1: (3r x 2c)</h3>-->
+                        <!--</md-grid-tile-footer>-->
+                    </md-grid-tile>
+                </md-grid-list>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+<!--</md-content>-->

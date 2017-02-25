@@ -1,0 +1,25 @@
+<md-content layout-padding>
+    <md-input-container>
+        <label>Search</label>
+        <input ng-model="search">
+    </md-input-container>
+    <md-grid-list
+            md-cols-gt-md="12" md-cols="3" md-cols-md="8"
+            md-row-height-gt-md="1:1" md-row-height="1:1"
+            md-gutter-gt-md="16px" md-gutter-md="8px" md-gutter="4px">
+        <md-grid-tile
+                ng-repeat="item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] | filter: search track by $index"
+                ng-style="{
+            'background': 'transparent'
+          }"
+                md-colspan-sm="1"
+                md-colspan-xs="1">
+            <img ng-if="$index%2==0" ng-src="https://unsplash.it/300/200?image={{$index}}" style="max-width: 100%; max-height:100%;"/>
+            <img ng-if="$index%2>=1" ng-src="https://unsplash.it/200/300?image={{$index}}" style="max-height:100%; max-width:100%;"/>
+            <md-grid-tile-footer>
+                <h3>some footer</h3>
+                <md-button ng-click="setSearch($index)">Click me</md-button>
+            </md-grid-tile-footer>
+        </md-grid-tile>
+    </md-grid-list>
+</md-content>

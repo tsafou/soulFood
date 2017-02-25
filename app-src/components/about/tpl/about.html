@@ -1,0 +1,126 @@
+<md-content flex layout="row" layout-padding class="about-top-padding kt-test" style="justify-content: center;">
+
+    <div flex="70" flex-xs="100" layout="column" class="bullet-list">
+
+        <h3 class="dimgrey margin-top">Σάββατο 10 & 11 Δεκεμβρίου 2016, LAB attoir (περιοχή Παλιών Σφαγείων)</h3>
+
+        <p class="md-body-1 kt-justify">O Upnloud σας προσκαλεί στο 2ο <i>Flea Market & Street Food SKG</i> με όραμα να
+            καθιερώσει μια εβδομαδιαία γιορτή γεύσεων και ανταλλαγής αντικειμένων στη Θεσσαλονίκη. Στην πρώτη συνάντηση
+            οι επισκέπτες ξεπέρασαν τους 10,000 και ήρθαν σε επαφή με την εναλλακτική χρήση αντικειμένων, γνώρισαν την
+            αξία του παλιού και είδαν τη χαρά να το μεταποιείς σε κάτι νέο. Ήρθαν σε επαφή με νέες κουλτούρες μέσω της
+            γεύσης (street food), ενώ τα παιδιά έλαβαν μέρος σε workshops και διαδραστικές παρουσιάσεις βιβλίων.
+            Ενημερωθήκαμε για κοινωνικά προβλήματα και βοηθήσαμε ασθενείς κοινωνικές ομάδες με τη συλλογή τροφίμων και
+            ειδών πρώτης ανάγκης.</p>
+
+        <h2 class="md-subhead">Τί περιλαμβάνει το δεύτερο <i>Flea Market & Street Food SKG</i>:</h2>
+
+        <ul class="md-body-1 kt-justify">
+            <li>Αγορά με δίσκους, ρούχα, υποδήματα, κατασκευές, ηλεκτρικές συσκευές, έργα τέχνης, παιχνίδια</li>
+            <li>Street food: Γεύσεις από διάφορα σημεία του κόσμου (ακόμη περισσότερες από την προηγούμενη φορά)</li>
+            <li>Περισσότερα Workshops & Παρουσιάσεις βιβλίων για τα παιδιά</li>
+            <li>Χώρος για οργανώσεις για την ενημέρωση του προσφυγικού και συλλογής αγαθών για πρόσφυγες και άστεγους</li>
+            <li>Μουσικές εκδηλώσεις με DJs</li>
+            <li> Bar & Chill Zone</li>
+        </ul>
+
+        <br/>
+
+        <!--<div>-->
+            <!--<h3 class="dimgrey margin-top">Υπό την αιγίδα</h3>-->
+            <!--<md-divider></md-divider>-->
+
+            <!--&lt;!&ndash;<md-grid-list&ndash;&gt;-->
+                    <!--&lt;!&ndash;md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="8"&ndash;&gt;-->
+                    <!--&lt;!&ndash;md-row-height-gt-md="1:1" md-row-height="1:1"&ndash;&gt;-->
+                    <!--&lt;!&ndash;md-gutter="12px" md-gutter-gt-sm="30px">&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<md-grid-tile ng-repeat="logo in aboutCtrl.logosDimosUrl track by $index">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<a ng-href="{{logo}}" target="_blank" ng-mouseenter="active=true" ng-mouseleave="active=false"&ndash;&gt;-->
+                       <!--&lt;!&ndash;ng-class="active ? 'active-logo' : 'logo'">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<img ng-src="assets/img/logos/dimos/{{$index}}.jpg"/>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;</md-grid-tile>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;</md-grid-list>&ndash;&gt;-->
+        <!--</div>-->
+
+        <div>
+            <h3 class="dimgrey margin-top">Media partners</h3>
+            <md-divider></md-divider>
+
+            <md-grid-list
+                    md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="8"
+                    md-row-height-gt-md="1:1" md-row-height="1:1"
+                    md-gutter="12px" md-gutter-gt-sm="30px">
+
+                <md-grid-tile ng-repeat="logo in aboutCtrl.logosMediaUrl track by $index">
+                    <a ng-href="{{logo}}" target="_blank" ng-mouseenter="active=true" ng-mouseleave="active=false"
+                       ng-class="active ? 'active-logo' : 'logo'">
+                        <img ng-src="assets/img/logos/mediaPartners/{{$index}}.jpg"/>
+                    </a>
+                </md-grid-tile>
+
+            </md-grid-list>
+        </div>
+
+        <div>
+            <h3 class="dimgrey margin-top">Sponsors</h3>
+            <md-divider></md-divider>
+
+            <md-grid-list
+            md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="8"
+            md-row-height-gt-md="1:1" md-row-height="1:1"
+            md-gutter="12px" md-gutter-gt-sm="30px">
+
+            <md-grid-tile ng-repeat="logo in aboutCtrl.logosSponsors track by $index">
+            <a ng-href="{{logo}}" target="_blank" ng-mouseenter="active=true" ng-mouseleave="active=false"
+            ng-class="active ? 'active-logo' : 'logo'">
+            <img ng-src="assets/img/logos/sponsors/{{$index}}.jpg"/>
+            </a>
+            </md-grid-tile>
+
+            </md-grid-list>
+        </div>
+
+        <div>
+            <h3 class="dimgrey margin-top">Supporters</h3>
+            <md-divider></md-divider>
+
+            <md-grid-list
+                    md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="8"
+                    md-row-height-gt-md="1:1" md-row-height="1:1"
+                    md-gutter="12px" md-gutter-gt-sm="30px">
+
+                <md-grid-tile ng-repeat="logo in aboutCtrl.logosSupportersUrl track by $index">
+                    <a ng-href="{{logo}}" target="_blank" ng-mouseenter="active=true" ng-mouseleave="active=false"
+                       ng-class="active ? 'active-logo' : 'logo'">
+                        <img ng-src="assets/img/logos/supporters/{{$index}}.jpg"/>
+                    </a>
+                </md-grid-tile>
+
+            </md-grid-list>
+        </div>
+
+        <div>
+            <h3 class="dimgrey margin-top">Street food</h3>
+            <md-divider></md-divider>
+
+            <md-grid-list
+                    md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="8"
+                    md-row-height-gt-md="1:1" md-row-height="1:1"
+                    md-gutter="12px" md-gutter-gt-sm="30px">
+
+                <md-grid-tile ng-repeat="logo in aboutCtrl.logosStreetFoodUrl track by $index">
+                    <a ng-href="{{logo}}" target="_blank" ng-mouseenter="active=true" ng-mouseleave="active=false"
+                       ng-class="active ? 'active-logo' : 'logo'">
+                        <img ng-src="assets/img/logos/streetFood/{{$index}}.jpg"/>
+                    </a>
+                </md-grid-tile>
+
+            </md-grid-list>
+        </div>
+
+    </div>
+
+
+</md-content>

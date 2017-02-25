@@ -1,0 +1,66 @@
+<md-content flex layout="row" class="kt-test" style="justify-content: center;">
+    <div flex="70" flex-xs="100" layout="column" layout-padding class="over-fab-trigger">
+        <!--<h2 class="md-title">ΕΠΙΚΟΙΝΩΝΙΑ</h2>-->
+        <h3 class="dimgrey margin-top">Μίλα με την ομάδα</h3>
+
+        <md-content md-whiteframe="4" layout-padding>
+            <form novalidate id="contact-form" name="contactForm" ng-submit="contactCtrl.sendEmail()">
+                <md-content layout="column" class="contact-letter">
+                    <md-input-container style="width:60%;" class="md-block">
+                        <label for="name">Το όνομά σου</label>
+                        <input
+                                ng-model="person.name"
+                                type="text"
+                                name="name"
+                                id="name"
+                                required/>
+                        <div ng-messages="contactForm.name.$error">
+                            <p ng-message="required">* Ξέχασες να συμπληρώσεις το όνομά σου!</p>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container style="width:60%;" class="md-block" layout="column">
+                        <label for="email">Το email σου (για να σου απαντήσουμε)</label>
+                        <input
+                                ng-model="person.email"
+                                type="email"
+                                name="email"
+                                id="email"
+                                required/>
+                        <div ng-messages="contactForm.email.$error">
+                            <p ng-message="email">* Μάλλον έχεις κάνει κάποιο λάθος στην ηλεκτρονική σου διεύθυνση!</p>
+                            <p ng-message="required">* Ξέχασες να συμπληρώσεις την ηλεκτρονική σου διεύθυνση!</p>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label for="message">Η ερώτησή σου</label>
+            <textarea
+                    ng-model="person.message"
+                    name="message"
+                    id="message"
+                    md-maxlength="150"
+                    rows="3"
+                    required>
+            </textarea>
+                        <div ng-messages="contactForm.message.$error">
+                            <p ng-message="required">* Μάλλον ξέχασες τι θέλεις να μας πεις!</p>
+                            <p ng-message="md-maxlength">* Το μέγιστο μήκος του μηνύματος είναι 150 χαρακτήρες!</p>
+                        </div>
+                    </md-input-container>
+
+                </md-content>
+
+                <md-input-container layout="row" layout-align="end center">
+                    <p ng-show="contactCtrl.showSuccess" flex class="green">Το μήνυμά σου έφυγε επιτυχώς!</p>
+                    <p ng-show="contactCtrl.showFailure" flex class="error">Παρουσιάστηκε κάποιο σφάλμα. Δοκίμασε να
+                        στείλεις το μήνυμά σου στο <a href="mailto:ds@gmail.com?subject=Mail%20from%20Website%20direct%20link">ds@gmail.com</a>
+                    </p>
+                    <md-button class="md-raised md-accent" type="submit" ng-disabled="!contactForm.$valid">ΑΠΟΣΤΟΛΗ
+                    </md-button>
+                </md-input-container>
+            </form>
+        </md-content>
+    </div>
+
+</md-content>
