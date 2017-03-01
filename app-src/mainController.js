@@ -5,9 +5,9 @@
 
 angular.module('fleaMarket').controller('mainController', mainController);
 
-mainController.$inject = ['$scope', '$mdSidenav', '$state', '$mdMedia', '$mdDialog'];
+mainController.$inject = ['$scope', '$mdSidenav', '$state', '$mdMedia', '$mdDialog', '$translate'];
 
-function mainController($scope, $mdSidenav, $state, $mdMedia, $mdDialog) {
+function mainController($scope, $mdSidenav, $state, $mdMedia, $mdDialog, $translate) {
     var vm = this;
     $scope.$mdMedia = $mdMedia;
 
@@ -92,4 +92,12 @@ function mainController($scope, $mdSidenav, $state, $mdMedia, $mdDialog) {
     };
 
 
+    //TRANSLATION START
+    vm.language = 'en';
+    vm.languages = ['en', 'gr'];
+    vm.updateLanguage = function() {
+        $translate.use(vm.language);
+    };
+
+    //TRANSLATION END
 }

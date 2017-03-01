@@ -1,1 +1,208 @@
-"use strict";function mainController($scope,$mdSidenav,$state,$mdMedia,$mdDialog){var vm=this;$scope.$mdMedia=$mdMedia;var originatorEv;$scope.state=$state,vm.menuItems=[{name:"Σχετικα",state:"about"},{name:"Συμμετοχη",state:"application"},{name:"Εκθετες",state:"info.merchants"},{name:"Επισκεπτες",state:"info.visitors"},{name:"Επικοινωνια",state:"contact"}],vm.openSidebar=function(){vm.sidenavIsOpen=!0,$mdSidenav("left").open()},vm.closeSidebar=function(){vm.sidenavIsOpen=!1,$mdSidenav("left").close()},vm.goToState=function(state){$state.go(state)},vm.openMenu=function($mdOpenMenu,ev){originatorEv=ev,$mdOpenMenu(ev)},vm.showFaq=function(){alert=$mdDialog.alert({title:"Συχνες Ερωτησεις",templateUrl:"components/var/faq.html",clickOutsideToClose:!0,controller:function($scope,$mdDialog){$scope.closeDialog=function(){$mdDialog.hide()}}}),$mdDialog.show(alert)},vm.showBasicInfo=function(){alert=$mdDialog.alert({title:"Πληροφορίες συμμετοχής",templateUrl:"components/var/participationInfo.html",clickOutsideToClose:!0,controller:function($scope,$mdDialog){$scope.closeDialog=function(){$mdDialog.hide()}}}),$mdDialog.show(alert)}}function homeController($scope,$mdSidenav,$state){var vm=this;vm.slides=[{id:0,path:"assets/img/flea1.jpg",desc:"Flea Market",subDesc:"Αγοράζουμε δίσκους, ρούχα, υποδήματα κ.α."},{id:1,path:"assets/img/streetFood.jpg",desc:"Street Food",subDesc:"Δοκιμάζουμε νέες γεύσεις και διεθνείς κουζίνες"},{id:2,path:"assets/img/activities.jpg",desc:"Activities",subDesc:"Γνωρίζουμε πρόσφυγες, φιλοζωικές οργανώσεις, μουσικές κ.α."}],vm.active=0,vm.interval=5e3,vm.noWrapSlides=!1}function aboutController($scope,$mdSidenav,$state){var vm=this;vm.logosDimosUrl=["http://www.thessaloniki.gr/"],vm.logosMediaUrl=["https://www.facebook.com/SoulfoodThessaloniki/","http://www.athensvoice.gr/","http://beater.gr/","https://www.mixcloud.com/blackradioberlin/","http://www.kasetophono.com/","http://www.livemedia.gr/","http://www.manstaradio.gr/","http://popaganda.gr/","http://publishitmagazine.gr/"],vm.logosSocialUrl=["http://www.partyrentals.gr/","http://www.bdl.gr/","https://www.facebook.com/CocktailBarSKG/","http://www.meerarchitekten.com/","https://www.facebook.com/LaDozeBar/"],vm.logosSupportersUrl=["http://fairtrade.gr/","https://www.facebook.com/hobostore/","https://www.facebook.com/%CE%A0%CE%9D%CE%9F%CE%97-%CE%95%CE%9B%CE%A0%CE%99%CE%94%CE%91%CE%A3-1674902772737064/","http://www.praksis.gr/el/","http://www.galileogalilei.gr/"],vm.logosStreetFoodUrl=["http://www.brothersinlaw.gr/","https://foursquare.com/v/high-school-pizza-bar/5479bfd0498e8569fb42bec2","https://www.facebook.com/joinjuicebars/","http://www.holamexicana.gr/","http://www.mongo.gr"]}function contactController($scope,$mdSidenav,$state,$timeout){var vm=this;vm.showSuccess=!1,$scope.person={},vm.sendEmail=function(){$scope.contactForm.$valid&&($timeout(function(){$scope.person={},$scope.contactForm.$setPristine(),$scope.contactForm.$setUntouched(),vm.showSuccess=!0},1500),$timeout(function(){vm.showSuccess=!1},5500))}}function updateFilling($timeout){return{restrict:"A",link:function(scope,element,attrs,controller){function updateFilling(element,filling,totWidth){var style=window.getComputedStyle(element,null),eventLeft=style.getPropertyValue("left"),eventWidth=style.getPropertyValue("width");eventLeft=Number(eventLeft.replace("px",""))+Number(eventWidth.replace("px",""))/2;var scaleValue=eventLeft/totWidth;setTransformValue(filling,"scaleX",scaleValue)}function setTransformValue(element,property,value){element.style["-webkit-transform"]=property+"("+value+")",element.style["-moz-transform"]=property+"("+value+")",element.style["-ms-transform"]=property+"("+value+")",element.style["-o-transform"]=property+"("+value+")",element.style.transform=property+"("+value+")"}0==scope.$index&&$timeout(function(){var filling=document.getElementById("filling");updateFilling(element[0],filling,element[0].offsetParent.offsetWidth)}),element.bind("click",function(e){var filling=document.getElementById("filling");updateFilling(element[0],filling,element[0].offsetParent.offsetWidth)})}}}function infoController($scope,$mdSidenav,$state,$mdMedia,Lightbox){var vm=this;$scope.selected=[],$scope.query={order:"name",limit:5,page:1},vm.selectedEvent=0,vm.goTo=function(index){vm.selectedEvent=index},vm.events=[{name:"Start",date:"01/09/2016",desc:"First event - opening",img:"assets/img/clothes.jpg",left:"20%"},{name:"Blah",date:"02/09/2016",desc:"Something else",img:"assets/img/records.jpg",left:"40%"},{name:"Mid",date:"03/09/2016",desc:"Good",img:"assets/img/milos1.jpg",left:"60%"},{name:"End",date:"04/09/2016",desc:"End of fleamarket - music",img:"assets/img/records.jpg",left:"80%"}],vm.merchants=[{zone:"Κανονικός Πάγκος",dimensions:"1,25 * 0,60",price:90},{zone:"Προνομιακός Πάγκος",dimensions:"1,80 * 0,76",price:130},{zone:"2 Κανονικοί Πάγκοι Ενωμένοι",dimensions:"2,50 * 0,60",price:180}],vm.gallery=[{title:"klmk;m",url:"assets/img/gallery/1.jpg"},{title:"kmlkmn",url:"assets/img/gallery/2.jpg"},{title:"rddf",url:"assets/img/gallery/3.jpg"},{title:"jhfdg",url:"assets/img/gallery/4.jpeg"},{title:"kmlkmn",url:"assets/img/gallery/5.jpeg"},{title:"kmlkmn",url:"assets/img/gallery/6.jpg"},{title:"kmlkmn",url:"assets/img/gallery/7.jpg"},{title:"kmlkmn",url:"assets/img/gallery/8.jpg"},{title:"kmlkmn",url:"assets/img/gallery/9.jpg"},{title:"kmlkmn",url:"assets/img/gallery/10.jpg"},{title:"kmlkmn",url:"assets/img/gallery/11.jpg"}],vm.dj=[{time:"10πμ - 12μμ",sat:"Elena Angelidou",sun:"Oldman Talkin’"},{time:"12μμ - 2μμ",sat:"DJ Penelope",sun:"Fotis Tendts"},{time:"2μμ - 4μμ",sat:"Phon",sun:"Chris Ex"},{time:"4μμ - 6μμ",sat:"Leonidas Dedeoglou",sun:"Tania"},{time:"6μμ - 8μμ",sat:"theMACK",sun:"Ioannis (Kocmoc)"},{time:"8μμ - 10μμ",sat:"Anatoli",sun:"ØD"}],vm.schedule=[{time:"10πμ",sat:{title:"Έναρξη Flea Market",desc:"Έναρξη Flea Market"},sun:{title:"Έναρξη δεύτερης ημέρας",desc:"Έναρξη δεύτερης ημέρας"}},{time:"11:30πμ",sat:{title:"",desc:'Παρουσίαση παραμυθιού "Το κουκλοθέατρο των ονείρων με τη Σάρλοτ"',dur:"(Διάρκεια: 60 λεπτά)"},sun:{title:"",desc:'Παρουσίαση παραμυθιού "Το κουκλοθέατρο των ονείρων με τη Σάρλοτ"',dur:"(Διάρκεια: 60 λεπτά)"}},{time:"1μμ",sat:{title:"",desc:'Εργαστήριο για παιδιά "Οικογένεια τεράτων"',dur:"(Διάρκεια: 50 λεπτά)"},sun:{title:"",desc:'Εργαστήριο για παιδιά "Οικογένεια τεράτων"',dur:"(Διάρκεια: 50 λεπτά)"}},{time:"3μμ",sat:{title:"",desc:'Εργαστήριο για παιδιά "Οικογένεια τεράτων"',dur:"(Διάρκεια: 50 λεπτά)"},sun:{title:"",desc:'Εργαστήριο για παιδιά "Οικογένεια τεράτων"',dur:"(Διάρκεια: 50 λεπτά)"}},{time:"6μμ",sat:{title:"",desc:'Παρουσίαση παραμυθιού "Το κουκλοθέατρο των ονείρων με τη Σάρλοτ"',dur:"(Διάρκεια: 60 λεπτά)"},sun:{title:"",desc:'Παρουσίαση παραμυθιού "Το κουκλοθέατρο των ονείρων με τη Σάρλοτ"',dur:"(Διάρκεια: 60 λεπτά)"}},{time:"10μμ",sat:{title:"Λήξη 1ης ημέρας",desc:"Λήξη 1ης ημέρας"},sun:{title:"Λήξη Flea Market",desc:"Λήξη Flea Market"}}],vm.activeImageUrl=vm.gallery[0].url,vm.setActiveImage=function(index){vm.activeImageUrl=vm.gallery[index].url},$scope.openLightboxModal=function(index){Lightbox.openModal(vm.gallery,index)}}function applicationController($scope){function showApplication(){var js,q,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id="typef_orm",b="https://s3-eu-west-1.amazonaws.com/share.typeform.com/";gi.call(d,id)||(js=ce.call(d,"script"),js.id=id,js.src=b+"widget.js",q=gt.call(d,"script")[0],q.parentNode.insertBefore(js,q))}showApplication()}angular.module("fleaMarket",["ui.router","ngMaterial","ngMessages","ngAnimate","ngMdIcons","ui.bootstrap","md.data.table","bootstrapLightbox","angular-loading-bar","ngSanitize"]).config(["$locationProvider","$urlRouterProvider","$stateProvider","$mdThemingProvider","cfpLoadingBarProvider",function($locationProvider,$urlRouterProvider,$stateProvider,$mdThemingProvider,cfpLoadingBarProvider){cfpLoadingBarProvider.includeSpinner=!1,$urlRouterProvider.otherwise("home"),$stateProvider.state("home",{url:"/home",templateUrl:"components/home/tpl/home.html",controller:"homeController",controllerAs:"homeCtrl"}).state("about",{url:"/about",templateUrl:"components/about/tpl/about.html",controller:"aboutController",controllerAs:"aboutCtrl"}).state("contact",{url:"/contact",templateUrl:"components/contact/tpl/contact.html",controller:"contactController",controllerAs:"contactCtrl"}).state("application",{url:"/application",templateUrl:"components/application/tpl/application.html",controller:"applicationController",controllerAs:"applicationCtrl"}).state("info",{url:"/info",templateUrl:"components/info/tpl/info.html",controller:"infoController",controllerAs:"infoCtrl"}).state("info.merchants",{url:"/merchants",templateUrl:"components/info/tpl/merchants.html"}).state("info.visitors",{url:"/visitors",templateUrl:"components/info/tpl/visitors.html"}).state("stef",{url:"/stef",templateUrl:"components/stef/tpl/stef.html",controller:"stefController",controllerAs:"stefCtrl"}),$mdThemingProvider.definePalette("tsafou",{50:"ed8a29",100:"ffcdd2",200:"ef9a9a",300:"e57373",400:"ef5350",500:"f44336",600:"e53935",700:"d32f2f",800:"c62828",900:"b71c1c",A100:"3470b7",A200:"ff5252",A400:"ff1744",A700:"ffffff",contrastDefaultColor:"light",contrastDarkColors:["50","100","200","300","400","A100"],contrastLightColors:void 0}),$mdThemingProvider.theme("default").primaryPalette("grey",{default:"50"}).accentPalette("tsafou",{default:"50"}).backgroundPalette("grey",{default:"50"}),$mdThemingProvider.theme("tabs").primaryPalette("tsafou",{default:"A100"}).accentPalette("tsafou",{default:"50"}).backgroundPalette("grey",{default:"50"})}]).run(["$rootScope","$document","$timeout",function($rootScope,$document,$timeout){$rootScope.startTime=new Date,$rootScope.loading_screen=pleaseWait({logo:"assets/img/fleaMarketLogoTrans.png",loadingHtml:'<div class="sk-wave"><div class="sk-rect sk-rect1"></div><div class="sk-rect sk-rect2"></div><div class="sk-rect sk-rect3"></div><div class="sk-rect sk-rect4"></div><div class="sk-rect sk-rect5"></div></div>'});var diff;$document.ready(function(){diff=new Date-$rootScope.startTime,diff>4e3?$rootScope.loading_screen.finish():$timeout(function(){$rootScope.loading_screen.finish()},4e3-diff)})}]),angular.module("fleaMarket").controller("mainController",mainController),mainController.$inject=["$scope","$mdSidenav","$state","$mdMedia","$mdDialog"],angular.module("fleaMarket").controller("homeController",homeController),homeController.$inject=["$scope","$mdSidenav","$state"],angular.module("fleaMarket").controller("aboutController",aboutController),aboutController.$inject=["$scope","$mdSidenav","$state"],angular.module("fleaMarket").controller("contactController",contactController),contactController.$inject=["$scope","$mdSidenav","$state","$timeout"],angular.module("fleaMarket").directive("updateFilling",updateFilling).controller("infoController",infoController),updateFilling.$inject=["$timeout"],infoController.$inject=["$scope","$mdSidenav","$state","$mdMedia","Lightbox"],angular.module("fleaMarket").controller("applicationController",applicationController),applicationController.$inject=["$scope"];
+'use strict';
+
+// Declare app level module which depends on views, and components
+angular.module('fleaMarket', [
+    'ui.router',
+    'ngMaterial',
+    'ngMessages',
+    'ngAnimate',
+    'ngMdIcons',
+    'ui.bootstrap',
+    'md.data.table',
+    'bootstrapLightbox',
+    'angular-loading-bar',
+    'ngSanitize',
+    'pascalprecht.translate'
+]).config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$mdThemingProvider', 'cfpLoadingBarProvider', '$translateProvider', function ($locationProvider, $urlRouterProvider, $stateProvider, $mdThemingProvider, cfpLoadingBarProvider, $translateProvider) {
+        // $locationProvider.hashPrefix('!');
+        cfpLoadingBarProvider.includeSpinner = false;
+
+        $urlRouterProvider.otherwise('home');
+
+        $stateProvider
+
+        // HOME STATES AND NESTED VIEWS ========================================
+            .state('home', {
+                url: '/home',
+                templateUrl: 'components/home/tpl/home.html',
+                controller: 'homeController',
+                controllerAs: 'homeCtrl',
+                // views: {
+                //     "viewA": { templateUrl: "components/home/tpl/partial-home-list.html",
+                //         controller: function($scope) {
+                //             $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
+                //         }}
+                // }
+            })
+
+            // nested list with custom controller
+            // .state('home.list', {
+            //     url: '/list',
+            //     templateUrl: 'components/home/tpl/partial-home-list.html',
+            //     controller: function ($scope) {
+            //         $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
+            //     }
+            // })
+
+            // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
+            .state('about', {
+                url: '/about',
+                templateUrl: 'components/about/tpl/about.html',
+                controller: 'aboutController',
+                controllerAs: 'aboutCtrl'
+            })
+
+            .state('contact', {
+                url: '/contact',
+                templateUrl: 'components/contact/tpl/contact.html',
+                controller: 'contactController',
+                controllerAs: 'contactCtrl'
+            })
+
+            .state('application', {
+                url: '/application',
+                templateUrl: 'components/application/tpl/application.html',
+                controller: 'applicationController',
+                controllerAs: 'applicationCtrl'
+            })
+
+            .state('info', {
+                url: '/info',
+                templateUrl: 'components/info/tpl/info.html',
+                controller: 'infoController',
+                controllerAs: 'infoCtrl'
+            })
+            .state('info.merchants', {
+                url: '/merchants',
+                templateUrl: 'components/info/tpl/merchants.html'
+            })
+            .state('info.visitors', {
+                url: '/visitors',
+                templateUrl: 'components/info/tpl/visitors.html'
+            })
+            .state('stef', {
+                url: '/stef',
+                templateUrl: 'components/stef/tpl/stef.html',
+                controller: 'stefController',
+                controllerAs: 'stefCtrl'
+            });
+
+
+        /*Theming*/
+        $mdThemingProvider.definePalette('tsafou', {
+            '50': 'ed8a29',
+            '100': 'ffcdd2',
+            '200': 'ef9a9a',
+            '300': 'e57373',
+            '400': 'ef5350',
+            '500': 'f44336',
+            '600': 'e53935',
+            '700': 'd32f2f',
+            '800': 'c62828',
+            '900': 'b71c1c',
+            'A100': '3470b7',
+            'A200': 'ff5252',
+            'A400': 'ff1744',
+            'A700': 'ffffff',
+            'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
+                                                // on this palette should be dark or light
+
+            'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
+                '200', '300', '400', 'A100'],
+            'contrastLightColors': undefined    // could also specify this if default was 'dark'
+        });
+        $mdThemingProvider.theme('default')
+            .primaryPalette('grey',
+                {'default': '50'})
+            .accentPalette('tsafou',
+                {'default': '50'}) //amber
+            .backgroundPalette('grey', {
+                'default': '50'
+            });
+        $mdThemingProvider.theme('tabs')
+            .primaryPalette('tsafou', {'default': 'A100'})
+            .accentPalette('tsafou',
+                {'default': '50'}) //amber
+            .backgroundPalette('grey', {
+                'default': '50'
+            });
+        // .dark();
+
+        //TRANSLATION START
+        $translateProvider.translations('en', {
+                TITLE: 'About',
+                MESSAGE: 'This app supports your language!'
+            })
+            .translations('gr', {
+                TITLE: 'Σχετικα',
+                MESSAGE: 'Denna app stöder ditt språk!'
+            });
+
+        $translateProvider.preferredLanguage('en');
+        //TRANSLATION END
+    }])
+    .run(['$rootScope', '$document', '$timeout', function ($rootScope, $document, $timeout) {
+        // Get the start time in order for the loader to stay on for a standard amount of time - close it in mainCtrl
+        $rootScope.startTime = new Date();
+
+        $rootScope.loading_screen = pleaseWait({
+            logo: "assets/img/fleaMarketLogoTrans.png",
+            // backgroundColor: 'rgb(0,96,100)',
+            loadingHtml: // '<h3 class="loading-message">Please wait, a few bits tried to escape, but we caught them!</h3>'
+            '<div class="sk-wave">'
+            + '<div class="sk-rect sk-rect1"></div>'
+            + '<div class="sk-rect sk-rect2"></div>'
+            + '<div class="sk-rect sk-rect3"></div>'
+            + '<div class="sk-rect sk-rect4"></div>'
+            + '<div class="sk-rect sk-rect5"></div>'
+            + '</div>'
+            // loadingHtml: "<p class='loading-message'>Loading! Please wait...</p>"
+        });
+
+        var diff;
+
+        $document.ready(function () {
+            // Find the elapsed difference between the present time and the startTime set in our config
+            diff = new Date() - $rootScope.startTime;
+
+            // If 1500ms has elapsed, the loading splash can be hidden
+            // else create a timeout to hide the loading splash after 800ms has elapsed since the startTime was set
+            if (diff > 4000) {
+                $rootScope.loading_screen.finish();
+            } else {
+                $timeout(function () {
+                    $rootScope.loading_screen.finish();
+                }, 4000 - diff);
+            }
+        });
+
+        // for loading between states
+        /*  $rootScope.$on('$stateChangeStart', function (event) {
+         $rootScope.loading_screen1 = pleaseWait({
+         logo: "",
+         backgroundColor: '#f46d3b',
+         loadingHtml: '<h1 class="loading-message">Flea Market SKG</h1>'
+         + '<div class="sk-wave">'
+         + '<div class="sk-rect sk-rect1"></div>'
+         + '<div class="sk-rect sk-rect2"></div>'
+         + '<div class="sk-rect sk-rect3"></div>'
+         + '<div class="sk-rect sk-rect4"></div>'
+         + '<div class="sk-rect sk-rect5"></div>'
+         + '</div>'
+         // loadingHtml: "<p class='loading-message'>Loading! Please wait...</p>"
+         });
+         });
+         $rootScope.$on('$stateChangeSuccess', function (event) {
+         diff = new Date() - $rootScope.startTime;
+         if (diff > 4000) {
+         $rootScope.loading_screen1.finish();
+         } else {
+         $timeout(function () {
+         $rootScope.loading_screen1.finish();
+         }, 4000 - diff);
+         }
+         console.log('state change end');
+         });
+         */
+
+    }]);
