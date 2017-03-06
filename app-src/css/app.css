@@ -18,11 +18,13 @@ body {
 
 #main-content {
     /*margin-top: 4%;*/
+    background-color: transparent;
 }
 
 #top-toolbar {
-    border-bottom: 1px solid lightgray;
-    background-color: #FFFFFF;
+    border-bottom: 0;
+    background-color: transparent;
+    /*background-color: #FFFFFF;*/
     /*background: url('assets/img/motivoTr.jpg');*/
     /*background-size: contain;*/
 }
@@ -35,11 +37,24 @@ body {
 #top-toolbar .menu-toolbar-button.lightgrey {
     color: dimgrey;
 }
+#top-toolbar .menu-toolbar-button.white {
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+}
 
 #top-toolbar .menu-toolbar-button.lightgrey.active {
     color: #ed8a29;
 }
-
+#top-toolbar .menu-toolbar-button.white.active {
+    color: #ed8a29;
+    border-bottom: 2px solid #ed8a29;
+}
+#top-toolbar  .md-button:not([disabled]):hover {
+    background: transparent;
+    color: #ed8a29 !important;
+    border-bottom: 2px solid #ed8a29;
+}
 body > .inner {
     display: none;
 }
@@ -132,11 +147,7 @@ md-toolbar .md-menu {
 }
 
 .main-logo img {
-    height: 130px;
-    background-color: white;
-    border-radius: 50%;
-    margin-top: -15px;
-    border-bottom: 2px solid lightgray;
+    height: 160px;
 }
 
 .main-logo-sm img {
@@ -417,7 +428,7 @@ table.md-table th.md-column.two-columns {
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .main-background {
     height: 100%;
-    background: url("../assets/img/soulFoodBG.jpg") ;
+    background: url("../assets/img/soulFoodBG2.png") ;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

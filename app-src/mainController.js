@@ -93,10 +93,8 @@ function mainController($scope, $mdSidenav, $state, $mdMedia, $mdDialog, $transl
 
 
     //TRANSLATION START
-    vm.language = 'en';
-    vm.languages = ['en', 'gr'];
-    vm.updateLanguage = function() {
-        $translate.use(vm.language);
+    vm.updateLanguage = function(language) {
+        $translate.use(language);
     };
 
     //TRANSLATION END

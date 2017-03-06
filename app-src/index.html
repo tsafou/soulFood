@@ -6,7 +6,8 @@
 <!--[if IE 8]>
 <html lang="en" ng-app="fleaMarket" ng-strict-di class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="gr" itemscope itemtype="https://schema.org/-----" ng-app="fleaMarket" ng-strict-di class="no-js"> <!--<![endif]-->
+<html lang="gr" itemscope itemtype="https://schema.org/-----" ng-app="fleaMarket" ng-strict-di class="no-js">
+<!--<![endif]-->
 <head>
     <title>Soul Food Thessaloniki</title>
 
@@ -32,7 +33,8 @@
 
     <!-- Open Graph data -->
     <meta property="og:title" content="Flea Market Thessaloniki">
-    <meta property="og:description" content="Μια τοπική γιορτή που γίνεται 4 φορές το χρόνο, πάντα σε συμβολικούς για την πόλη χώρους και με καινούργια στοιχεία κάθε φορά">
+    <meta property="og:description"
+          content="Μια τοπική γιορτή που γίνεται 4 φορές το χρόνο, πάντα σε συμβολικούς για την πόλη χώρους και με καινούργια στοιχεία κάθε φορά">
     <meta property="og:url" content="http://thefleamarketskg.com/">
     <meta property="og:image" content="http://thefleamarketskg.com/assets/img/handmade_shoes.jpg">
     <meta property="og:type" content="website">
@@ -64,20 +66,22 @@
     <!-- build:css css/main.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&subset=greek,greek-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&subset=greek,greek-ext"
+          rel="stylesheet">
     <link rel="stylesheet" href="/soulFood/app-src/css/app.css">
     <!-- endbuild -->
 
     <!-- build:css css/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/soulFood/bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.css" />
-    <link rel="stylesheet" href="/soulFood/bower_components/angular-loading-bar/build/loading-bar.css" />
-    <link rel="stylesheet" href="/soulFood/bower_components/angular-material/angular-material.css" />
-    <link rel="stylesheet" href="/soulFood/bower_components/angular-material-data-table/dist/md-data-table.css" />
-    <link rel="stylesheet" href="/soulFood/bower_components/angular-material-icons/angular-material-icons.css" />
-    <link rel="stylesheet" href="/soulFood/bower_components/please-wait/build/please-wait.css" />
-    <link rel="stylesheet" href="/soulFood/bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="/soulFood/bower_components/SpinKit/css/spinkit.css" />
+    <link rel="stylesheet"
+          href="/soulFood/bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.css"/>
+    <link rel="stylesheet" href="/soulFood/bower_components/angular-loading-bar/build/loading-bar.css"/>
+    <link rel="stylesheet" href="/soulFood/bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="/soulFood/bower_components/angular-material-data-table/dist/md-data-table.css"/>
+    <link rel="stylesheet" href="/soulFood/bower_components/angular-material-icons/angular-material-icons.css"/>
+    <link rel="stylesheet" href="/soulFood/bower_components/please-wait/build/please-wait.css"/>
+    <link rel="stylesheet" href="/soulFood/bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/soulFood/bower_components/SpinKit/css/spinkit.css"/>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -135,7 +139,7 @@
 
 <body ng-controller="mainController as mainCtrl" ng-cloak layout="column">
 
-<div layout="row" style="min-height: 100vh; width:100%;">
+<div flex layout="row" style="min-height: 100vh; width:100%;" >
     <md-sidenav class="md-sidenav-left"
                 md-component-id="left"
                 md-whiteframe="4">
@@ -159,12 +163,13 @@
     </md-sidenav>
 
 
-    <md-content flex layout="column">
+    <md-content flex layout="column" class="main-background">
 
-        <md-toolbar id="top-toolbar" ng-class=" $mdMedia('gt-xs') ? 'md-medium-tall' : 'md-medium' " layout="row" layout-align="space-between center">
-            <!--style="background: transparent;"-->
-            <div class="main-logo" hide-xs>
-                <a ui-sref="home" ng-mouseenter="mainCtrl.active=true" ng-mouseleave="mainCtrl.active=false" ng-class="active ? 'active-main-logo' : ''"><img src="assets/img/fleaMarketLogoTrans.png"/></a>
+        <md-toolbar id="top-toolbar" ng-class=" $mdMedia('gt-xs') ? 'md-medium-tall' : 'md-medium' " layout="row"
+                    layout-align="space-between center">
+            <div class="main-logo" flex-offset="5" hide-xs>
+                <a ui-sref="home" ng-mouseenter="mainCtrl.active=true" ng-mouseleave="mainCtrl.active=false"
+                   ng-class="active ? 'active-main-logo' : ''"><img src="assets/img/logoSoulTr.png"/></a>
             </div>
 
             <div flex="20" hide-gt-xs>
@@ -175,7 +180,8 @@
 
             <div flex="60" class="md-toolbar-tools" layout-align="center center" hide-gt-xs>
                 <div class="main-logo-sm">
-                    <a ui-sref="home" ng-mouseenter="active=true" ng-mouseleave="active=false" ng-class="active ? 'active-logo' : ''"><img src="assets/img/fleaMarketLogoTransSM.png"/></a>
+                    <a ui-sref="home" ng-mouseenter="active=true" ng-mouseleave="active=false"
+                       ng-class="active ? 'active-logo' : ''"><img src="assets/img/fleaMarketLogoTransSM.png"/></a>
                 </div>
             </div>
 
@@ -183,18 +189,18 @@
 
             <div class="md-toolbar-tools" layout-align="center center" hide-xs>
 
-                <md-button flex="15" ng-click="mainCtrl.goToState('about')"
-                           ui-sref="about" ui-sref-active="active" class="menu-toolbar-button lightgrey">
+                <md-button  ng-click="mainCtrl.goToState('about')" md-ink-ripple="false"
+                           ui-sref="about" ui-sref-active="active" class="menu-toolbar-button white">
                     {{'TITLE' | translate}}
                 </md-button>
 
-                <md-button flex="15" ng-click="mainCtrl.goToState('application')"
-                           ui-sref="application" ui-sref-active="active" class="menu-toolbar-button lightgrey">
+                <md-button  ng-click="mainCtrl.goToState('application')" md-ink-ripple="false"
+                           ui-sref="application" ui-sref-active="active" class="menu-toolbar-button white">
                     Συμμετοχη
                 </md-button>
 
-                <md-menu flex="15" layout="row">
-                    <md-button flex aria-label="Information" class="menu-toolbar-button lightgrey"
+                <md-menu  layout="row">
+                    <md-button flex aria-label="Information" class="menu-toolbar-button white"
                                ui-sref="info" ui-sref-active="active"
                                ng-click="mainCtrl.openMenu($mdOpenMenu, $event)">
                         Πληροφοριες
@@ -214,18 +220,25 @@
                     </md-menu-content>
                 </md-menu>
 
-                <md-button flex="15" ng-click="mainCtrl.goToState('contact')"
-                           ui-sref="contact" ui-sref-active="active" class="menu-toolbar-button lightgrey">
+                <md-button  ng-click="mainCtrl.goToState('contact')" md-ink-ripple="false"
+                           ui-sref="contact" ui-sref-active="active" class="menu-toolbar-button white">
                     Επικοινωνια
                 </md-button>
 
             </div>
 
-            <md-select ng-model="mainCtrl.language" ng-change="mainCtrl.updateLanguage()" class="md-no-underline">
-                <md-option ng-value="language" ng-repeat="language in mainCtrl.languages">{{ language }}</md-option>
-            </md-select>
+            <!--<md-select ng-model="mainCtrl.language" ng-change="mainCtrl.updateLanguage()" class="md-no-underline">-->
+                <!--<md-option ng-value="language" ng-repeat="language in mainCtrl.languages">{{ language }}</md-option>-->
+            <!--</md-select>-->
 
-
+            <div layout="row" layout-align="center">
+                <md-button class="md-icon-button" aria-label="English" ng-click="mainCtrl.updateLanguage('en')">
+                    <md-icon md-svg-icon="assets/img/englishFlag.svg"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="English" ng-click="mainCtrl.updateLanguage('gr')">
+                    <md-icon md-svg-icon="assets/img/greekFlag.svg"></md-icon>
+                </md-button>
+            </div>
 
 
             <div flex="10"></div>
@@ -245,22 +258,26 @@
             <md-fab-actions md-theme="default">
                 <md-button aria-label="FAQ" class="md-fab md-raised md-mini" ng-click="mainCtrl.showFaq();">
                     <md-tooltip md-direction="right">
-                        Συχνές ερωτήσεις</md-tooltip>
+                        Συχνές ερωτήσεις
+                    </md-tooltip>
                     FAQ
                 </md-button>
-                <md-button aria-label="Πληροφορίες συμμετοχής" class="md-fab md-raised md-mini" ng-click="mainCtrl.showBasicInfo();">
+                <md-button aria-label="Πληροφορίες συμμετοχής" class="md-fab md-raised md-mini"
+                           ng-click="mainCtrl.showBasicInfo();">
                     <md-icon md-svg-src="assets/img/info.svg" aria-label="Πληροφορίες συμμετοχής"></md-icon>
                     <md-tooltip md-direction="right">
                         Πληροφορίες συμμετοχής
                     </md-tooltip>
                 </md-button>
-                <md-button aria-label="Facebook" class="md-fab md-raised md-mini" href="https://www.facebook.com/fleathessaloniki/" target="_blank">
+                <md-button aria-label="Facebook" class="md-fab md-raised md-mini"
+                           href="https://www.facebook.com/fleathessaloniki/" target="_blank">
                     <md-icon md-svg-src="assets/img/facebook.svg" aria-label="Facebook"></md-icon>
                     <md-tooltip md-direction="right">
                         Βρείτε μας στο Facebook
                     </md-tooltip>
                 </md-button>
-                <md-button aria-label="Instagram" class="md-fab md-raised md-mini" href="https://www.instagram.com/upnloud/" target="_blank">
+                <md-button aria-label="Instagram" class="md-fab md-raised md-mini"
+                           href="https://www.instagram.com/upnloud/" target="_blank">
                     <md-icon md-svg-src="assets/img/instagram.svg" aria-label="Instagram"></md-icon>
                     <md-tooltip md-direction="right">
                         Βρείτε μας στο Instagram
@@ -271,7 +288,8 @@
 
         <div class="my-signature">
             <a href="http://www.tsafaris.com" target="_blank">
-                <md-icon md-svg-src="assets/img/ic_code_black_24px.svg" class="s24" aria-label="Kostis Tsafaris"></md-icon>
+                <md-icon md-svg-src="assets/img/ic_code_black_24px.svg" class="s24"
+                         aria-label="Kostis Tsafaris"></md-icon>
                 <md-tooltip md-direction="bottom">Find out who built me!</md-tooltip>
             </a>
         </div>
