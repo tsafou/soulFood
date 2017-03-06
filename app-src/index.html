@@ -114,6 +114,7 @@
     <script src="/soulFood/app-src/components/home/js/homeController.js"></script>
     <script src="/soulFood/app-src/components/about/js/aboutController.js"></script>
     <script src="/soulFood/app-src/components/contact/js/contactController.js"></script>
+    <script src="/soulFood/app-src/components/location/js/locationController.js"></script>
     <script src="/soulFood/app-src/components/info/js/infoController.js"></script>
     <script src="/soulFood/app-src/components/application/js/applicationController.js"></script>
     <!-- endbuild -->
@@ -139,7 +140,7 @@
 
 <body ng-controller="mainController as mainCtrl" ng-cloak layout="column">
 
-<div flex layout="row" style="min-height: 100vh; width:100%;" >
+<div flex layout="row" style="min-height: 100vh; width:100%;">
     <md-sidenav class="md-sidenav-left"
                 md-component-id="left"
                 md-whiteframe="4">
@@ -189,53 +190,61 @@
 
             <div class="md-toolbar-tools" layout-align="center center" hide-xs>
 
-                <md-button  ng-click="mainCtrl.goToState('about')" md-ink-ripple="false"
-                           ui-sref="about" ui-sref-active="active" class="menu-toolbar-button white">
-                    {{'TITLE' | translate}}
-                </md-button>
-
-                <md-button  ng-click="mainCtrl.goToState('application')" md-ink-ripple="false"
+                <md-button ng-click="mainCtrl.goToState('application')" md-ink-ripple="false"
                            ui-sref="application" ui-sref-active="active" class="menu-toolbar-button white">
-                    Συμμετοχη
+                    {{'APPLICATION' | translate}}
                 </md-button>
 
-                <md-menu  layout="row">
-                    <md-button flex aria-label="Information" class="menu-toolbar-button white"
-                               ui-sref="info" ui-sref-active="active"
-                               ng-click="mainCtrl.openMenu($mdOpenMenu, $event)">
-                        Πληροφοριες
-                    </md-button>
-                    <md-menu-content width="4">
-                        <!-- <md-menu-item>
-                            <md-button ui-sref="info">General</md-button>
-                        </md-menu-item>
-                        <md-menu-divider></md-menu-divider> -->
-                        <md-menu-item>
-                            <md-button ui-sref="info.merchants">Εκθέτες</md-button>
-                        </md-menu-item>
-                        <md-menu-divider></md-menu-divider>
-                        <md-menu-item>
-                            <md-button ui-sref="info.visitors">Επισκέπτες</md-button>
-                        </md-menu-item>
-                    </md-menu-content>
-                </md-menu>
+                <md-button ng-click="mainCtrl.goToState('location')" md-ink-ripple="false"
+                           ui-sref="location" ui-sref-active="active" class="menu-toolbar-button white">
+                    {{'LOCATION' | translate}}
+                </md-button>
 
-                <md-button  ng-click="mainCtrl.goToState('contact')" md-ink-ripple="false"
+                <md-button ng-click="mainCtrl.goToState('accomodation')" md-ink-ripple="false"
+                           ui-sref="about" ui-sref-active="active" class="menu-toolbar-button white">
+                    {{'ACCOMODATION' | translate}}
+                </md-button>
+
+                <md-button ng-click="mainCtrl.goToState('contact')" md-ink-ripple="false"
                            ui-sref="contact" ui-sref-active="active" class="menu-toolbar-button white">
-                    Επικοινωνια
+                    {{'CONTACT' | translate}}
                 </md-button>
+
+                <!--<md-menu layout="row">-->
+                <!--<md-button flex aria-label="Information" class="menu-toolbar-button white"-->
+                <!--ui-sref="info" ui-sref-active="active"-->
+                <!--ng-click="mainCtrl.openMenu($mdOpenMenu, $event)">-->
+                <!--Πληροφοριες-->
+                <!--</md-button>-->
+                <!--<md-menu-content width="4">-->
+                <!--&lt;!&ndash; <md-menu-item>-->
+                <!--<md-button ui-sref="info">General</md-button>-->
+                <!--</md-menu-item>-->
+                <!--<md-menu-divider></md-menu-divider> &ndash;&gt;-->
+                <!--<md-menu-item>-->
+                <!--<md-button ui-sref="info.merchants">Εκθέτες</md-button>-->
+                <!--</md-menu-item>-->
+                <!--<md-menu-divider></md-menu-divider>-->
+                <!--<md-menu-item>-->
+                <!--<md-button ui-sref="info.visitors">Επισκέπτες</md-button>-->
+                <!--</md-menu-item>-->
+                <!--</md-menu-content>-->
+                <!--</md-menu>-->
 
             </div>
 
-            <!--<md-select ng-model="mainCtrl.language" ng-change="mainCtrl.updateLanguage()" class="md-no-underline">-->
-                <!--<md-option ng-value="language" ng-repeat="language in mainCtrl.languages">{{ language }}</md-option>-->
+            <!--<md-select ng-model="mainCtrl.selectedLang" ng-change="mainCtrl.updateLanguage()" class="md-no-underline">-->
+                <!--<md-option value="en"><md-icon md-svg-icon="assets/img/englishFlag.svg"></md-icon></md-option>-->
+                <!--<md-option value="gr"><md-icon md-svg-icon="assets/img/greekFlag.svg"></md-icon></md-option>-->
             <!--</md-select>-->
 
             <div layout="row" layout-align="center">
-                <md-button class="md-icon-button" aria-label="English" ng-click="mainCtrl.updateLanguage('en')">
+                <md-button class="md-icon-button" aria-label="English" ng-click="mainCtrl.updateLanguage('en')"
+                           ng-show="mainCtrl.selectedLang=='gr'">
                     <md-icon md-svg-icon="assets/img/englishFlag.svg"></md-icon>
                 </md-button>
-                <md-button class="md-icon-button" aria-label="English" ng-click="mainCtrl.updateLanguage('gr')">
+                <md-button class="md-icon-button" aria-label="English" ng-click="mainCtrl.updateLanguage('gr')"
+                           ng-show="mainCtrl.selectedLang=='en'">
                     <md-icon md-svg-icon="assets/img/greekFlag.svg"></md-icon>
                 </md-button>
             </div>
@@ -246,6 +255,10 @@
 
 
         <md-content ui-view flex layout="column" id="main-content"></md-content>
+
+        <md-content ng-hide="state.is('home') || state.is('application')">
+            Footer
+        </md-content>
 
         <md-fab-speed-dial md-direction="up" class="md-fling md-fab-bottom-left" md-theme="tabs"
                            ng-hide="state.is('home')">

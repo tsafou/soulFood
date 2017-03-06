@@ -14,7 +14,7 @@ function mainController($scope, $mdSidenav, $state, $mdMedia, $mdDialog, $transl
     var originatorEv;
     var faq;
     $scope.state = $state;
-    
+    vm.selectedLang = 'en';
     vm.menuItems = [
         // {
         //     "name": "Aρχικη",
@@ -94,7 +94,8 @@ function mainController($scope, $mdSidenav, $state, $mdMedia, $mdDialog, $transl
 
     //TRANSLATION START
     vm.updateLanguage = function(language) {
-        $translate.use(language);
+        vm.selectedLang = language;
+        $translate.use(vm.selectedLang);
     };
 
     //TRANSLATION END

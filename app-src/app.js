@@ -14,133 +14,148 @@ angular.module('fleaMarket', [
     'ngSanitize',
     'pascalprecht.translate'
 ]).config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$mdThemingProvider', 'cfpLoadingBarProvider', '$translateProvider', function ($locationProvider, $urlRouterProvider, $stateProvider, $mdThemingProvider, cfpLoadingBarProvider, $translateProvider) {
-        // $locationProvider.hashPrefix('!');
-        cfpLoadingBarProvider.includeSpinner = false;
+    // $locationProvider.hashPrefix('!');
+    cfpLoadingBarProvider.includeSpinner = false;
 
-        $urlRouterProvider.otherwise('home');
+    $urlRouterProvider.otherwise('home');
 
-        $stateProvider
+    $stateProvider
 
-        // HOME STATES AND NESTED VIEWS ========================================
-            .state('home', {
-                url: '/home',
-                templateUrl: 'components/home/tpl/home.html',
-                controller: 'homeController',
-                controllerAs: 'homeCtrl',
-                // views: {
-                //     "viewA": { templateUrl: "components/home/tpl/partial-home-list.html",
-                //         controller: function($scope) {
-                //             $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
-                //         }}
-                // }
-            })
+    // HOME STATES AND NESTED VIEWS ========================================
+        .state('home', {
+            url: '/home',
+            templateUrl: 'components/home/tpl/home.html',
+            controller: 'homeController',
+            controllerAs: 'homeCtrl',
+            // views: {
+            //     "viewA": { templateUrl: "components/home/tpl/partial-home-list.html",
+            //         controller: function($scope) {
+            //             $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
+            //         }}
+            // }
+        })
 
-            // nested list with custom controller
-            // .state('home.list', {
-            //     url: '/list',
-            //     templateUrl: 'components/home/tpl/partial-home-list.html',
-            //     controller: function ($scope) {
-            //         $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
-            //     }
-            // })
+        // nested list with custom controller
+        // .state('home.list', {
+        //     url: '/list',
+        //     templateUrl: 'components/home/tpl/partial-home-list.html',
+        //     controller: function ($scope) {
+        //         $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
+        //     }
+        // })
 
-            // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-            .state('about', {
-                url: '/about',
-                templateUrl: 'components/about/tpl/about.html',
-                controller: 'aboutController',
-                controllerAs: 'aboutCtrl'
-            })
+        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
+        .state('about', {
+            url: '/about',
+            templateUrl: 'components/about/tpl/about.html',
+            controller: 'aboutController',
+            controllerAs: 'aboutCtrl'
+        })
 
-            .state('contact', {
-                url: '/contact',
-                templateUrl: 'components/contact/tpl/contact.html',
-                controller: 'contactController',
-                controllerAs: 'contactCtrl'
-            })
+        .state('contact', {
+            url: '/contact',
+            templateUrl: 'components/contact/tpl/contact.html',
+            controller: 'contactController',
+            controllerAs: 'contactCtrl'
+        })
 
-            .state('application', {
-                url: '/application',
-                templateUrl: 'components/application/tpl/application.html',
-                controller: 'applicationController',
-                controllerAs: 'applicationCtrl'
-            })
+        .state('location', {
+            url: '/location',
+            templateUrl: 'components/location/tpl/location.html',
+            controller: 'locationController',
+            controllerAs: 'locationCtrl'
+        })
 
-            .state('info', {
-                url: '/info',
-                templateUrl: 'components/info/tpl/info.html',
-                controller: 'infoController',
-                controllerAs: 'infoCtrl'
-            })
-            .state('info.merchants', {
-                url: '/merchants',
-                templateUrl: 'components/info/tpl/merchants.html'
-            })
-            .state('info.visitors', {
-                url: '/visitors',
-                templateUrl: 'components/info/tpl/visitors.html'
-            })
-            .state('stef', {
-                url: '/stef',
-                templateUrl: 'components/stef/tpl/stef.html',
-                controller: 'stefController',
-                controllerAs: 'stefCtrl'
-            });
+        .state('application', {
+            url: '/application',
+            templateUrl: 'components/application/tpl/application.html',
+            controller: 'applicationController',
+            controllerAs: 'applicationCtrl'
+        })
 
-
-        /*Theming*/
-        $mdThemingProvider.definePalette('tsafou', {
-            '50': 'ed8a29',
-            '100': 'ffcdd2',
-            '200': 'ef9a9a',
-            '300': 'e57373',
-            '400': 'ef5350',
-            '500': 'f44336',
-            '600': 'e53935',
-            '700': 'd32f2f',
-            '800': 'c62828',
-            '900': 'b71c1c',
-            'A100': '3470b7',
-            'A200': 'ff5252',
-            'A400': 'ff1744',
-            'A700': 'ffffff',
-            'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
-                                                // on this palette should be dark or light
-
-            'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
-                '200', '300', '400', 'A100'],
-            'contrastLightColors': undefined    // could also specify this if default was 'dark'
+        .state('info', {
+            url: '/info',
+            templateUrl: 'components/info/tpl/info.html',
+            controller: 'infoController',
+            controllerAs: 'infoCtrl'
+        })
+        .state('info.merchants', {
+            url: '/merchants',
+            templateUrl: 'components/info/tpl/merchants.html'
+        })
+        .state('info.visitors', {
+            url: '/visitors',
+            templateUrl: 'components/info/tpl/visitors.html'
+        })
+        .state('stef', {
+            url: '/stef',
+            templateUrl: 'components/stef/tpl/stef.html',
+            controller: 'stefController',
+            controllerAs: 'stefCtrl'
         });
-        $mdThemingProvider.theme('default')
-            .primaryPalette('grey',
-                {'default': '50'})
-            .accentPalette('tsafou',
-                {'default': '50'}) //amber
-            .backgroundPalette('grey', {
-                'default': '50'
-            });
-        $mdThemingProvider.theme('tabs')
-            .primaryPalette('tsafou', {'default': 'A100'})
-            .accentPalette('tsafou',
-                {'default': '50'}) //amber
-            .backgroundPalette('grey', {
-                'default': '50'
-            });
-        // .dark();
 
-        //TRANSLATION START
-        $translateProvider.translations('en', {
-                TITLE: 'About',
-                MESSAGE: 'This app supports your language!'
-            })
-            .translations('gr', {
-                TITLE: 'Σχετικα',
-                MESSAGE: 'Denna app stöder ditt språk!'
-            });
 
-        $translateProvider.preferredLanguage('en');
-        //TRANSLATION END
-    }])
+    /*Theming*/
+    $mdThemingProvider.definePalette('tsafou', {
+        '50': 'ed8a29',
+        '100': 'ffcdd2',
+        '200': 'ef9a9a',
+        '300': 'e57373',
+        '400': 'ef5350',
+        '500': 'f44336',
+        '600': 'e53935',
+        '700': 'd32f2f',
+        '800': 'c62828',
+        '900': 'b71c1c',
+        'A100': '3470b7',
+        'A200': 'ff5252',
+        'A400': 'ff1744',
+        'A700': 'ffffff',
+        'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
+                                            // on this palette should be dark or light
+
+        'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
+            '200', '300', '400', 'A100'],
+        'contrastLightColors': undefined    // could also specify this if default was 'dark'
+    });
+    $mdThemingProvider.theme('default')
+        .primaryPalette('grey',
+            {'default': '50'})
+        .accentPalette('tsafou',
+            {'default': '50'}) //amber
+        .backgroundPalette('grey', {
+            'default': '50'
+        });
+    $mdThemingProvider.theme('tabs')
+        .primaryPalette('tsafou', {'default': 'A100'})
+        .accentPalette('tsafou',
+            {'default': '50'}) //amber
+        .backgroundPalette('grey', {
+            'default': '50'
+        });
+    // .dark();
+
+    //TRANSLATION START
+    $translateProvider.translations('en', {
+        ABOUT: 'About',
+        APPLICATION: 'Application',
+        LOCATION: 'Location',
+        ACCOMODATION: 'Accomodation',
+        CONTACT: 'Contact',
+        LOCATION_TEXT: 'TEXT'
+    })
+        .translations('gr', {
+            ABOUT: 'Σχετικα',
+            APPLICATION: 'Αιτηση Συμμετοχης',
+            LOCATION: 'Τοποθεσια',
+            ACCOMODATION: 'Διαμονη',
+            CONTACT: 'Επικοινωνια',
+            LOCATION_TEXT: 'Η ιστορία της Θεσσαλονίκης μας ελκύει και μας δείχνει τη σωστή κατεύθυνση. Μια πόλη “σταυροδόμι των λαών”, η οποία τα παλιότερα χρόνια υπήρξε κοιτίδα πολυπολιτισμικότητας και που σήμερα την έχει διατηρήσει στις “γεύσεις” της. Μπαχάρια, αρώματα, πρώτες ύλες και συνταγές απ’όλο τον κόσμο. Από τις Ινδίες μέχρι την Αμερική, από τα Ευρωπαϊκα γλυκά μέχρι τα σούσι της Ασίας.'
+        });
+
+    $translateProvider.preferredLanguage('en');
+    //TRANSLATION END
+}])
     .run(['$rootScope', '$document', '$timeout', function ($rootScope, $document, $timeout) {
         // Get the start time in order for the loader to stay on for a standard amount of time - close it in mainCtrl
         $rootScope.startTime = new Date();
