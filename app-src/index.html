@@ -138,7 +138,7 @@
 
 </head>
 
-<body ng-controller="mainController as mainCtrl" ng-cloak layout="column">
+<body ng-controller="mainController as mainCtrl" ng-cloak >
 
 <div flex layout="row" style="min-height: 100vh; width:100%;">
     <md-sidenav class="md-sidenav-left"
@@ -254,7 +254,7 @@
         </md-toolbar>
 
 
-        <md-content ui-view flex layout="column" id="main-content"></md-content>
+        <md-content ui-view flex layout="column" id="main-content" style="min-height: calc(100vh - 88px)"></md-content>
 
         <md-content ng-hide="state.is('home') || state.is('application')">
             Footer
