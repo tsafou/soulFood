@@ -12,8 +12,9 @@ angular.module('fleaMarket', [
     'bootstrapLightbox',
     'angular-loading-bar',
     'ngSanitize',
-    'pascalprecht.translate'
-]).config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$mdThemingProvider', 'cfpLoadingBarProvider', '$translateProvider', function ($locationProvider, $urlRouterProvider, $stateProvider, $mdThemingProvider, cfpLoadingBarProvider, $translateProvider) {
+    'pascalprecht.translate',
+    'uiGmapgoogle-maps'
+]).config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$mdThemingProvider', 'cfpLoadingBarProvider', '$translateProvider', 'uiGmapGoogleMapApiProvider', function ($locationProvider, $urlRouterProvider, $stateProvider, $mdThemingProvider, cfpLoadingBarProvider, $translateProvider, uiGmapGoogleMapApiProvider) {
     // $locationProvider.hashPrefix('!');
     cfpLoadingBarProvider.includeSpinner = false;
 
@@ -155,6 +156,13 @@ angular.module('fleaMarket', [
 
     $translateProvider.preferredLanguage('en');
     //TRANSLATION END
+
+    // Google Maps
+    uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyBJlIUu2xoZT8DO3qsVsZFT9NZNeslH3JY',
+        v: '3', //defaults to latest 3.X anyhow
+        libraries: 'weather,geometry,visualization'
+    });
 }])
     .run(['$rootScope', '$document', '$timeout', function ($rootScope, $document, $timeout) {
         // Get the start time in order for the loader to stay on for a standard amount of time - close it in mainCtrl

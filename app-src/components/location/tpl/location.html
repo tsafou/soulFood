@@ -7,13 +7,19 @@
                 <div flex="33">2</div>
                 <div flex="33">3</div>
             </div>
-            <div>MAP</div>
+            <div flex="50" flex-xs="100" layout="column">
+                <ui-gmap-google-map center='map.center' zoom='map.zoom'
+                                    options="map.options" refresh="contact">
+                    <ui-gmap-markers models="markers" coords="'self'" fit='false'></ui-gmap-markers>
+                </ui-gmap-google-map>
+            </div>
         </div>
 
 
-        <div flex layout="row">
+        <div flex layout="column">
             <div flex="80">{{'LOCATION_TEXT' | translate}}</div>
-            <div></div>
+            <md-divider></md-divider>
+            <p>asdfsdkjfkjsad flsdlkfnsflk sdfklg jksdfg kjfds gkjdf gkjhsdf glj lsjkfsfdjkgsdfjg d!</p>
         </div>
     </div>
 

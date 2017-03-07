@@ -63,6 +63,7 @@
     <meta name="theme-color" content="#ffffff">
     <!--END-->
 
+
     <!-- build:css css/main.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -104,6 +105,11 @@
     <script src="/soulFood/bower_components/jquery/dist/jquery.js"></script>
     <script src="/soulFood/bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="/soulFood/bower_components/angular-translate/angular-translate.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/lodash/4.13.1/lodash.min.js"></script>  &lt;!&ndash;for google maps&ndash;&gt;-->
+    <script src="/soulFood/bower_components/lodash/dist/lodash.js"></script>  <!--for google maps-->
+    <!--Google Maps-->`
+    <script src="/soulFood/bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+    <script src="/soulFood/bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
 
     <!-- endbower -->
     <!-- endbuild -->
@@ -252,7 +258,6 @@
 
             <div flex="10"></div>
         </md-toolbar>
-
 
         <md-content ui-view flex layout="column" id="main-content" style="min-height: calc(100vh - 88px)"></md-content>
 
