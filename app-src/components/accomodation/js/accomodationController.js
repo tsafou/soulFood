@@ -1,11 +1,11 @@
 /**
- * Created by Tsafou on 07/07/2016.
+ * Created by Tsafou on 12/03/2017.
  */
-angular.module('soulFood').controller('aboutController', aboutController);
+angular.module('soulFood').controller('accomodationController', accomodationController);
 
-aboutController.$inject = ['$scope', '$mdSidenav', '$state'];
+accomodationController.$inject = ['$scope', '$mdSidenav', '$state'];
 
-function aboutController($scope, $mdSidenav, $state) {
+function accomodationController($scope, $mdSidenav, $state) {
     var vm = this;
 
     vm.logosDimosUrl = ['http://www.thessaloniki.gr/'];

@@ -4,7 +4,7 @@
 /**
  * Created by Tsafou on 04/06/2016.
  */
-angular.module('fleaMarket').controller('homeController', homeController);
+angular.module('soulFood').controller('homeController', homeController);
 
 homeController.$inject = ['$scope', '$mdSidenav', '$state'];
 

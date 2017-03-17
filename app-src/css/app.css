@@ -3,7 +3,7 @@
 body {
     /*font-family: 'Ubuntu Condensed', Arial, Tahoma;*/
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .bg-img {
@@ -29,11 +29,6 @@ body {
     /*background-size: contain;*/
 }
 
-.kt-test {
-    background: url('../assets/img/motivoTr.jpg');
-    /*background-size: contain;*/
-}
-
 #top-toolbar .menu-toolbar-button.lightgrey {
     color: dimgrey;
 }
@@ -44,16 +39,21 @@ body {
 }
 
 #top-toolbar .menu-toolbar-button.lightgrey.active {
-    color: #ed8a29;
+    /*color: #ed8a29;*/
+    color: #e31e24;
 }
 #top-toolbar .menu-toolbar-button.white.active {
-    color: #ed8a29;
-    border-bottom: 2px solid #ed8a29;
+    /*color: #ed8a29;*/
+    /*border-bottom: 2px solid #ed8a29;*/
+    color: #e31e24;
+    border-bottom: 2px solid #e31e24;
 }
 #top-toolbar  .md-button:not([disabled]):hover {
     background: transparent;
-    color: #ed8a29 !important;
-    border-bottom: 2px solid #ed8a29;
+    /*color: #ed8a29 !important;*/
+    /*border-bottom: 2px solid #ed8a29; */
+    color: #e31e24 !important;
+    border-bottom: 2px solid #e31e24;
 }
 body > .inner {
     display: none;
@@ -428,11 +428,54 @@ table.md-table th.md-column.two-columns {
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .main-background {
     /*height: 100%;*/
-    background: url("../assets/img/soulFoodBgLandscape.png") ;
+    background: url("../assets/img/soulFoodBgLandscape2.png") ;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 .angular-google-map-container {
-    height: 60vh;
+    /*height: 100%;*/
+}
+.map-wrapper {
+    position: relative;
+    min-height: 55vh !important;
+    max-height: calc(100vh - 120px);
+    margin-top: 2em;
+}
+
+.angular-google-map-container { height:100%; width:100%; position:absolute; top:0; left:0; }
+
+
+md-divider {
+    margin: 4px 0;
+}
+
+.content-body {
+    background-color: rgba(0,0,0,0.87);
+    color: #fafafa;
+    padding-top: 60px;
+}
+
+body::-webkit-scrollbar {
+    width: 0.8em;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #cf2028;
+    outline: 1px solid slategrey;
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.margin-top-2em {
+    margin-top: 2em;
+}
+.margin-top-10 {
+    margin-top: 10px;
 }

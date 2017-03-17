@@ -3,7 +3,7 @@
  */
 "use strict";
 
-angular.module('fleaMarket').controller('mainController', mainController);
+angular.module('soulFood').controller('mainController', mainController);
 
 mainController.$inject = ['$scope', '$mdSidenav', '$state', '$mdMedia', '$mdDialog', '$translate'];
 

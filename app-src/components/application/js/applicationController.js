@@ -2,7 +2,7 @@
  * Created by Tsafou on 25/08/2016.
  */
 
-angular.module('fleaMarket').controller('applicationController', applicationController);
+angular.module('soulFood').controller('applicationController', applicationController);
 
 applicationController.$inject = ['$scope'];
 

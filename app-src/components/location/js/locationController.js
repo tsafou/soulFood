@@ -2,11 +2,11 @@
  * Created by Tsafou on 07/07/2016.
  */
 
-angular.module('fleaMarket').controller('locationController', locationController);
+angular.module('soulFood').controller('locationController', locationController);
 
-locationController.$inject = ['$scope', 'uiGmapIsReady', 'uiGmapGoogleMapApi'];
+locationController.$inject = ['$scope', 'uiGmapIsReady', 'uiGmapGoogleMapApi', 'Lightbox'];
 
-function locationController($scope, uiGmapIsReady, uiGmapGoogleMapApi) {
+function locationController($scope, uiGmapIsReady, uiGmapGoogleMapApi, Lightbox) {
     var vm = this;
 
     $scope.map = {
@@ -24,22 +24,22 @@ function locationController($scope, uiGmapIsReady, uiGmapGoogleMapApi) {
         longitude: 22.953934
     }];
 
-    // uiGmapGoogleMapApi.then(function(maps) {
-    //     $scope.map = {
-    //         center: {
-    //             latitude: 40.578412,
-    //             longitude: 23.021786
-    //         },
-    //         zoom: 8,
-    //         options: {scrollwheel: false}
-    //     };
-    //
-    //     $scope.markers = [{
-    //         id: 1,
-    //         latitude: 40.578412,
-    //         longitude: 23.021786
-    //     }];
-    //
-    // });
+    vm.gallery = [
+        {
+            title: 'klmk;m',
+            url: 'assets/img/activities.jpg'
+        },
+        {
+            title: 'klmk;m',
+            url: 'assets/img/clothes.jpg'
+        },
+        {
+            title: 'klmk;m',
+            url: 'assets/img/streetFood.jpg'
+        }
+    ];
+    $scope.openLightboxModal = function (index) {
+        Lightbox.openModal(vm.gallery, index, null);
+    };
 
 }

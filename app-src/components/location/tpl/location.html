@@ -1,13 +1,20 @@
-<md-content flex layout="row" class="kt-test" layout-padding layout-align="center start">
-
-    <div layout="row" flex="80">
-        <div flex="60" layout="column">
-            <div layout="row">
-                <div flex="33">1</div>
-                <div flex="33">2</div>
-                <div flex="33">3</div>
+<div flex layout="row" class="content-body" layout-padding layout-align="center start" style="overflow-y: hidden;">
+    <div layout="row" layout-xs="column" flex="80">
+        <div flex="60" flex-xs="100" layout="column">
+            <div>
+                <md-grid-list
+                        md-cols-xs="3" md-cols-sm="3" md-cols-md="3" md-cols-gt-md="3"
+                        md-row-height-gt-md="1:1" md-row-height="1:1"
+                        md-gutter="12px" md-gutter-gt-sm="8px">
+                    <md-grid-tile ng-repeat="image in locationCtrl.gallery">
+                        <a ng-click="openLightboxModal($index)">
+                            <img ng-src="{{image.url}}" class="img-thumbnail kt-thumbnail">
+                        </a>
+                    </md-grid-tile>
+                </md-grid-list>
             </div>
-            <div flex="50" flex-xs="100" layout="column">
+
+            <div class="map-wrapper margin-top-2em">
                 <ui-gmap-google-map center='map.center' zoom='map.zoom'
                                     options="map.options" refresh="contact">
                     <ui-gmap-markers models="markers" coords="'self'" fit='false'></ui-gmap-markers>
@@ -15,12 +22,44 @@
             </div>
         </div>
 
+        <div flex="5"></div>
 
-        <div flex layout="column">
-            <div flex="80">{{'LOCATION_TEXT' | translate}}</div>
-            <md-divider></md-divider>
-            <p>asdfsdkjfkjsad flsdlkfnsflk sdfklg jksdfg kjfds gkjdf gkjhsdf glj lsjkfsfdjkgsdfjg d!</p>
+        <div flex="35" flex-xs="100" layout="column">
+            <div>
+                <h3 class="md-title no-margin-top">{{'LOCATION_HEADER' | translate}}</h3>
+                <p>{{'CITYHALL_TEXT1A' | translate}}<br>
+                    {{'CITYHALL_TEXT1B' | translate}}<br/>
+                    {{'CITYHALL_TEXT1C' | translate}}<br/>
+                    {{'CITYHALL_TEXT1D' | translate}}<br/>
+                </p>
+            </div>
+
+            <md-divider style="border-color:#fafafa;"></md-divider>
+
+            <div >
+                <h3 class="md-title margin-top-10">{{'BUS_HEADER' | translate}}</h3>
+                <p>
+                    {{'BUS_TEXT1A' | translate}} <br/>
+                    {{'BUS_TEXT1B' | translate}} <br/>
+                    {{'BUS_TEXT1C' | translate}}
+                </p>
+                <p>
+                    {{'BUS_TEXT2A' | translate}} <br/>
+                    {{'BUS_TEXT2B' | translate}} <br/>
+                    {{'BUS_TEXT2C' | translate}}
+                </p>
+                <p>
+                    {{'BUS_TEXT3A' | translate}} <br/>
+                    {{'BUS_TEXT3B' | translate}} <br/>
+                    {{'BUS_TEXT3C' | translate}}
+                </p>
+                <p>
+                    {{'BUS_TEXT4A' | translate}} <br/>
+                    {{'BUS_TEXT4B' | translate}} <br/>
+                    {{'BUS_TEXT4C' | translate}}
+                </p>
+            </div>
         </div>
     </div>
+</div>
 
-</md-content>

@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('fleaMarket', [
+angular.module('soulFood', [
     'ui.router',
     'ngMaterial',
     'ngMessages',
@@ -51,6 +51,13 @@ angular.module('fleaMarket', [
             templateUrl: 'components/about/tpl/about.html',
             controller: 'aboutController',
             controllerAs: 'aboutCtrl'
+        })
+
+        .state('accomodation', {
+            url: '/accomodation',
+            templateUrl: 'components/accomodation/tpl/accomodation.html',
+            controller: 'accomodationController',
+            controllerAs: 'accomodationCtrl'
         })
 
         .state('contact', {
@@ -134,6 +141,12 @@ angular.module('fleaMarket', [
         .backgroundPalette('grey', {
             'default': '50'
         });
+    $mdThemingProvider.theme('footer')
+        .primaryPalette('red')
+        .accentPalette('tsafou')
+        .backgroundPalette('grey', {
+            'default': '900'
+        }).dark();
     // .dark();
 
     //TRANSLATION START
@@ -143,7 +156,29 @@ angular.module('fleaMarket', [
         LOCATION: 'Location',
         ACCOMODATION: 'Accomodation',
         CONTACT: 'Contact',
-        LOCATION_TEXT: 'TEXT'
+        LOCATION_HEADER: 'Location',
+        BUS_HEADER: 'Bus Stops',
+        BUS_TEXT1A: 'Λεωφ.Βας.Γεωργίου (προς Δυτικά (κέντρο))',
+        BUS_TEXT1B: 'Σταση : Δημαρχιακό Μέγαρο',
+        BUS_TEXT1C: 'Λεωφ.Βας.Γεωργίου (προς Δυτικά (κέντρο)) Σταση : Δημαρχιακό Μέγαρο Γραμμές: 3, 5, 6, 33, 39, 78',
+        BUS_TEXT2A: 'Λεωφ. Μεγ. Αλεξάνδρου (προς Ανατολικά)',
+        BUS_TEXT2B: 'Στάση: Δημαρχιακό Μέγαρο',
+        BUS_TEXT2C: 'Γραμμές: 5, 6, 8, 33, 78',
+        BUS_TEXT3A: 'Λεωφ.Στρατού (προς Ανατολικά/Δυτικά)',
+        BUS_TEXT3B: 'Στάση: Στρατηγείο',
+        BUS_TEXT3C: 'Γραμμές: 3, 7, 10, 11, 12, 31, 39',
+        BUS_TEXT4A: '3ης Σεπτεμβρίου (Προς Δυτικά/Ανατολικά)',
+        BUS_TEXT4B: 'Στάση: Μουσείου Βυζαντινού Πολιτισμού',
+        BUS_TEXT4C: 'Γραμμές: 3, 8',
+        FOOTER_COL1_HEADER: 'Contact',
+        FOOTER_COL2_HEADER: 'Find us',
+        FOOTER_COL1_PHONE:'Phone: +30 6944 556677',
+        FOOTER_COL1_WEB:'www.soulfoodthessaloniki.com',
+        ACCOMODATION_HEADER: 'Accomodation',
+        CITYHALL_TEXT1A: 'Thessaloniki City Hall',
+        CITYHALL_TEXT1B: 'Leoforos Vasileos Georgiou 1',
+        CITYHALL_TEXT1C: 'Thessaloniki 546 40',
+        CITYHALL_TEXT1D: '231 331 7777',
     })
         .translations('gr', {
             ABOUT: 'Σχετικα',
@@ -151,7 +186,29 @@ angular.module('fleaMarket', [
             LOCATION: 'Τοποθεσια',
             ACCOMODATION: 'Διαμονη',
             CONTACT: 'Επικοινωνια',
-            LOCATION_TEXT: 'Η ιστορία της Θεσσαλονίκης μας ελκύει και μας δείχνει τη σωστή κατεύθυνση. Μια πόλη “σταυροδόμι των λαών”, η οποία τα παλιότερα χρόνια υπήρξε κοιτίδα πολυπολιτισμικότητας και που σήμερα την έχει διατηρήσει στις “γεύσεις” της. Μπαχάρια, αρώματα, πρώτες ύλες και συνταγές απ’όλο τον κόσμο. Από τις Ινδίες μέχρι την Αμερική, από τα Ευρωπαϊκα γλυκά μέχρι τα σούσι της Ασίας.'
+            LOCATION_HEADER: 'Τοποθεσία',
+            BUS_HEADER: 'Στάσεις Λεωφορείων',
+            BUS_TEXT1A: 'Λεωφ. Βασ. Γεωργίου (προς Δυτικά/Κέντρο)',
+            BUS_TEXT1B: 'Σταση: Δημαρχιακό Μέγαρο',
+            BUS_TEXT1C: 'Γραμμές: 3, 5, 6, 33, 39, 78',
+            BUS_TEXT2A: 'Λεωφ. Μεγ. Αλεξάνδρου (προς Ανατολικά)',
+            BUS_TEXT2B: 'Στάση: Δημαρχιακό Μέγαρο',
+            BUS_TEXT2C: 'Γραμμές: 5, 6, 8, 33, 78',
+            BUS_TEXT3A: 'Λεωφ.Στρατού (προς Ανατολικά/Δυτικά)',
+            BUS_TEXT3B: 'Στάση: Στρατηγείο',
+            BUS_TEXT3C: 'Γραμμές: 3, 7, 10, 11, 12, 31, 39',
+            BUS_TEXT4A: '3ης Σεπτεμβρίου (Προς Δυτικά/Ανατολικά)',
+            BUS_TEXT4B: 'Στάση: Μουσείου Βυζαντινού Πολιτισμού',
+            BUS_TEXT4C: 'Γραμμές: 3, 8',
+            FOOTER_COL1_HEADER: 'Επικοινωνία',
+            FOOTER_COL2_HEADER: 'Βρείτε μας',
+            FOOTER_COL1_PHONE:'Τηλέφωνο: +30 6944 556677',
+            FOOTER_COL1_WEB:'www.soulfoodthessaloniki.com',
+            ACCOMODATION_HEADER: 'Διαμονή',
+            CITYHALL_TEXT1A: 'Δημαρχείο Θεσσαλονίκης',
+            CITYHALL_TEXT1B: 'Λεωφόρος Βασιλέως Γεωργίου 1',
+            CITYHALL_TEXT1C: 'Θεσσαλονίκη 546 40',
+            CITYHALL_TEXT1D: '231 331 7777',
         });
 
     $translateProvider.preferredLanguage('en');
@@ -169,7 +226,7 @@ angular.module('fleaMarket', [
         $rootScope.startTime = new Date();
 
         $rootScope.loading_screen = pleaseWait({
-            logo: "assets/img/fleaMarketLogoTrans.png",
+            logo: "assets/img/logoSoulTr.png",
             // backgroundColor: 'rgb(0,96,100)',
             loadingHtml: // '<h3 class="loading-message">Please wait, a few bits tried to escape, but we caught them!</h3>'
             '<div class="sk-wave">'

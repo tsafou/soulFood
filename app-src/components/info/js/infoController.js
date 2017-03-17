@@ -2,7 +2,7 @@
  * Created by Tsafou on 07/07/2016.
  */
 
-angular.module('fleaMarket')
+angular.module('soulFood')
     .directive('updateFilling', updateFilling)
     .controller('infoController', infoController);
 
