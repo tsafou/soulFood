@@ -15,7 +15,8 @@ function locationController($scope, uiGmapIsReady, uiGmapGoogleMapApi, Lightbox)
             longitude: 22.953934
         },
         zoom: 16,
-        options: {scrollwheel: false}
+        options: {scrollwheel: false},
+        gestureHandling: 'cooperative'
     };
 
     $scope.markers = [{

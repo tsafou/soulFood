@@ -127,13 +127,10 @@ angular.module('soulFood', [
         'contrastLightColors': undefined    // could also specify this if default was 'dark'
     });
     $mdThemingProvider.theme('default')
-        .primaryPalette('grey',
-            {'default': '50'})
-        .accentPalette('tsafou',
-            {'default': '50'}) //amber
-        .backgroundPalette('grey', {
-            'default': '50'
-        });
+        .primaryPalette('amber')
+        .accentPalette('red')
+        .backgroundPalette('grey');
+
     $mdThemingProvider.theme('tabs')
         .primaryPalette('tsafou', {'default': 'A100'})
         .accentPalette('tsafou',
@@ -141,9 +138,10 @@ angular.module('soulFood', [
         .backgroundPalette('grey', {
             'default': '50'
         });
+
     $mdThemingProvider.theme('footer')
-        .primaryPalette('red')
-        .accentPalette('tsafou')
+        .primaryPalette('blue')
+        .accentPalette('red')
         .backgroundPalette('grey', {
             'default': '900'
         }).dark();

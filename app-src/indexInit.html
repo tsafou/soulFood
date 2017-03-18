@@ -144,9 +144,12 @@
 
 </head>
 
-<body ng-controller="mainController as mainCtrl" ng-cloak layout="column" style="overflow-y:hidden">
-<div layout="row">
-    <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
+<body ng-controller="mainController as mainCtrl" ng-cloak>
+
+<div flex layout="row" style="min-height: 100vh; width:100%;">
+    <md-sidenav class="md-sidenav-left"
+                md-component-id="left"
+                md-whiteframe="4">
         <!--md-is-locked-open="$mdMedia('gt-md')"-->
         <md-toolbar layout="row" layout-align="space-between center">
             <div flex>
@@ -154,52 +157,152 @@
                     <ng-md-icon icon="arrow_back"></ng-md-icon>
                 </md-button>
             </div>
-            <p flex style="text-align: center; margin:0;">Menu</p>
+            <p flex style="text-align: center;">Menu</p>
             <div flex></div>
         </md-toolbar>
 
         <div layout="column" layout-align="center center">
-            <!--<md-button ng-repeat="item in mainCtrl.menuItems"-->
-                       <!--ui-sref-active="active" ng-click="mainCtrl.goToState(item.state); mainCtrl.closeSidebar()"-->
-                       <!--aria-label="Close menu">{{item.name}}-->
-            <!--</md-button>-->
-            <md-button ng-click="mainCtrl.goToState('application'); mainCtrl.closeSidebar()" md-ink-ripple="false"
-                       ui-sref="application" ui-sref-active="active" class="menu-toolbar-button white">
-                {{'APPLICATION' | translate}}
-            </md-button>
-
-            <md-button ng-click="mainCtrl.goToState('location'); mainCtrl.closeSidebar()" md-ink-ripple="false"
-                       ui-sref="location" ui-sref-active="active" class="menu-toolbar-button white">
-                {{'LOCATION' | translate}}
-            </md-button>
-
-            <md-button ng-click="mainCtrl.goToState('accomodation'); mainCtrl.closeSidebar()" md-ink-ripple="false"
-                       ui-sref="accomodation" ui-sref-active="active" class="menu-toolbar-button white">
-                {{'ACCOMODATION' | translate}}
-            </md-button>
-
-            <md-button ng-click="mainCtrl.goToState('contact'); mainCtrl.closeSidebar()" md-ink-ripple="false"
-                       ui-sref="contact" ui-sref-active="active" class="menu-toolbar-button white">
-                {{'CONTACT' | translate}}
+            <md-button ng-repeat="item in mainCtrl.menuItems"
+                       ui-sref-active="active" ng-click="mainCtrl.goToState(item.state); mainCtrl.closeSidebar()"
+                       aria-label="Close menu">{{item.name}}
             </md-button>
         </div>
     </md-sidenav>
 
-    <div flex layout="column">
-        <div ng-include="'top-toolbar.html'"></div>
 
-        <md-content id="{{$mdMedia('xs') ? 'main-content-portrait' : 'main-content'}}">
-            <div ng-class="(state.is('home')) || (state.is('application')) ? '' : 'content-body'" layout="row"
-                 layout-align="center stretch" style="min-height:calc(100vh - 82px)">
-                <div flex="80" flex-xs="100" layout="row">
-                    <div flex ui-view layout-padding></div>
+    <div flex layout="column" class="main-background">
+
+        <md-toolbar id="top-toolbar" md-scroll-shrink ng-class=" $mdMedia('gt-xs') ? 'md-medium-tall' : 'md-medium' "
+                    layout="row"
+                    layout-align="space-between center">
+            <div class="main-logo" flex-offset="5" hide-xs>
+                <a ui-sref="home" ng-mouseenter="mainCtrl.active=true" ng-mouseleave="mainCtrl.active=false"
+                   ng-class="active ? 'active-main-logo' : ''"><img src="assets/img/logoSoulTr.png"/></a>
+            </div>
+
+            <div flex="20" hide-gt-xs>
+                <md-button ng-click="mainCtrl.openSidebar()" aria-label="Open menu">
+                    <ng-md-icon icon="menu" style="fill: black;"></ng-md-icon>
+                </md-button>
+            </div>
+
+            <div flex="60" class="md-toolbar-tools" layout-align="center center" hide-gt-xs>
+                <div class="main-logo-sm">
+                    <a ui-sref="home" ng-mouseenter="active=true" ng-mouseleave="active=false"
+                       ng-class="active ? 'active-logo' : ''"><img src="assets/img/fleaMarketLogoTransSM.png"/></a>
                 </div>
             </div>
 
-            <md-content ng-hide="state.is('home') || state.is('application')" ng-include="'footer.html'"
-                        md-theme="footer"
-                        layout="column" class="footer"></md-content>
-        </md-content>
+            <div flex="20" hide-gt-xs></div>
+
+            <div class="md-toolbar-tools" layout-align="center center" hide-xs>
+
+                <md-button ng-click="mainCtrl.goToState('application')" md-ink-ripple="false"
+                           ui-sref="application" ui-sref-active="active" class="menu-toolbar-button white">
+                    {{'APPLICATION' | translate}}
+                </md-button>
+
+                <md-button ng-click="mainCtrl.goToState('location')" md-ink-ripple="false"
+                           ui-sref="location" ui-sref-active="active" class="menu-toolbar-button white">
+                    {{'LOCATION' | translate}}
+                </md-button>
+
+                <md-button ng-click="mainCtrl.goToState('accomodation')" md-ink-ripple="false"
+                           ui-sref="accomodation" ui-sref-active="active" class="menu-toolbar-button white">
+                    {{'ACCOMODATION' | translate}}
+                </md-button>
+
+                <md-button ng-click="mainCtrl.goToState('contact')" md-ink-ripple="false"
+                           ui-sref="contact" ui-sref-active="active" class="menu-toolbar-button white">
+                    {{'CONTACT' | translate}}
+                </md-button>
+
+                <!--<md-menu layout="row">-->
+                <!--<md-button flex aria-label="Information" class="menu-toolbar-button white"-->
+                <!--ui-sref="info" ui-sref-active="active"-->
+                <!--ng-click="mainCtrl.openMenu($mdOpenMenu, $event)">-->
+                <!--Πληροφοριες-->
+                <!--</md-button>-->
+                <!--<md-menu-content width="4">-->
+                <!--&lt;!&ndash; <md-menu-item>-->
+                <!--<md-button ui-sref="info">General</md-button>-->
+                <!--</md-menu-item>-->
+                <!--<md-menu-divider></md-menu-divider> &ndash;&gt;-->
+                <!--<md-menu-item>-->
+                <!--<md-button ui-sref="info.merchants">Εκθέτες</md-button>-->
+                <!--</md-menu-item>-->
+                <!--<md-menu-divider></md-menu-divider>-->
+                <!--<md-menu-item>-->
+                <!--<md-button ui-sref="info.visitors">Επισκέπτες</md-button>-->
+                <!--</md-menu-item>-->
+                <!--</md-menu-content>-->
+                <!--</md-menu>-->
+
+            </div>
+
+            <!--<md-select ng-model="mainCtrl.selectedLang" ng-change="mainCtrl.updateLanguage()" class="md-no-underline">-->
+            <!--<md-option value="en"><md-icon md-svg-icon="assets/img/englishFlag.svg"></md-icon></md-option>-->
+            <!--<md-option value="gr"><md-icon md-svg-icon="assets/img/greekFlag.svg"></md-icon></md-option>-->
+            <!--</md-select>-->
+
+            <div layout="row" layout-align="center">
+                <md-button class="md-icon-button" aria-label="English" ng-click="mainCtrl.updateLanguage('en')"
+                           ng-show="mainCtrl.selectedLang=='gr'">
+                    <md-icon md-svg-icon="assets/img/englishFlag.svg"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="English" ng-click="mainCtrl.updateLanguage('gr')"
+                           ng-show="mainCtrl.selectedLang=='en'">
+                    <md-icon md-svg-icon="assets/img/greekFlag.svg"></md-icon>
+                </md-button>
+            </div>
+
+
+            <div flex="10"></div>
+        </md-toolbar>
+
+        <md-content ui-view flex layout="column" id="main-content" style="min-height: calc(100vh - 88px)"></md-content>
+
+        <md-content ng-hide="state.is('home') || state.is('application')" ng-include="'footer.html'" md-theme="footer"
+             layout="column"></md-content>
+
+        <!--<md-fab-speed-dial md-direction="up" class="md-fling md-fab-bottom-left" md-theme="tabs"-->
+        <!--ng-hide="state.is('home')">-->
+        <!--<md-fab-trigger>-->
+        <!--<md-button aria-label="menu" class="md-fab md-primary">-->
+        <!--<md-icon md-svg-src="assets/img/menu-alt.svg" style="color:white;"></md-icon>-->
+        <!--</md-button>-->
+        <!--</md-fab-trigger>-->
+
+        <!--<md-fab-actions md-theme="default">-->
+        <!--<md-button aria-label="FAQ" class="md-fab md-raised md-mini" ng-click="mainCtrl.showFaq();">-->
+        <!--<md-tooltip md-direction="right">-->
+        <!--Συχνές ερωτήσεις-->
+        <!--</md-tooltip>-->
+        <!--FAQ-->
+        <!--</md-button>-->
+        <!--<md-button aria-label="Πληροφορίες συμμετοχής" class="md-fab md-raised md-mini"-->
+        <!--ng-click="mainCtrl.showBasicInfo();">-->
+        <!--<md-icon md-svg-src="assets/img/info.svg" aria-label="Πληροφορίες συμμετοχής"></md-icon>-->
+        <!--<md-tooltip md-direction="right">-->
+        <!--Πληροφορίες συμμετοχής-->
+        <!--</md-tooltip>-->
+        <!--</md-button>-->
+        <!--<md-button aria-label="Facebook" class="md-fab md-raised md-mini"-->
+        <!--href="https://www.facebook.com/fleathessaloniki/" target="_blank">-->
+        <!--<md-icon md-svg-src="assets/img/facebook.svg" aria-label="Facebook"></md-icon>-->
+        <!--<md-tooltip md-direction="right">-->
+        <!--Βρείτε μας στο Facebook-->
+        <!--</md-tooltip>-->
+        <!--</md-button>-->
+        <!--<md-button aria-label="Instagram" class="md-fab md-raised md-mini"-->
+        <!--href="https://www.instagram.com/upnloud/" target="_blank">-->
+        <!--<md-icon md-svg-src="assets/img/instagram.svg" aria-label="Instagram"></md-icon>-->
+        <!--<md-tooltip md-direction="right">-->
+        <!--Βρείτε μας στο Instagram-->
+        <!--</md-tooltip>-->
+        <!--</md-button>-->
+        <!--</md-fab-actions>-->
+        <!--</md-fab-speed-dial>-->
 
         <div class="my-signature">
             <a href="http://www.tsafaris.com" target="_blank">
@@ -208,6 +311,7 @@
                 <md-tooltip md-direction="bottom">Find out who built me!</md-tooltip>
             </a>
         </div>
+
     </div>
 </div>
 
