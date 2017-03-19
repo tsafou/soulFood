@@ -22,6 +22,15 @@ body {
     background-image:url('http://devsoulfood.tsafaris.com/assets/img/soulFoodBgLandscape2.png');
     background-size:cover;
     background-position: center center;
+    min-height:calc(100vh - 82px);
+}
+
+.full-height {
+    height: 100%;
+}
+
+.full-width {
+    width: 100%;
 }
 
 #main-content-portrait {
@@ -47,22 +56,22 @@ body {
     border-bottom: 2px solid transparent;
 }
 
-#top-toolbar .menu-toolbar-button.lightgrey.active {
+#top-toolbar .md-toolbar-tools .menu-toolbar-button.lightgrey.active {
     /*color: #ed8a29;*/
     color: #e31e24;
 }
-#top-toolbar .menu-toolbar-button.white.active {
+#top-toolbar .md-toolbar-tools .menu-toolbar-button.white.active {
     /*color: #ed8a29;*/
     /*border-bottom: 2px solid #ed8a29;*/
     color: #e31e24;
     border-bottom: 2px solid #e31e24;
 }
-#top-toolbar  .md-button:not([disabled]):hover {
+#top-toolbar .md-toolbar-tools  .md-button:not([disabled]):hover {
     background: transparent;
     /*color: #ed8a29 !important;*/
     /*border-bottom: 2px solid #ed8a29; */
     color: #e31e24 !important;
-    border-bottom: 2px solid #e31e24;
+    /*border-bottom: 2px solid #e31e24;*/
 }
 body > .inner {
     display: none;
@@ -350,6 +359,7 @@ md-grid-tile a img {
     height: 100% !important;
     width: 100% !important;
     object-fit: cover !important;
+    cursor: pointer;
 }
 
 #contact-form .md-button span {
@@ -492,6 +502,10 @@ md-divider {
     margin-top: 10px;
 }
 .footer {
-    padding-bottom:40px;
+    padding-bottom:4%;
     background-color: rgb(33,33,33);
+}
+
+.word-wrap {
+    word-wrap: break-word;
 }

@@ -1,5 +1,5 @@
 <div layout="row" layout-xs="column">
-    <div flex="60" flex-xs="100" layout="column">
+    <div flex="60" flex-xs="100">
         <div>
             <md-grid-list
                     md-cols-xs="3" md-cols-sm="3" md-cols-md="3" md-cols-gt-md="3"
@@ -13,7 +13,7 @@
             </md-grid-list>
         </div>
 
-        <div class="map-wrapper margin-top-2em">
+        <div class="map-wrapper margin-top-2em" id="map">
             <ui-gmap-google-map center='map.center' zoom='map.zoom'
                                 options="map.options" refresh="contact">
                 <ui-gmap-markers models="markers" coords="'self'" fit='false'></ui-gmap-markers>
@@ -21,9 +21,9 @@
         </div>
     </div>
 
-    <div flex="5"></div>
+    <div flex="5" hide-xs></div>
 
-    <div flex="35" flex-xs="100" layout="column">
+    <div flex="35" flex-xs="100">
         <div>
             <h3 class="md-title" ng-class="$mdMedia('gt-xs') ? 'no-margin-top' : ''">{{'LOCATION_HEADER' | translate}}</h3>
             <p>{{'CITYHALL_TEXT1A' | translate}}<br>
@@ -57,7 +57,6 @@
                 {{'BUS_TEXT4B' | translate}} <br/>
                 {{'BUS_TEXT4C' | translate}}
             </p>
-            <p>LAST</p>
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
-<md-toolbar md-scroll-shrink md-shrink-speed-factor="0.4" id="top-toolbar"
-            ng-class=" $mdMedia('gt-xs') ? 'md-medium-tall' : 'md-medium' "
-            layout="row" layout-align="space-between center">
+<!--<md-toolbar md-scroll-shrink md-shrink-speed-factor="0.4" id="top-toolbar"-->
+            <!--ng-class=" $mdMedia('gt-xs') ? 'md-medium-tall' : 'md-medium' "-->
+            <!--layout="row" layout-align="space-between center">-->
     <div class="main-logo" flex-offset="5" hide-xs>
         <a ui-sref="home" ng-mouseenter="mainCtrl.active=true" ng-mouseleave="mainCtrl.active=false"
            ng-class="active ? 'active-main-logo' : ''"><img src="assets/img/logoSoulTr.png"/></a>
@@ -48,15 +48,17 @@
     <!--<md-option value="gr"><md-icon md-svg-icon="assets/img/greekFlag.svg"></md-icon></md-option>-->
     <!--</md-select>-->
 
-    <div flex flex-xs="15" layout="row" layout-align="center">
-        <md-button class="md-icon-button" aria-label="English" ng-click="mainCtrl.updateLanguage('en')"
+    <div flex="10" flex-xs="15" layout="row" layout-align="center">
+        <md-button class="md-fab md-mini" aria-label="English" ng-click="mainCtrl.updateLanguage('en')"
                    ng-show="mainCtrl.selectedLang=='gr'">
-            <md-icon md-svg-icon="assets/img/englishFlag.svg"></md-icon>
+            <span>EN</span>
+            <!--<md-icon md-svg-icon="assets/img/englishFlag.svg"></md-icon>-->
         </md-button>
-        <md-button class="md-icon-button" aria-label="Ελληνικά" ng-click="mainCtrl.updateLanguage('gr')"
+        <md-button class="md-fab md-mini" aria-label="Ελληνικά" ng-click="mainCtrl.updateLanguage('gr')"
                    ng-show="mainCtrl.selectedLang=='en'">
-            <md-icon md-svg-icon="assets/img/greekFlag.svg"></md-icon>
+            <span>GR</span>
+            <!--<md-icon md-svg-icon="assets/img/greekFlag.svg"></md-icon>-->
         </md-button>
     </div>
-    <div flex="10" flex-xs="5"></div>
-</md-toolbar>
+    <div flex="5" flex-xs="5"></div>
+<!--</md-toolbar>-->

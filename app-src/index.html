@@ -144,8 +144,8 @@
 
 </head>
 
-<body ng-controller="mainController as mainCtrl" ng-cloak layout="column" style="overflow-y:hidden">
-<div layout="row">
+<body ng-controller="mainController as mainCtrl" ng-cloak flex layout="column" style="overflow-y:hidden">
+<div flex layout="row" class="full-height">
     <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
         <!--md-is-locked-open="$mdMedia('gt-md')"-->
         <md-toolbar layout="row" layout-align="space-between center">
@@ -160,8 +160,8 @@
 
         <div layout="column" layout-align="center center">
             <!--<md-button ng-repeat="item in mainCtrl.menuItems"-->
-                       <!--ui-sref-active="active" ng-click="mainCtrl.goToState(item.state); mainCtrl.closeSidebar()"-->
-                       <!--aria-label="Close menu">{{item.name}}-->
+            <!--ui-sref-active="active" ng-click="mainCtrl.goToState(item.state); mainCtrl.closeSidebar()"-->
+            <!--aria-label="Close menu">{{item.name}}-->
             <!--</md-button>-->
             <md-button ng-click="mainCtrl.goToState('application'); mainCtrl.closeSidebar()" md-ink-ripple="false"
                        ui-sref="application" ui-sref-active="active" class="menu-toolbar-button white">
@@ -185,14 +185,18 @@
         </div>
     </md-sidenav>
 
-    <div flex layout="column">
-        <div ng-include="'top-toolbar.html'"></div>
+    <div layout="column" class="full-height full-width">
+        <!--<div ng-include="'top-toolbar.html'"></div>-->
+        <md-toolbar  id="top-toolbar" md-scroll-shrink md-shrink-speed-factor="0.4"
+                     ng-class=" $mdMedia('gt-xs') ? 'md-medium-tall' : 'md-medium' "
+                    layout="row" layout-align="space-between center" ng-include="'top-toolbar.html'">
+        </md-toolbar>
 
-        <md-content id="{{$mdMedia('xs') ? 'main-content-portrait' : 'main-content'}}">
+        <md-content id="{{$mdMedia('xs') ? 'main-content-portrait' : 'main-content'}}" layout-fill >
             <div ng-class="(state.is('home')) || (state.is('application')) ? '' : 'content-body'" layout="row"
                  layout-align="center stretch" style="min-height:calc(100vh - 82px)">
                 <div flex="80" flex-xs="100" layout="row">
-                    <div flex ui-view layout-padding></div>
+                    <div flex ui-view layout-padding layout="column"></div>
                 </div>
             </div>
 

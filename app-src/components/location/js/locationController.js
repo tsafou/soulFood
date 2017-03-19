@@ -15,8 +15,10 @@ function locationController($scope, uiGmapIsReady, uiGmapGoogleMapApi, Lightbox)
             longitude: 22.953934
         },
         zoom: 16,
-        options: {scrollwheel: false},
-        gestureHandling: 'cooperative'
+        options: {
+            scrollwheel: false,
+            gestureHandling: 'cooperative'
+        }
     };
 
     $scope.markers = [{
@@ -39,8 +41,17 @@ function locationController($scope, uiGmapIsReady, uiGmapGoogleMapApi, Lightbox)
             url: 'assets/img/streetFood.jpg'
         }
     ];
+
     $scope.openLightboxModal = function (index) {
         Lightbox.openModal(vm.gallery, index, null);
     };
+
+    // uiGmapIsReady.promise(1).then(function(instances) {
+    //     instances.forEach(function(inst) {
+    //         var map = inst.map;
+    //         var uuid = map.uiGmap_id;
+    //         var mapInstanceNumber = inst.instance; // Starts at 1.
+    //     });
+    // });
 
 }
