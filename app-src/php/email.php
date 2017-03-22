@@ -22,32 +22,34 @@ $mail->isSMTP();
 // 0 = off (for production use)
 // 1 = client messages
 // 2 = client and server messages
-$mail->SMTPDebug = 2;
+$mail->SMTPDebug = 3;
 //Ask for HTML-friendly debug output
 $mail->Debugoutput = 'html';
 //Set the hostname of the mail server
-$mail->Host = 'smtp.gmail.com';
+$mail->Host = 'thessalonikistreetfoodfestival.com';
 // use
 // $mail->Host = gethostbyname('smtp.gmail.com');
 // if your network does not support SMTP over IPv6
-//Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-$mail->Port = 587;
-//Set the encryption system to use - ssl (deprecated) or tls
-$mail->SMTPSecure = 'tls';
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = "kostis.tsafaris@gmail.com";
+$mail->Username = "noreply@thessalonikistreetfoodfestival.com";
 //Password to use for SMTP authentication
-$mail->Password = "MniK.T.Iwbi1982!";
+$mail->Password = "kZ5n4f_6";
+//Set the SMTP port number - 587 or 25 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+$mail->Port = 25;
+//Set the encryption system to use - ssl (deprecated) or tls
+$mail->SMTPSecure = 'tls';
+
+
 //Set who the message is to be sent from
 $mail->setFrom($email, $name);
-//Set an alternative reply-to address
-$mail->addReplyTo($email, $name);
 //Set who the message is to be sent to
 $mail->addAddress('dinos1@hotmail.com', 'ti na valw edw?');
+//Set an alternative reply-to address
+$mail->addReplyTo($email, $name);
 //Set the subject line
-$mail->Subject = 'Fleamarket Website Contact Form';
+$mail->Subject = 'Thessaloniki Street Food Festival Website Contact Form';
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body

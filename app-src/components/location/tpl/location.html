@@ -14,7 +14,7 @@
         </div>
 
         <div class="map-wrapper margin-top-2em" id="map">
-            <ui-gmap-google-map center='map.center' zoom='map.zoom'
+            <ui-gmap-google-map ng-if="mapReady" center='map.center' zoom='map.zoom'
                                 options="map.options" refresh="contact">
                 <ui-gmap-markers models="markers" coords="'self'" fit='false'></ui-gmap-markers>
             </ui-gmap-google-map>

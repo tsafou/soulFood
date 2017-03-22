@@ -53,11 +53,11 @@ angular.module('soulFood', [
             controllerAs: 'aboutCtrl'
         })
 
-        .state('accomodation', {
-            url: '/accomodation',
-            templateUrl: 'components/accomodation/tpl/accomodation.html',
-            controller: 'accomodationController',
-            controllerAs: 'accomodationCtrl'
+        .state('accommodation', {
+            url: '/accommodation',
+            templateUrl: 'components/accommodation/tpl/accommodation.html',
+            controller: 'accommodationController',
+            controllerAs: 'accommodationCtrl'
         })
 
         .state('contact', {
@@ -152,7 +152,7 @@ angular.module('soulFood', [
         ABOUT: 'About',
         APPLICATION: 'Application',
         LOCATION: 'Location',
-        ACCOMODATION: 'Accomodation',
+        accommodation: 'accommodation',
         CONTACT: 'Contact',
         LOCATION_HEADER: 'Location',
         BUS_HEADER: 'Bus Stops',
@@ -168,11 +168,10 @@ angular.module('soulFood', [
         BUS_TEXT4A: '3is Septemvriou (Going East/West)',
         BUS_TEXT4B: 'Stop: Mouseiou Vyzantinou Politismou',
         BUS_TEXT4C: 'Lines: 3, 8',
-        FOOTER_COL1_HEADER: 'Contact',
+        FOOTER_COL1_HEADER: 'Contact us',
         FOOTER_COL2_HEADER: 'Find us',
         FOOTER_COL1_PHONE:'Phone: +30 ',
-        FOOTER_COL1_WEB:'www.soulfoodthessaloniki.com',
-        ACCOMODATION_HEADER: 'Accomodation',
+        accommodation_HEADER: 'accommodation',
         CITYHALL_TEXT1A: 'Thessaloniki City Hall',
         CITYHALL_TEXT1B: 'Leoforos Vasileos Georgiou 1',
         CITYHALL_TEXT1C: 'Thessaloniki 546 40',
@@ -182,7 +181,7 @@ angular.module('soulFood', [
             ABOUT: 'Σχετικα',
             APPLICATION: 'Αιτηση Συμμετοχης',
             LOCATION: 'Τοποθεσια',
-            ACCOMODATION: 'Διαμονη',
+            accommodation: 'Διαμονη',
             CONTACT: 'Επικοινωνια',
             LOCATION_HEADER: 'Τοποθεσία',
             BUS_HEADER: 'Στάσεις Λεωφορείων',
@@ -201,8 +200,7 @@ angular.module('soulFood', [
             FOOTER_COL1_HEADER: 'Επικοινωνία',
             FOOTER_COL2_HEADER: 'Βρείτε μας',
             FOOTER_COL1_PHONE:'Τηλέφωνο: +30 6944 556677',
-            FOOTER_COL1_WEB:'www.soulfoodthessaloniki.com',
-            ACCOMODATION_HEADER: 'Διαμονή',
+            accommodation_HEADER: 'Διαμονή',
             CITYHALL_TEXT1A: 'Δημαρχείο Θεσσαλονίκης',
             CITYHALL_TEXT1B: 'Λεωφόρος Βασιλέως Γεωργίου 1',
             CITYHALL_TEXT1C: 'Θεσσαλονίκη 546 40',
