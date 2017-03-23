@@ -54,15 +54,27 @@ function locationController($scope, uiGmapIsReady, uiGmapGoogleMapApi, Lightbox,
     vm.gallery = [
         {
             title: 'klmk;m',
-            url: 'assets/img/activities.jpg'
+            url: 'assets/img/slideshow1.jpg'
         },
         {
             title: 'klmk;m',
-            url: 'assets/img/clothes.jpg'
+            url: 'assets/img/slideshow2.jpg'
         },
         {
             title: 'klmk;m',
-            url: 'assets/img/streetFood.jpg'
+            url: 'assets/img/slideshow3.jpg'
+        },
+        {
+            title: 'klmk;m',
+            url: 'assets/img/slideshow4.jpg'
+        },
+        {
+            title: 'klmk;m',
+            url: 'assets/img/slideshow5.jpg'
+        },
+        {
+            title: 'klmk;m',
+            url: 'assets/img/slideshow6.jpg'
         }
     ];
 
@@ -73,7 +85,6 @@ function locationController($scope, uiGmapIsReady, uiGmapGoogleMapApi, Lightbox,
     // $scope.mapReady = false;
     uiGmapIsReady.promise(1).then(function (instances) {
         instances.forEach(function (inst) {
-            console.log("ready");
             refreshGoogleMap();
         });
     });

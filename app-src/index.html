@@ -188,7 +188,7 @@
 
         <md-content id="{{$mdMedia('xs') ? 'main-content-portrait' : 'main-content'}}" layout-fill >
             <div ng-class="(state.is('home')) || (state.is('application')) ? '' : 'content-body'" layout="row"
-                 layout-align="center stretch" style="min-height:calc(100vh - 82px)">
+                 layout-align="center stretch" style="min-height:100%;">
                 <div flex="80" flex-xs="100" layout="row">
                     <div flex ui-view layout-padding layout="column"></div>
                 </div>
