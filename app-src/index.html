@@ -9,7 +9,7 @@
 <html lang="gr" itemscope itemtype="https://schema.org/-----" ng-app="soulFood" ng-strict-di class="no-js">
 <!--<![endif]-->
 <head>
-    <title>Soul Food Thessaloniki</title>
+    <title>Thessaloniki Street Food Festival</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +21,7 @@
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="Thessaloniki Street Food Festival">
     <meta itemprop="description"
-          content="Μια τοπική γιορτή που γίνεται 4 φορές το χρόνο, πάντα σε συμβολικούς για την πόλη χώρους και με καινούργια στοιχεία κάθε φορά!">
+          content="Η δημιουργική ομάδα του SoulFood Thessaloniki (Upnloud &amp; Black Radio Berlin) παρουσιάζει το 1ο Thessaloniki Street Food Festival το Σάββατο 29 &amp; Κυριακή 30 Απριλίου, από τις 10 π.μ μέχρι και τις 10 μ.μ., στο νέο Δημαρχείο Θεσσαλονίκης.">
     <meta itemprop="image" content="http://thefleamarketskg.com/assets/img/handmade_shoes.jpg">
 
     <!-- Twitter Card data -->
@@ -29,12 +29,12 @@
     <meta name="twitter:title" content="Thessaloniki Street Food Festival">
     <meta name="twitter:image" content="http://thefleamarketskg.com/assets/img/handmade_shoes.jpg">
     <meta name="twitter:description"
-          content="Μια τοπική γιορτή που γίνεται 4 φορές το χρόνο, πάντα σε συμβολικούς για την πόλη χώρους και με καινούργια στοιχεία κάθε φορά">
+          content="Η δημιουργική ομάδα του SoulFood Thessaloniki (Upnloud &amp; Black Radio Berlin) παρουσιάζει το 1ο Thessaloniki Street Food Festival το Σάββατο 29 &amp; Κυριακή 30 Απριλίου, από τις 10 π.μ μέχρι και τις 10 μ.μ., στο νέο Δημαρχείο Θεσσαλονίκης.">
 
     <!-- Open Graph data -->
     <meta property="og:title" content="Thessaloniki Street Food Festival">
     <meta property="og:description"
-          content="Μια τοπική γιορτή που γίνεται 4 φορές το χρόνο, πάντα σε συμβολικούς για την πόλη χώρους και με καινούργια στοιχεία κάθε φορά">
+          content="Η δημιουργική ομάδα του SoulFood Thessaloniki (Upnloud &amp; Black Radio Berlin) παρουσιάζει το 1ο Thessaloniki Street Food Festival το Σάββατο 29 &amp; Κυριακή 30 Απριλίου, από τις 10 π.μ μέχρι και τις 10 μ.μ., στο νέο Δημαρχείο Θεσσαλονίκης.">
     <meta property="og:url" content="http://thessalonikistreetfoodfestival.com/">
     <meta property="og:image" content="http://thessalonikistreetfoodfestival.com/assets/img/soulFoodBG2.png">
     <meta property="og:type" content="website">
@@ -123,6 +123,7 @@
     <script src="components/info/js/infoController.js"></script>
     <script src="components/application/js/applicationController.js"></script>
     <script src="components/accommodation/js/accommodationController.js"></script>
+    <script src="components/sponsors/js/sponsorsController.js"></script>
     <!-- endbuild -->
 
     <script>
@@ -172,7 +173,7 @@
                 {{'ACCOMMODATION' | translate}}
             </md-button>
 
-            <md-button ng-click="mainCtrl.goToState('sponsors')" md-ink-ripple="false"
+            <md-button ng-click="mainCtrl.goToState('sponsors'); mainCtrl.closeSidebar()" md-ink-ripple="false"
                        ui-sref="sponsors" ui-sref-active="active" class="menu-toolbar-button white">
                 {{'SPONSORS' | translate}}
             </md-button>
@@ -182,7 +183,7 @@
                 {{'CONTACT' | translate}}
             </md-button>
 
-            <md-button ng-click="mainCtrl.goToState('about')" md-ink-ripple="false"
+            <md-button ng-click="mainCtrl.goToState('about'); mainCtrl.closeSidebar()" md-ink-ripple="false"
                        ui-sref="about" ui-sref-active="active" class="menu-toolbar-button white">
                 {{'ABOUT' | translate}}
             </md-button>
