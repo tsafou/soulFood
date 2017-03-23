@@ -1,0 +1,102 @@
+<!--<md-content flex layout="row" layout-padding class="about-top-padding kt-test" style="justify-content: center;">-->
+
+    <div flex="80" flex-xs="100" layout="column" class="bullet-list">
+        <!--<div>-->
+        <!--<h3 class="dimgrey margin-top">Υπό την αιγίδα</h3>-->
+        <!--<md-divider></md-divider>-->
+
+        <!--&lt;!&ndash;<md-grid-list&ndash;&gt;-->
+        <!--&lt;!&ndash;md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="8"&ndash;&gt;-->
+        <!--&lt;!&ndash;md-row-height-gt-md="1:1" md-row-height="1:1"&ndash;&gt;-->
+        <!--&lt;!&ndash;md-gutter="12px" md-gutter-gt-sm="30px">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<md-grid-tile ng-repeat="logo in aboutCtrl.logosDimosUrl track by $index">&ndash;&gt;-->
+        <!--&lt;!&ndash;<a ng-href="{{logo}}" target="_blank" ng-mouseenter="active=true" ng-mouseleave="active=false"&ndash;&gt;-->
+        <!--&lt;!&ndash;ng-class="active ? 'active-logo' : 'logo'">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img ng-src="assets/img/logos/dimos/{{$index}}.jpg"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+        <!--&lt;!&ndash;</md-grid-tile>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;</md-grid-list>&ndash;&gt;-->
+        <!--</div>-->
+
+        <div>
+            <h3 class="margin-top">Media partners</h3>
+            <md-divider></md-divider>
+
+            <md-grid-list
+                    md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="8"
+                    md-row-height-gt-md="1:1" md-row-height="1:1"
+                    md-gutter="12px" md-gutter-gt-sm="30px">
+
+                <md-grid-tile ng-repeat="logo in aboutCtrl.logosMediaUrl track by $index">
+                    <a ng-href="{{logo}}" target="_blank" ng-mouseenter="active=true" ng-mouseleave="active=false"
+                       ng-class="active ? 'active-logo' : 'logo'">
+                        <img ng-src="assets/img/logos/mediaPartners/{{$index}}.jpg"/>
+                    </a>
+                </md-grid-tile>
+
+            </md-grid-list>
+        </div>
+
+        <div>
+            <h3 class="margin-top">Sponsors</h3>
+            <md-divider></md-divider>
+
+            <md-grid-list
+                    md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="8"
+                    md-row-height-gt-md="1:1" md-row-height="1:1"
+                    md-gutter="12px" md-gutter-gt-sm="30px">
+
+                <md-grid-tile ng-repeat="logo in aboutCtrl.logosSponsors track by $index">
+                    <a ng-href="{{logo}}" target="_blank" ng-mouseenter="active=true" ng-mouseleave="active=false"
+                       ng-class="active ? 'active-logo' : 'logo'">
+                        <img ng-src="assets/img/logos/sponsors/{{$index}}.jpg"/>
+                    </a>
+                </md-grid-tile>
+
+            </md-grid-list>
+        </div>
+
+        <div>
+            <h3 class="margin-top">Supporters</h3>
+            <md-divider></md-divider>
+
+            <md-grid-list
+                    md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="8"
+                    md-row-height-gt-md="1:1" md-row-height="1:1"
+                    md-gutter="12px" md-gutter-gt-sm="30px">
+
+                <md-grid-tile ng-repeat="logo in aboutCtrl.logosSupportersUrl track by $index">
+                    <a ng-href="{{logo}}" target="_blank" ng-mouseenter="active=true" ng-mouseleave="active=false"
+                       ng-class="active ? 'active-logo' : 'logo'">
+                        <img ng-src="assets/img/logos/supporters/{{$index}}.jpg"/>
+                    </a>
+                </md-grid-tile>
+
+            </md-grid-list>
+        </div>
+
+        <div>
+            <h3 class="margin-top">Street food</h3>
+            <md-divider></md-divider>
+
+            <md-grid-list
+                    md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="8"
+                    md-row-height-gt-md="1:1" md-row-height="1:1"
+                    md-gutter="12px" md-gutter-gt-sm="30px">
+
+                <md-grid-tile ng-repeat="logo in aboutCtrl.logosStreetFoodUrl track by $index">
+                    <a ng-href="{{logo}}" target="_blank" ng-mouseenter="active=true" ng-mouseleave="active=false"
+                       ng-class="active ? 'active-logo' : 'logo'">
+                        <img ng-src="assets/img/logos/streetFood/{{$index}}.jpg"/>
+                    </a>
+                </md-grid-tile>
+
+            </md-grid-list>
+        </div>
+
+    </div>
+
+
+<!--</md-content>-->

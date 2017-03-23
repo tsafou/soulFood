@@ -27,6 +27,7 @@ $mail->SMTPDebug = 3;
 $mail->Debugoutput = 'html';
 //Set the hostname of the mail server
 $mail->Host = 'thessalonikistreetfoodfestival.com';
+//$mail->Host = 'localhost';
 // use
 // $mail->Host = gethostbyname('smtp.gmail.com');
 // if your network does not support SMTP over IPv6
@@ -39,13 +40,14 @@ $mail->Password = "kZ5n4f_6";
 //Set the SMTP port number - 587 or 25 for authenticated TLS, a.k.a. RFC4409 SMTP submission
 $mail->Port = 25;
 //Set the encryption system to use - ssl (deprecated) or tls
-$mail->SMTPSecure = 'tls';
+//$mail->SMTPSecure = 'tls';
+$mail->SMTPAutoTLS = false;
 
 
 //Set who the message is to be sent from
 $mail->setFrom($email, $name);
 //Set who the message is to be sent to
-$mail->addAddress('dinos1@hotmail.com', 'ti na valw edw?');
+$mail->addAddress('soulfoodthessaloniki@gmail.com', 'Soulfood Team');
 //Set an alternative reply-to address
 $mail->addReplyTo($email, $name);
 //Set the subject line

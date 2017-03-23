@@ -60,6 +60,13 @@ angular.module('soulFood', [
             controllerAs: 'accommodationCtrl'
         })
 
+        .state('sponsors', {
+            url: '/sponsors',
+            templateUrl: 'components/sponsors/tpl/sponsors.html',
+            controller: 'sponsorsController',
+            controllerAs: 'sponsorsCtrl'
+        })
+
         .state('contact', {
             url: '/contact',
             templateUrl: 'components/contact/tpl/contact.html',
@@ -152,8 +159,9 @@ angular.module('soulFood', [
         ABOUT: 'About',
         APPLICATION: 'Application',
         LOCATION: 'Location',
-        accommodation: 'accommodation',
+        ACCOMMODATION: 'accommodation',
         CONTACT: 'Contact',
+        SPONSORS: 'Sponsors',
         LOCATION_HEADER: 'Location',
         BUS_HEADER: 'Bus Stops',
         BUS_TEXT1A: 'Leof. Vas. Georgiou (going West/Center)',
@@ -176,13 +184,26 @@ angular.module('soulFood', [
         CITYHALL_TEXT1B: 'Leoforos Vasileos Georgiou 1',
         CITYHALL_TEXT1C: 'Thessaloniki 546 40',
         CITYHALL_TEXT1D: '231 331 7777',
+        CONTACT_HEADER: 'Talk to our team',
+        CONTACT_LABEL_NAME: 'Your name',
+        CONTACT_LABEL_NAME_ERROR: '* You forgot to fill in your name!',
+        CONTACT_EMAIL: 'Your email',
+        CONTACT_EMAIL_ERROR1: '* You \'ve probably made a mistake in your email address!',
+        CONTACT_EMAIL_ERROR2: '* You forgot to fill in your email address!',
+        CONTACT_QUESTION: 'Your question',
+        CONTACT_QUESTION_ERROR1: '* You probably forgot what you wanted to say!',
+        CONTACT_QUESTION_ERROR2: '* The maximum length of the message is 150 characters!',
+        CONTACT_SUCCESS: 'Message successfully sent!',
+        CONTACT_ERROR: 'An error has occurred. Please try sending your message directly to ',
+        CONTACT_SEND: 'SEND',
     })
         .translations('gr', {
             ABOUT: 'Σχετικα',
             APPLICATION: 'Αιτηση Συμμετοχης',
             LOCATION: 'Τοποθεσια',
-            accommodation: 'Διαμονη',
+            ACCOMMODATION: 'Διαμονη',
             CONTACT: 'Επικοινωνια',
+            SPONSORS: 'Σπονσορες',
             LOCATION_HEADER: 'Τοποθεσία',
             BUS_HEADER: 'Στάσεις Λεωφορείων',
             BUS_TEXT1A: 'Λεωφ. Βασ. Γεωργίου (προς Δυτικά/Κέντρο)',
@@ -205,6 +226,18 @@ angular.module('soulFood', [
             CITYHALL_TEXT1B: 'Λεωφόρος Βασιλέως Γεωργίου 1',
             CITYHALL_TEXT1C: 'Θεσσαλονίκη 546 40',
             CITYHALL_TEXT1D: '231 331 7777',
+            CONTACT_HEADER: 'Μίλα με την ομάδα μας',
+            CONTACT_LABEL_NAME: 'Το όνομά σου',
+            CONTACT_LABEL_NAME_ERROR: '* Ξέχασες να συμπληρώσεις το όνομά σου!',
+            CONTACT_EMAIL: 'Το email σου',
+            CONTACT_EMAIL_ERROR1: '* Μάλλον έχεις κάνει κάποιο λάθος στην ηλεκτρονική σου διεύθυνση!',
+            CONTACT_EMAIL_ERROR2: '* Ξέχασες να συμπληρώσεις την ηλεκτρονική σου διεύθυνση!',
+            CONTACT_QUESTION: 'Η ερώτησή σου',
+            CONTACT_QUESTION_ERROR1: '* Μάλλον ξέχασες τι θέλεις να μας πεις!',
+            CONTACT_QUESTION_ERROR2: '* Το μέγιστο μήκος του μηνύματος είναι 150 χαρακτήρες!',
+            CONTACT_SUCCESS: 'Το μήνυμά σου έφυγε επιτυχώς!',
+            CONTACT_ERROR: 'Παρουσιάστηκε κάποιο σφάλμα. Δοκίμασε να στείλεις το μήνυμά σου στο ',
+            CONTACT_SEND: 'ΑΠΟΣΤΟΛΗ',
         });
 
     $translateProvider.preferredLanguage('en');

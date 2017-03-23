@@ -140,7 +140,7 @@
 
 <body ng-controller="mainController as mainCtrl" ng-cloak flex layout="column" style="overflow-y:hidden">
 <div flex layout="row" class="full-height">
-    <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
+    <md-sidenav md-is-open="mainCtrl.sidenavIsOpen" class="md-sidenav-left" md-component-id="left" md-whiteframe="4" >
         <!--md-is-locked-open="$mdMedia('gt-md')"-->
         <md-toolbar layout="row" layout-align="space-between center">
             <div flex>
@@ -152,7 +152,7 @@
             <div flex></div>
         </md-toolbar>
 
-        <div layout="column" layout-align="center center">
+        <div layout="column" layout-align="center center" style="padding-top: 40px;">
             <!--<md-button ng-repeat="item in mainCtrl.menuItems"-->
             <!--ui-sref-active="active" ng-click="mainCtrl.goToState(item.state); mainCtrl.closeSidebar()"-->
             <!--aria-label="Close menu">{{item.name}}-->
@@ -169,12 +169,22 @@
 
             <md-button ng-click="mainCtrl.goToState('accommodation'); mainCtrl.closeSidebar()" md-ink-ripple="false"
                        ui-sref="accommodation" ui-sref-active="active" class="menu-toolbar-button white">
-                {{'accommodation' | translate}}
+                {{'ACCOMMODATION' | translate}}
+            </md-button>
+
+            <md-button ng-click="mainCtrl.goToState('sponsors')" md-ink-ripple="false"
+                       ui-sref="sponsors" ui-sref-active="active" class="menu-toolbar-button white">
+                {{'SPONSORS' | translate}}
             </md-button>
 
             <md-button ng-click="mainCtrl.goToState('contact'); mainCtrl.closeSidebar()" md-ink-ripple="false"
                        ui-sref="contact" ui-sref-active="active" class="menu-toolbar-button white">
                 {{'CONTACT' | translate}}
+            </md-button>
+
+            <md-button ng-click="mainCtrl.goToState('about')" md-ink-ripple="false"
+                       ui-sref="about" ui-sref-active="active" class="menu-toolbar-button white">
+                {{'ABOUT' | translate}}
             </md-button>
         </div>
     </md-sidenav>
@@ -186,8 +196,9 @@
             <!--md-scroll-shrink md-shrink-speed-factor="0.4"-->
         </md-toolbar>
 
-        <md-content id="{{$mdMedia('xs') ? 'main-content-portrait' : 'main-content'}}" layout-fill >
-            <div ng-class="(state.is('home')) || (state.is('application')) ? '' : 'content-body'" layout="row"
+        <!--layout-fill-->
+        <md-content id="{{$mdMedia('xs') ? 'main-content-portrait' : 'main-content'}}" flex>
+            <div ng-class="(state.is('home')) ? '' : 'content-body'" layout="row"
                  layout-align="center stretch" style="min-height:100%;">
                 <div flex="80" flex-xs="100" layout="row">
                     <div flex ui-view layout-padding layout="column"></div>
@@ -199,13 +210,6 @@
                         layout="column" class="footer"></md-content>
         </md-content>
 
-        <div class="my-signature">
-            <a href="http://www.tsafaris.com" target="_blank">
-                <md-icon md-svg-src="assets/img/ic_code_black_24px.svg" class="s24"
-                         aria-label="Kostis Tsafaris"></md-icon>
-                <md-tooltip md-direction="bottom">Find out who built me!</md-tooltip>
-            </a>
-        </div>
     </div>
 </div>
 

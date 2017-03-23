@@ -6,9 +6,12 @@
            ng-class="active ? 'active-main-logo' : ''"><img src="assets/img/logoSoulTr.png"/></a>
     </div>
 
-    <div flex="20" hide-gt-xs>
-        <md-button ng-click="mainCtrl.openSidebar()" aria-label="Open menu">
-            <ng-md-icon icon="menu" style="fill: black;"></ng-md-icon>
+    <div flex="20" hide-gt-xs layout="row" layout-align="center">
+        <md-button ng-if="!mainCtrl.sidenavIsOpen" ng-click="mainCtrl.openSidebar()" class="md-icon-button" aria-label="Open menu">
+            <ng-md-icon icon="menu" ></ng-md-icon>
+        </md-button>
+        <md-button ng-if="mainCtrl.sidenavIsOpen" ng-click="mainCtrl.closeSidebar()" class="md-icon-button" aria-label="Close menu">
+            <ng-md-icon icon="arrow_back"></ng-md-icon>
         </md-button>
     </div>
 
@@ -20,7 +23,7 @@
     </div>
 
 
-    <div class="md-toolbar-tools" layout-align="center center" hide-xs style="overflow-x: auto;">
+    <div class="md-toolbar-tools" layout-align="center center" hide-xs layout-wrap>
 
         <md-button ng-click="mainCtrl.goToState('application')" md-ink-ripple="false"
                    ui-sref="application" ui-sref-active="active" class="menu-toolbar-button white">
@@ -34,12 +37,22 @@
 
         <md-button ng-click="mainCtrl.goToState('accommodation')" md-ink-ripple="false"
                    ui-sref="accommodation" ui-sref-active="active" class="menu-toolbar-button white">
-            {{'accommodation' | translate}}
+            {{'ACCOMMODATION' | translate}}
+        </md-button>
+
+        <md-button ng-click="mainCtrl.goToState('sponsors')" md-ink-ripple="false"
+                   ui-sref="sponsors" ui-sref-active="active" class="menu-toolbar-button white">
+            {{'SPONSORS' | translate}}
         </md-button>
 
         <md-button ng-click="mainCtrl.goToState('contact')" md-ink-ripple="false"
                    ui-sref="contact" ui-sref-active="active" class="menu-toolbar-button white">
             {{'CONTACT' | translate}}
+        </md-button>
+
+        <md-button ng-click="mainCtrl.goToState('about')" md-ink-ripple="false"
+                   ui-sref="about" ui-sref-active="active" class="menu-toolbar-button white">
+            {{'ABOUT' | translate}}
         </md-button>
     </div>
 
@@ -62,3 +75,11 @@
     </div>
     <div flex="5" flex-xs="5"></div>
 <!--</md-toolbar>-->
+
+<div class="my-signature">
+    <a href="http://www.tsafaris.com" target="_blank">
+        <md-icon md-svg-src="assets/img/ic_code_black_24px.svg" class="s24"
+                 aria-label="Kostis Tsafaris"></md-icon>
+        <md-tooltip md-direction="bottom">Find out who built me!</md-tooltip>
+    </a>
+</div>

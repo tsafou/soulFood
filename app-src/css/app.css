@@ -27,6 +27,7 @@ body {
 
 .full-height {
     height: 100%;
+    overflow-y: hidden;
 }
 
 .full-width {
@@ -41,6 +42,7 @@ body {
 
 #top-toolbar {
     border-bottom: 0;
+    z-index: 99;
     /*background-color: transparent;*/
     /*background-color: #fbbd00;*/
     /*background: url('assets/img/motivoTr.jpg');*/
@@ -362,6 +364,11 @@ md-grid-tile a img {
     cursor: pointer;
 }
 
+.contact-page {
+    background-color: transparent;
+    justify-content: center;
+}
+
 #contact-form .md-button span {
     color: whitesmoke;
 }
@@ -412,7 +419,7 @@ table.md-table th.md-column.two-columns {
 }
 
 .my-signature {
-    position: fixed;
+    position: absolute;
     right: 0;
     top: 0;
     z-index: 2;
