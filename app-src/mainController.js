@@ -5,16 +5,23 @@
 
 angular.module('soulFood').controller('mainController', mainController);
 
-mainController.$inject = ['$scope', '$mdSidenav', '$state', '$mdMedia', '$mdDialog', '$translate'];
+mainController.$inject = ['$scope', '$mdSidenav', '$state', '$mdMedia', '$mdDialog', '$translate', '$location'];
 
-function mainController($scope, $mdSidenav, $state, $mdMedia, $mdDialog, $translate) {
+function mainController($scope, $mdSidenav, $state, $mdMedia, $mdDialog, $translate, $location) {
     var vm = this;
     $scope.$mdMedia = $mdMedia;
 
     var originatorEv;
     var faq;
-    $scope.state = $state;
     vm.selectedLang = 'en';
+    $scope.state = $state;
+    if ($location.$$host.split('.').lastIndexOf('gr')>-1) {
+        vm.selectedLang = 'gr';
+    }
+    else {
+        vm.selectedLang = 'en';
+    }
+
     vm.states = [
         {
             name: 'application'
@@ -34,32 +41,6 @@ function mainController($scope, $mdSidenav, $state, $mdMedia, $mdDialog, $transl
         {
             name: 'about'
         },
-    ];
-    vm.menuItems = [
-        // {
-        //     "name": "Aρχικη",
-        //     "state": "home"
-        // },
-        {
-            "name": "Σχετικα",
-            "state": "about"
-        },
-        {
-            "name": "Συμμετοχη",
-            "state": "application"
-        },
-        {
-            "name": "Εκθετες",
-            "state": "info.merchants"
-        },
-        {
-            "name": "Επισκεπτες",
-            "state": "info.visitors"
-        },
-        {
-            "name": "Επικοινωνια",
-            "state": "contact"
-        }
     ];
 
     vm.openSidebar = function () {
@@ -119,4 +100,5 @@ function mainController($scope, $mdSidenav, $state, $mdMedia, $mdDialog, $transl
     };
 
     //TRANSLATION END
+    vm.updateLanguage(vm.selectedLang);
 }

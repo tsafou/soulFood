@@ -165,7 +165,7 @@
                        ng-click="mainCtrl.goToState(state.name); mainCtrl.closeSidebar()" md-ink-ripple="false"
                        ui-sref="{{state.name}}" ui-sref-active="active" class="menu-toolbar-button white"
                        aria-label="{{state.name}}">
-                {{ state.name | translate | uppercase}}
+                {{ state.name | uppercase | translate}}
             </md-button>
         </div>
     </md-sidenav>

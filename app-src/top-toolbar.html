@@ -1,79 +1,88 @@
 <!--<md-toolbar md-scroll-shrink md-shrink-speed-factor="0.4" id="top-toolbar"-->
-            <!--ng-class=" $mdMedia('gt-xs') ? 'md-medium-tall' : 'md-medium' "-->
-            <!--layout="row" layout-align="space-between center">-->
-    <div class="main-logo" flex-offset="5" hide-xs>
-        <a ui-sref="home" ng-mouseenter="mainCtrl.active=true" ng-mouseleave="mainCtrl.active=false"
-           ng-class="active ? 'active-main-logo' : ''"><img src="assets/img/logoSoulTr.png"/></a>
+<!--ng-class=" $mdMedia('gt-xs') ? 'md-medium-tall' : 'md-medium' "-->
+<!--layout="row" layout-align="space-between center">-->
+<div class="main-logo" flex-offset="5" hide-xs>
+    <a ui-sref="home" ng-mouseenter="mainCtrl.active=true" ng-mouseleave="mainCtrl.active=false"
+       ng-class="active ? 'active-main-logo' : ''"><img src="assets/img/logoSoulTr.png"/></a>
+</div>
+
+<div flex="20" hide-gt-xs layout="row" layout-align="center">
+    <md-button ng-if="!mainCtrl.sidenavIsOpen" ng-click="mainCtrl.openSidebar()" class="md-icon-button"
+               aria-label="Open menu">
+        <ng-md-icon icon="menu"></ng-md-icon>
+    </md-button>
+    <md-button ng-if="mainCtrl.sidenavIsOpen" ng-click="mainCtrl.closeSidebar()" class="md-icon-button"
+               aria-label="Close menu">
+        <ng-md-icon icon="arrow_back"></ng-md-icon>
+    </md-button>
+</div>
+
+<div flex="60" class="md-toolbar-tools" layout-align="center center" hide-gt-xs>
+    <div class="main-logo-sm">
+        <a ui-sref="home" ng-mouseenter="active=true" ng-mouseleave="active=false"
+           ng-class="active ? 'active-logo' : ''"><img src="assets/img/logoSoulTr.png"/></a>
     </div>
-
-    <div flex="20" hide-gt-xs layout="row" layout-align="center">
-        <md-button ng-if="!mainCtrl.sidenavIsOpen" ng-click="mainCtrl.openSidebar()" class="md-icon-button" aria-label="Open menu">
-            <ng-md-icon icon="menu" ></ng-md-icon>
-        </md-button>
-        <md-button ng-if="mainCtrl.sidenavIsOpen" ng-click="mainCtrl.closeSidebar()" class="md-icon-button" aria-label="Close menu">
-            <ng-md-icon icon="arrow_back"></ng-md-icon>
-        </md-button>
-    </div>
-
-    <div flex="60" class="md-toolbar-tools" layout-align="center center" hide-gt-xs>
-        <div class="main-logo-sm">
-            <a ui-sref="home" ng-mouseenter="active=true" ng-mouseleave="active=false"
-               ng-class="active ? 'active-logo' : ''"><img src="assets/img/logoSoulTr.png"/></a>
-        </div>
-    </div>
+</div>
 
 
-    <div class="md-toolbar-tools" layout-align="center center" hide-xs layout-wrap>
+<div class="md-toolbar-tools" layout-align="center center" hide-xs layout-wrap>
+    <md-button ng-repeat="state in mainCtrl.states"
+               ng-click="mainCtrl.goToState(state.name);" md-ink-ripple="false"
+               ui-sref="{{state.name}}" ui-sref-active="active" class="menu-toolbar-button white"
+               aria-label="{{state.name}}">
+        {{ state.name | uppercase | translate}}
+    </md-button>
 
-        <md-button ng-click="mainCtrl.goToState('application')" md-ink-ripple="false"
-                   ui-sref="application" ui-sref-active="active" class="menu-toolbar-button white">
-            {{'APPLICATION' | translate}}
-        </md-button>
 
-        <md-button ng-click="mainCtrl.goToState('location')" md-ink-ripple="false"
-                   ui-sref="location" ui-sref-active="active" class="menu-toolbar-button white">
-            {{'LOCATION' | translate}}
-        </md-button>
+    <!--<md-button ng-click="mainCtrl.goToState('application')" md-ink-ripple="false"-->
+               <!--ui-sref="application" ui-sref-active="active" class="menu-toolbar-button white">-->
+        <!--{{'APPLICATION' | translate}}-->
+    <!--</md-button>-->
 
-        <md-button ng-click="mainCtrl.goToState('accommodation')" md-ink-ripple="false"
-                   ui-sref="accommodation" ui-sref-active="active" class="menu-toolbar-button white">
-            {{'ACCOMMODATION' | translate}}
-        </md-button>
+    <!--<md-button ng-click="mainCtrl.goToState('location')" md-ink-ripple="false"-->
+               <!--ui-sref="location" ui-sref-active="active" class="menu-toolbar-button white">-->
+        <!--{{'LOCATION' | translate}}-->
+    <!--</md-button>-->
 
-        <md-button ng-click="mainCtrl.goToState('sponsors')" md-ink-ripple="false"
-                   ui-sref="sponsors" ui-sref-active="active" class="menu-toolbar-button white">
-            {{'SPONSORS' | translate}}
-        </md-button>
+    <!--<md-button ng-click="mainCtrl.goToState('accommodation')" md-ink-ripple="false"-->
+               <!--ui-sref="accommodation" ui-sref-active="active" class="menu-toolbar-button white">-->
+        <!--{{'ACCOMMODATION' | translate}}-->
+    <!--</md-button>-->
 
-        <md-button ng-click="mainCtrl.goToState('contact')" md-ink-ripple="false"
-                   ui-sref="contact" ui-sref-active="active" class="menu-toolbar-button white">
-            {{'CONTACT' | translate}}
-        </md-button>
+    <!--<md-button ng-click="mainCtrl.goToState('sponsors')" md-ink-ripple="false"-->
+               <!--ui-sref="sponsors" ui-sref-active="active" class="menu-toolbar-button white">-->
+        <!--{{'SPONSORS' | translate}}-->
+    <!--</md-button>-->
 
-        <md-button ng-click="mainCtrl.goToState('about')" md-ink-ripple="false"
-                   ui-sref="about" ui-sref-active="active" class="menu-toolbar-button white">
-            {{'ABOUT' | translate}}
-        </md-button>
-    </div>
+    <!--<md-button ng-click="mainCtrl.goToState('contact')" md-ink-ripple="false"-->
+               <!--ui-sref="contact" ui-sref-active="active" class="menu-toolbar-button white">-->
+        <!--{{'CONTACT' | translate}}-->
+    <!--</md-button>-->
 
-    <!--<md-select ng-model="mainCtrl.selectedLang" ng-change="mainCtrl.updateLanguage()" class="md-no-underline">-->
-    <!--<md-option value="en"><md-icon md-svg-icon="assets/img/englishFlag.svg"></md-icon></md-option>-->
-    <!--<md-option value="gr"><md-icon md-svg-icon="assets/img/greekFlag.svg"></md-icon></md-option>-->
-    <!--</md-select>-->
+    <!--<md-button ng-click="mainCtrl.goToState('about')" md-ink-ripple="false"-->
+               <!--ui-sref="about" ui-sref-active="active" class="menu-toolbar-button white">-->
+        <!--{{'ABOUT' | translate}}-->
+    <!--</md-button>-->
+</div>
 
-    <div flex="10" flex-xs="15" layout="row" layout-align="center">
-        <md-button class="md-fab md-mini" aria-label="English" ng-click="mainCtrl.updateLanguage('en')"
-                   ng-show="mainCtrl.selectedLang=='gr'">
-            <span>EN</span>
-            <!--<md-icon md-svg-icon="assets/img/englishFlag.svg"></md-icon>-->
-        </md-button>
-        <md-button class="md-fab md-mini" aria-label="Ελληνικά" ng-click="mainCtrl.updateLanguage('gr')"
-                   ng-show="mainCtrl.selectedLang=='en'">
-            <span>GR</span>
-            <!--<md-icon md-svg-icon="assets/img/greekFlag.svg"></md-icon>-->
-        </md-button>
-    </div>
-    <div flex="5" flex-xs="5"></div>
+<!--<md-select ng-model="mainCtrl.selectedLang" ng-change="mainCtrl.updateLanguage()" class="md-no-underline">-->
+<!--<md-option value="en"><md-icon md-svg-icon="assets/img/englishFlag.svg"></md-icon></md-option>-->
+<!--<md-option value="gr"><md-icon md-svg-icon="assets/img/greekFlag.svg"></md-icon></md-option>-->
+<!--</md-select>-->
+
+<div flex="10" flex-xs="20" layout="row" layout-align="center">
+    <md-button class="md-fab md-mini" aria-label="English" ng-click="mainCtrl.updateLanguage('en')"
+               ng-show="mainCtrl.selectedLang=='gr'">
+        <span>EN</span>
+        <!--<md-icon md-svg-icon="assets/img/englishFlag.svg"></md-icon>-->
+    </md-button>
+    <md-button class="md-fab md-mini" aria-label="Ελληνικά" ng-click="mainCtrl.updateLanguage('gr')"
+               ng-show="mainCtrl.selectedLang=='en'">
+        <span>GR</span>
+        <!--<md-icon md-svg-icon="assets/img/greekFlag.svg"></md-icon>-->
+    </md-button>
+</div>
+<div flex="5" flex-xs="5"></div>
 <!--</md-toolbar>-->
 
 <div class="my-signature">

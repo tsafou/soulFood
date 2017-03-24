@@ -420,7 +420,7 @@ table.md-table th.md-column.two-columns {
 
 .my-signature {
     position: absolute;
-    right: 0;
+    right: 6px;
     top: 0;
     z-index: 2;
     transition-property: transform;

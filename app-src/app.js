@@ -196,6 +196,7 @@ angular.module('soulFood', [
         CONTACT_SUCCESS: 'Message successfully sent!',
         CONTACT_ERROR: 'An error has occurred. Please try sending your message directly to ',
         CONTACT_SEND: 'SEND',
+        CHECK_BACK_SOON: 'Please check back soon...',
     })
         .translations('gr', {
             ABOUT: 'Σχετικα',
@@ -226,7 +227,7 @@ angular.module('soulFood', [
             CITYHALL_TEXT1B: 'Λεωφόρος Βασιλέως Γεωργίου 1',
             CITYHALL_TEXT1C: 'Θεσσαλονίκη 546 40',
             CITYHALL_TEXT1D: '231 331 7777',
-            CONTACT_HEADER: 'Μίλα με την ομάδα μας',
+            CONTACT_HEADER: 'Μιλα με την ομαδα μας',
             CONTACT_LABEL_NAME: 'Το όνομά σου',
             CONTACT_LABEL_NAME_ERROR: '* Ξέχασες να συμπληρώσεις το όνομά σου!',
             CONTACT_EMAIL: 'Το email σου',
@@ -238,6 +239,7 @@ angular.module('soulFood', [
             CONTACT_SUCCESS: 'Το μήνυμά σου έφυγε επιτυχώς!',
             CONTACT_ERROR: 'Παρουσιάστηκε κάποιο σφάλμα. Δοκίμασε να στείλεις το μήνυμά σου στο ',
             CONTACT_SEND: 'ΑΠΟΣΤΟΛΗ',
+            CHECK_BACK_SOON: 'Σύντομα κοντά σας...',
         });
 
     $translateProvider.preferredLanguage('en');
