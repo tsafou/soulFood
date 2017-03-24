@@ -15,6 +15,26 @@ function mainController($scope, $mdSidenav, $state, $mdMedia, $mdDialog, $transl
     var faq;
     $scope.state = $state;
     vm.selectedLang = 'en';
+    vm.states = [
+        {
+            name: 'application'
+        },
+        {
+            name: 'location'
+        },
+        {
+            name: 'accommodation'
+        },
+        {
+            name: 'sponsors'
+        },
+        {
+            name: 'contact'
+        },
+        {
+            name: 'about'
+        },
+    ];
     vm.menuItems = [
         // {
         //     "name": "Aρχικη",

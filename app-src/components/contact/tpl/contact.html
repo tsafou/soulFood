@@ -1,9 +1,9 @@
-<md-content flex layout="row" class="contact-page">
-    <div flex="70" flex-xs="100" layout="column" layout-padding class="over-fab-trigger">
+<!--<md-content flex layout="row" class="contact-page">-->
+    <!--<div flex="70" flex-xs="100" layout="column" layout-padding class="over-fab-trigger">-->
         <!--<h2 class="md-title">ΕΠΙΚΟΙΝΩΝΙΑ</h2>-->
 
         <md-content md-whiteframe="4" layout-padding>
-            <h3 class="dimgrey margin-top">{{'CONTACT_HEADER' | translate}}</h3>
+            <h3 class="dimgrey margin-top ">{{'CONTACT_HEADER' | translate | uppercase}}</h3>
 
             <form novalidate id="contact-form" name="contactForm" ng-submit="contactCtrl.sendEmail()">
                 <md-content layout="column" class="contact-letter">
@@ -62,6 +62,6 @@
                 </md-input-container>
             </form>
         </md-content>
-    </div>
+    <!--</div>-->
 
-</md-content>
+<!--</md-content>-->
