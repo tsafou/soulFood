@@ -206,7 +206,7 @@ module.exports = function (grunt) {
                     '<%= yeoman.dist %>/js/{,*/}*.js',
                     '<%= yeoman.dist %>/css/{,*/}*.css',
                     // '<%= yeoman.dist %>/assets/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-                    // '<%= yeoman.dist %>/fonts/*'
+                    '<%= yeoman.dist %>/fonts/*'
                 ]
             }
         },
@@ -217,7 +217,7 @@ module.exports = function (grunt) {
         useminPrepare: {
             html: '<%= yeoman.app %>/index.html',
             options: {
-                root: '<%= yeoman.app %>/../../',
+                root: '<%= yeoman.app %>',
                 dest: '<%= yeoman.dist %>',
                 flow: {
                     html: {
@@ -453,12 +453,12 @@ module.exports = function (grunt) {
                     //     dest: '<%= yeoman.dist %>/images',
                     //     src: ['generated/*']
                     // },
-                    {
-                        expand: true,
-                        cwd: 'bower_components/bootstrap/',
-                        src: 'fonts/*',
-                        dest: '<%= yeoman.dist %>'
-                    },
+                    // {
+                    //     expand: true,
+                    //     cwd: 'bower_components/bootstrap/dist',
+                    //     src: 'fonts/*',
+                    //     dest: '<%= yeoman.dist %>'
+                    // },
                     // {
                     //     expand: true,
                     //     cwd: 'bower_components/simple-line-icons',
@@ -604,7 +604,7 @@ module.exports = function (grunt) {
         'filerev',
         'usemin',
         // 'useminGuest'
-        // 'htmlmin'
+        'htmlmin'
     ]);
 
     grunt.registerTask('default', [
