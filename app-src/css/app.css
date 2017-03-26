@@ -516,3 +516,7 @@ md-divider {
 .word-wrap {
     word-wrap: break-word;
 }
+
+a {
+    cursor: pointer;
+}

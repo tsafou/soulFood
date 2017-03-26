@@ -197,6 +197,7 @@ angular.module('soulFood', [
         CONTACT_ERROR: 'An error has occurred. Please try sending your message directly to ',
         CONTACT_SEND: 'SEND',
         CHECK_BACK_SOON: 'Please check back soon...',
+        SPONSORS_HEADER_AIGIDA: 'Sponsored by',
     })
         .translations('gr', {
             ABOUT: 'Σχετικα',
@@ -204,7 +205,7 @@ angular.module('soulFood', [
             LOCATION: 'Τοποθεσια',
             ACCOMMODATION: 'Διαμονη',
             CONTACT: 'Επικοινωνια',
-            SPONSORS: 'Σπονσορες',
+            SPONSORS: 'Χορηγοι',
             LOCATION_HEADER: 'Τοποθεσία',
             BUS_HEADER: 'Στάσεις Λεωφορείων',
             BUS_TEXT1A: 'Λεωφ. Βασ. Γεωργίου (προς Δυτικά/Κέντρο)',
@@ -240,6 +241,7 @@ angular.module('soulFood', [
             CONTACT_ERROR: 'Παρουσιάστηκε κάποιο σφάλμα. Δοκίμασε να στείλεις το μήνυμά σου στο ',
             CONTACT_SEND: 'ΑΠΟΣΤΟΛΗ',
             CHECK_BACK_SOON: 'Σύντομα κοντά σας...',
+            SPONSORS_HEADER_AIGIDA: 'Υπο την αιγιδα',
         });
 
     $translateProvider.preferredLanguage('en');

@@ -8,6 +8,32 @@ sponsorsController.$inject = ['$scope', '$mdSidenav', '$state'];
 function sponsorsController($scope, $mdSidenav, $state) {
     var vm = this;
 
+    vm.sponsors = [
+        {
+            path: 'assets/img/sponsors/akmi.png',
+            url: '',
+            category: 'sponsor'
+        },
+        {
+            path: 'assets/img/sponsors/heart.png',
+            url: '',
+            category: 'media'
+        },
+        {
+            path: 'assets/img/sponsors/kasetophono.png',
+            url: 'media',
+            category: ''
+        },
+        {
+            path: 'assets/img/sponsors/smile.png',
+            url: '',
+            category: 'sponsor'
+        },
+    ];
+    
+    
+    
+    
     vm.logosDimosUrl = ['http://www.thessaloniki.gr/'];
     vm.logosMediaUrl = [
         'http://www.athensvoice.gr/',
