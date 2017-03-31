@@ -197,7 +197,16 @@ angular.module('soulFood', [
         CONTACT_ERROR: 'An error has occurred. Please try sending your message directly to ',
         CONTACT_SEND: 'SEND',
         CHECK_BACK_SOON: 'Please check back soon...',
-        SPONSORS_HEADER_AIGIDA: 'Sponsored by',
+        SPONSORS_HEADER_SPONSORED_BY: 'Sponsored By',
+        SPONSORS_HEADER_MEDIA_PARTNERS: 'Media Sponsors',
+        SPONSORS_HEADER_SUPPORT: 'Under the auspices of',
+        ABOUT_HEADER_TOP: 'Thessaloniki Street Food Festival',
+        ABOUT_HEADER_TOP_TEXT: 'The creative team of SoulFood Thessaloniki (Upnloud & Black Radio Berlin) proudly presents the 1st Thessaloniki Street Food Festival! The dates of the Festival are Saturday 29 & Sunday 30 April from 10 a.m. until 10 p.m. and it will take place at the new Town Hall of Thessaloniki, under the auspices of the Municipality of Thessaloniki and, in particular, within the framework of the 7th Thessaloniki Food Festival, which is organised by the Deputy Mayoralty of Culture and International Relations. Entrance is free, which the area, located in the town centre, is easily identifiable and accessible (public transport, car, motorbike, bike or on foot) for the general public.',
+        ABOUT_HEADER_WHAT: 'What is Thessaloniki Street Food Festival?',
+        ABOUT_HEADER_WHAT_TEXT: 'Our objective is to create a two-day celebration, open to everyone! Through flavours, we want to search for and present the common identity, but also meet something foreign, and explore new flavours. A “tasteful” village will be established for 2 days, with different cuisines and music from our city’s DJs.',
+        ABOUT_HEADER_DESC: 'Description of the 1st Thessaloniki Street Food Festival',
+        ABOUT_HEADER_DESC_TEXT1: 'The idea for the creation of the 1st Thessaloniki Street Food Festival was born through our travels, our love for food, and the history of Thessaloniki, of course. As residents in many cities of various countries around the world (Germany, United Kingdom, Spain, Poland, Holland, etc.), we had the chance to visit, eat, and work in similar Street Food Festivals. In our minds, gastronomic quest is inextricably linked to each and every trip. Extraordinary flavours, old and new recipes, unknown combinations and ingredients.',
+        ABOUT_HEADER_DESC_TEXT2: ' The history of Thessaloniki attracts us and shows us the right direction. A city that is characterised a “crossroad of people”, which used to be a cradle of multiculturalism, and has maintained its “flavours” until now. Spices, aromas, raw materials and recipes from all around the world. From India to America, from European sweets to Asian sushi.',
     })
         .translations('gr', {
             ABOUT: 'Σχετικα',
@@ -241,7 +250,17 @@ angular.module('soulFood', [
             CONTACT_ERROR: 'Παρουσιάστηκε κάποιο σφάλμα. Δοκίμασε να στείλεις το μήνυμά σου στο ',
             CONTACT_SEND: 'ΑΠΟΣΤΟΛΗ',
             CHECK_BACK_SOON: 'Σύντομα κοντά σας...',
-            SPONSORS_HEADER_AIGIDA: 'Υπο την αιγιδα',
+            SPONSORS_HEADER_SPONSORED_BY: 'Χορηγοι',
+            SPONSORS_HEADER_MEDIA_PARTNERS: 'Χορηγοι επικοινωνιας',
+            SPONSORS_HEADER_SUPPORT: 'Με την υποστηριξη',
+            ABOUT_HEADER_TOP: 'Thessaloniki Street Food Festival',
+            ABOUT_HEADER_TOP_TEXT: 'Η δημιουργική ομάδα του SoulFood Thessaloniki (Upnloud & Black Radio Berlin) παρουσιάζει το 1st Thessaloniki Street Food Festival το Σάββατο 29 & Κυριακή 30 Απριλίου, από τις 10 π.μ μέχρι και τις 10 μ.μ., στο νέο Δημαρχείο Θεσσαλονίκης.',
+            ABOUT_HEADER_WHAT: 'Τί είναι το Thessaloniki Street Food Festival?',
+            ABOUT_HEADER_WHAT_TEXT: 'Δημιουργούμε μια διήμερη γιορτή, ανοιχτή σε όλους! Μέσα από τις γεύσεις θέλουμε να αναζητήσουμε και να παρουσιάσουμε την κοινή γευστική ταυτότητα, να γνωρίσουμε το διαφορετικό και το ξένο, οι ουρανίσκοι μας να εξερευνήσουν νέες γεύσεις. Για 2 μέρες θα ζωντανέψει ένα «γευστικό» χωριό με διαφορετικές κουζίνες, αγορά με προϊόντα απ’ όλο το κόσμο, μουσική από DJs της πόλης, workshops για μικρά αλλά και μεγάλα παιδιά!',
+            ABOUT_HEADER_DESC: 'Περιγραφή 1st Thessaloniki Street Food Festival',
+            ABOUT_HEADER_DESC_TEXT1: 'Η ιδέα της δημιουργίας του 1st Thessaloniki Street Food Festival γεννήθηκε μέσα από τα ταξίδια μας, την αγάπη μας για το φαγητό και φυσικά την ιστορία της Θεσσαλονίκης. Έχοντας ζήσει ο καθένας μας σε διάφορες πόλεις ανά τον κόσμο είχαμε την ευκαιρία να επισκεφτούμε, να γευτούμε & να δουλέψουμε σε αντίστοιχα Street Food Festivals. Μέσα στο μυαλό μας η γαστρονομική αναζήτηση είναι άρρηκτα συνδεδεμένη με κάθε μας ταξίδι. Παράξενες γεύσεις, παλιές & νέες συνταγές, άγνωστοι συνδυασμοί και υλικά.',
+            ABOUT_HEADER_DESC_TEXT2: 'Η ιστορία της Θεσσαλονίκης μας ελκύει και μας δείχνει τη σωστή κατεύθυνση. Μια πόλη “σταυροδόμι των λαών”, η οποία τα παλιότερα χρόνια υπήρξε κοιτίδα πολυπολιτισμικότητας , που σήμερα την έχει διατηρήσει στις “γεύσεις” της. Μπαχάρια, αρώματα, πρώτες ύλες και συνταγές απ’ όλο τον κόσμο. Από τις Ινδίες μέχρι την Αμερική, από τα Ευρωπαϊκά γλυκά μέχρι τα σούσι της Ασίας.',
+
         });
 
     $translateProvider.preferredLanguage('en');

@@ -355,6 +355,7 @@ md-grid-tile a img {
     width: 100%;
     object-fit: contain;
     align-self: center;
+    background-color: white;
 }
 
 .kt-thumbnail {

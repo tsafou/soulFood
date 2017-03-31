@@ -11,23 +11,23 @@ function sponsorsController($scope, $mdSidenav, $state) {
     vm.sponsors = [
         {
             path: 'assets/img/sponsors/akmi.png',
-            url: '',
-            category: 'sponsor'
+            url: 'http://iek-akmi.edu.gr',
+            category: 'sponsoredBy'
         },
         {
-            path: 'assets/img/sponsors/heart.png',
-            url: '',
-            category: 'media'
+            path: 'assets/img/sponsors/tto.png',
+            url: 'http://www.thessaloniki.gr',
+            category: 'auspices'
         },
         {
             path: 'assets/img/sponsors/kasetophono.png',
-            url: 'media',
-            category: ''
+            url: 'http://www.kasetophono.com',
+            category: 'mediaSponsor'
         },
         {
-            path: 'assets/img/sponsors/smile.png',
-            url: '',
-            category: 'sponsor'
+            path: 'assets/img/sponsors/ttf.png',
+            url: 'http://foodfestival.thessaloniki.gr',
+            category: 'auspices'
         },
     ];
     
