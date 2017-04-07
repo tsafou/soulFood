@@ -29,6 +29,21 @@ function sponsorsController($scope, $mdSidenav, $state) {
             url: 'http://foodfestival.thessaloniki.gr',
             category: 'auspices'
         },
+        {
+            path: 'assets/img/sponsors/galileo.png',
+            url: 'http://galileogalilei.gr',
+            category: 'sponsoredBy'
+        },
+        {
+            path: 'assets/img/sponsors/join.png',
+            url: 'http://joinjuicebars.gr',
+            category: 'sponsoredBy'
+        },
+        {
+            path: 'assets/img/sponsors/owl.png',
+            url: 'http://www.owlclothes.com',
+            category: 'clothing'
+        },
     ];
     
     

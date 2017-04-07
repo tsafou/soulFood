@@ -1,64 +1,85 @@
 <!--<div flex="80" flex-xs="100" layout="column" class="bullet-list">-->
-    <div>
-        <h2 class="margin-top md-title">{{'SPONSORS_HEADER_SPONSORED_BY' |translate | uppercase}}</h2>
-        <md-divider></md-divider>
+<div>
+    <h2 class="margin-top md-title">{{'SPONSORS_HEADER_SPONSORED_BY' |translate}}</h2>
+    <md-divider></md-divider>
 
-        <md-grid-list
-                md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="6"
-                md-row-height-gt-md="1:1" md-row-height="1:1"
-                md-gutter="18px" md-gutter-gt-sm="30px">
+    <md-grid-list
+            md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="6"
+            md-row-height-gt-md="1:1" md-row-height="1:1"
+            md-gutter="18px" md-gutter-gt-sm="30px">
 
-            <md-grid-tile ng-repeat="sponsor in sponsorsCtrl.sponsors track by $index"
-                          ng-if="sponsor.category=='sponsoredBy'">
-                <a ng-href="{{sponsor.url ? sponsor.url : ''}}" target="_blank" ng-mouseenter="active=true"
-                   ng-mouseleave="active=false"
-                   ng-class="active ? 'active-logo' : 'logo'">
-                    <img ng-src="{{sponsor.path}}"/>
-                </a>
-            </md-grid-tile>
-        </md-grid-list>
-    </div>
+        <md-grid-tile ng-repeat="sponsor in sponsorsCtrl.sponsors track by $index"
+                      ng-if="sponsor.category=='sponsoredBy'">
+            <a ng-href="{{sponsor.url ? sponsor.url : ''}}" target="_blank" ng-mouseenter="active=true"
+               ng-mouseleave="active=false"
+               ng-class="active ? 'active-logo' : 'logo'">
+                <img ng-src="{{sponsor.path}}"/>
+            </a>
+        </md-grid-tile>
+    </md-grid-list>
+</div>
 
-    <div>
-        <h2 class="margin-top md-title">{{'SPONSORS_HEADER_MEDIA_PARTNERS' |translate | uppercase}}</h2>
-        <md-divider></md-divider>
+<div>
+    <h2 class="margin-top md-title">{{'SPONSORS_HEADER_MEDIA_PARTNERS' |translate}}</h2>
+    <md-divider></md-divider>
 
-        <md-grid-list
-                md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="6"
-                md-row-height-gt-md="1:1" md-row-height="1:1"
-                md-gutter="18px" md-gutter-gt-sm="30px">
+    <md-grid-list
+            md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="6"
+            md-row-height-gt-md="1:1" md-row-height="1:1"
+            md-gutter="18px" md-gutter-gt-sm="30px">
 
-            <md-grid-tile ng-repeat="sponsor in sponsorsCtrl.sponsors track by $index"
-                          ng-if="sponsor.category=='mediaSponsor'">
-                <a ng-href="{{sponsor.url ? sponsor.url : ''}}" target="_blank" ng-mouseenter="active=true"
-                   ng-mouseleave="active=false"
-                   ng-class="active ? 'active-logo' : 'logo'">
-                    <img ng-src="{{sponsor.path}}"/>
-                </a>
-            </md-grid-tile>
+        <md-grid-tile ng-repeat="sponsor in sponsorsCtrl.sponsors track by $index"
+                      ng-if="sponsor.category=='mediaSponsor'">
+            <a ng-href="{{sponsor.url ? sponsor.url : ''}}" target="_blank" ng-mouseenter="active=true"
+               ng-mouseleave="active=false"
+               ng-class="active ? 'active-logo' : 'logo'">
+                <img ng-src="{{sponsor.path}}"/>
+            </a>
+        </md-grid-tile>
 
-        </md-grid-list>
-    </div>
+    </md-grid-list>
+</div>
 
-    <div>
-        <h2 class="margin-top md-title">{{'SPONSORS_HEADER_SUPPORT' |translate | uppercase}}</h2>
-        <md-divider></md-divider>
+<div>
+    <h2 class="margin-top md-title">{{'SPONSORS_HEADER_SUPPORT' |translate}}</h2>
+    <md-divider></md-divider>
 
-        <md-grid-list
-                md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="6"
-                md-row-height-gt-md="1:1" md-row-height="1:1"
-                md-gutter="18px" md-gutter-gt-sm="30px">
+    <md-grid-list
+            md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="6"
+            md-row-height-gt-md="1:1" md-row-height="1:1"
+            md-gutter="18px" md-gutter-gt-sm="30px">
 
-            <md-grid-tile ng-repeat="sponsor in sponsorsCtrl.sponsors track by $index"
-                          ng-if="sponsor.category=='auspices'">
-                <a ng-href="{{sponsor.url ? sponsor.url : ''}}" target="_blank" ng-mouseenter="active=true"
-                   ng-mouseleave="active=false"
-                   ng-class="active ? 'active-logo' : 'logo'">
-                    <img ng-src="{{sponsor.path}}"/>
-                </a>
-            </md-grid-tile>
+        <md-grid-tile ng-repeat="sponsor in sponsorsCtrl.sponsors track by $index"
+                      ng-if="sponsor.category=='auspices'">
+            <a ng-href="{{sponsor.url ? sponsor.url : ''}}" target="_blank" ng-mouseenter="active=true"
+               ng-mouseleave="active=false"
+               ng-class="active ? 'active-logo' : 'logo'">
+                <img ng-src="{{sponsor.path}}"/>
+            </a>
+        </md-grid-tile>
 
-        </md-grid-list>
-    </div>
+    </md-grid-list>
+</div>
+
+<div>
+    <h2 class="margin-top md-title">{{'SPONSORS_HEADER_CLOTHING' |translate }}</h2>
+    <md-divider></md-divider>
+
+    <md-grid-list
+            md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="6"
+            md-row-height-gt-md="1:1" md-row-height="1:1"
+            md-gutter="18px" md-gutter-gt-sm="30px">
+
+        <md-grid-tile ng-repeat="sponsor in sponsorsCtrl.sponsors track by $index"
+                      ng-if="sponsor.category=='clothing'">
+            <a ng-href="{{sponsor.url ? sponsor.url : ''}}" target="_blank" ng-mouseenter="active=true"
+               ng-mouseleave="active=false"
+               ng-class="active ? 'active-logo' : 'logo'">
+                <img ng-src="{{sponsor.path}}"/>
+            </a>
+        </md-grid-tile>
+
+    </md-grid-list>
+</div>
 
 <!--</div>-->

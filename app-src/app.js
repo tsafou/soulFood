@@ -15,7 +15,7 @@ angular.module('soulFood', [
     'pascalprecht.translate',
     'uiGmapgoogle-maps'
 ]).config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$mdThemingProvider', 'cfpLoadingBarProvider', '$translateProvider', 'uiGmapGoogleMapApiProvider', function ($locationProvider, $urlRouterProvider, $stateProvider, $mdThemingProvider, cfpLoadingBarProvider, $translateProvider, uiGmapGoogleMapApiProvider) {
-    // $locationProvider.hashPrefix('!');
+    $locationProvider.hashPrefix('!');
     cfpLoadingBarProvider.includeSpinner = false;
 
     $urlRouterProvider.otherwise('home');
@@ -28,6 +28,9 @@ angular.module('soulFood', [
             templateUrl: 'components/home/tpl/home.html',
             controller: 'homeController',
             controllerAs: 'homeCtrl',
+            data: {
+                title: 'Home'
+            }
             // views: {
             //     "viewA": { templateUrl: "components/home/tpl/partial-home-list.html",
             //         controller: function($scope) {
@@ -50,63 +53,60 @@ angular.module('soulFood', [
             url: '/about',
             templateUrl: 'components/about/tpl/about.html',
             controller: 'aboutController',
-            controllerAs: 'aboutCtrl'
+            controllerAs: 'aboutCtrl',
+            data: {
+                title: 'About'
+            }
         })
 
         .state('accommodation', {
             url: '/accommodation',
             templateUrl: 'components/accommodation/tpl/accommodation.html',
             controller: 'accommodationController',
-            controllerAs: 'accommodationCtrl'
+            controllerAs: 'accommodationCtrl',
+            data: {
+                title: 'Accommodation'
+            }
         })
 
         .state('sponsors', {
             url: '/sponsors',
             templateUrl: 'components/sponsors/tpl/sponsors.html',
             controller: 'sponsorsController',
-            controllerAs: 'sponsorsCtrl'
+            controllerAs: 'sponsorsCtrl',
+            data: {
+                title: 'Sponsors'
+            }
         })
 
         .state('contact', {
             url: '/contact',
             templateUrl: 'components/contact/tpl/contact.html',
             controller: 'contactController',
-            controllerAs: 'contactCtrl'
+            controllerAs: 'contactCtrl',
+            data: {
+                title: 'Contact'
+            }
         })
 
         .state('location', {
             url: '/location',
             templateUrl: 'components/location/tpl/location.html',
             controller: 'locationController',
-            controllerAs: 'locationCtrl'
+            controllerAs: 'locationCtrl',
+            data: {
+                title: 'Location'
+            }
         })
 
         .state('application', {
             url: '/application',
             templateUrl: 'components/application/tpl/application.html',
             controller: 'applicationController',
-            controllerAs: 'applicationCtrl'
-        })
-
-        .state('info', {
-            url: '/info',
-            templateUrl: 'components/info/tpl/info.html',
-            controller: 'infoController',
-            controllerAs: 'infoCtrl'
-        })
-        .state('info.merchants', {
-            url: '/merchants',
-            templateUrl: 'components/info/tpl/merchants.html'
-        })
-        .state('info.visitors', {
-            url: '/visitors',
-            templateUrl: 'components/info/tpl/visitors.html'
-        })
-        .state('stef', {
-            url: '/stef',
-            templateUrl: 'components/stef/tpl/stef.html',
-            controller: 'stefController',
-            controllerAs: 'stefCtrl'
+            controllerAs: 'applicationCtrl',
+            data: {
+                title: 'Application'
+            }
         });
 
 
@@ -200,6 +200,7 @@ angular.module('soulFood', [
         SPONSORS_HEADER_SPONSORED_BY: 'Sponsored By',
         SPONSORS_HEADER_MEDIA_PARTNERS: 'Media Sponsors',
         SPONSORS_HEADER_SUPPORT: 'Under the auspices of',
+        SPONSORS_HEADER_CLOTHING: 'Official clothing partner',
         ABOUT_HEADER_TOP: 'Thessaloniki Street Food Festival',
         ABOUT_HEADER_TOP_TEXT: 'The creative team of SoulFood Thessaloniki (Upnloud & Black Radio Berlin) proudly presents the 1st Thessaloniki Street Food Festival! The dates of the Festival are Saturday 29 & Sunday 30 April from 10 a.m. until 10 p.m. and it will take place at the new Town Hall of Thessaloniki, under the auspices of the Municipality of Thessaloniki and, in particular, within the framework of the 7th Thessaloniki Food Festival, which is organised by the Deputy Mayoralty of Culture and International Relations. Entrance is free, which the area, located in the town centre, is easily identifiable and accessible (public transport, car, motorbike, bike or on foot) for the general public.',
         ABOUT_HEADER_WHAT: 'What is Thessaloniki Street Food Festival?',
@@ -250,9 +251,10 @@ angular.module('soulFood', [
             CONTACT_ERROR: 'Παρουσιάστηκε κάποιο σφάλμα. Δοκίμασε να στείλεις το μήνυμά σου στο ',
             CONTACT_SEND: 'ΑΠΟΣΤΟΛΗ',
             CHECK_BACK_SOON: 'Σύντομα κοντά σας...',
-            SPONSORS_HEADER_SPONSORED_BY: 'Χορηγοι',
-            SPONSORS_HEADER_MEDIA_PARTNERS: 'Χορηγοι επικοινωνιας',
-            SPONSORS_HEADER_SUPPORT: 'Με την υποστηριξη',
+            SPONSORS_HEADER_SPONSORED_BY: 'Χορηγοί',
+            SPONSORS_HEADER_MEDIA_PARTNERS: 'Χορηγοί επικοινωνίας',
+            SPONSORS_HEADER_SUPPORT: 'Με την υποστήριξη',
+            SPONSORS_HEADER_CLOTHING: 'Επίσημος χορηγός ένδυσης',
             ABOUT_HEADER_TOP: 'Thessaloniki Street Food Festival',
             ABOUT_HEADER_TOP_TEXT: 'Η δημιουργική ομάδα του SoulFood Thessaloniki (Upnloud & Black Radio Berlin) παρουσιάζει το 1st Thessaloniki Street Food Festival το Σάββατο 29 & Κυριακή 30 Απριλίου, από τις 10 π.μ μέχρι και τις 10 μ.μ., στο νέο Δημαρχείο Θεσσαλονίκης.',
             ABOUT_HEADER_WHAT: 'Τί είναι το Thessaloniki Street Food Festival?',
@@ -273,7 +275,11 @@ angular.module('soulFood', [
         libraries: 'weather,geometry,visualization'
     });
 }])
-    .run(['$rootScope', '$document', '$timeout', function ($rootScope, $document, $timeout) {
+    .run(['$rootScope', '$document', '$timeout', '$state', function ($rootScope, $document, $timeout, $state) {
+        $rootScope.$on('$stateChangeSuccess', function() {
+            $rootScope.title = $state.current.data.title;
+        });
+
         // Get the start time in order for the loader to stay on for a standard amount of time - close it in mainCtrl
         $rootScope.startTime = new Date();
 
