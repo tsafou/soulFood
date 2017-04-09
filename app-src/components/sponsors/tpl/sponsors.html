@@ -82,4 +82,25 @@
     </md-grid-list>
 </div>
 
+<div>
+    <h2 class="margin-top md-title">{{'SPONSORS_HEADER_POWERED_BY' |translate }}</h2>
+    <md-divider></md-divider>
+
+    <md-grid-list
+            md-cols-xs="4" md-cols-sm="6" md-cols-md="6" md-cols-gt-md="6"
+            md-row-height-gt-md="1:1" md-row-height="1:1"
+            md-gutter="18px" md-gutter-gt-sm="30px">
+
+        <md-grid-tile ng-repeat="sponsor in sponsorsCtrl.sponsors track by $index"
+                      ng-if="sponsor.category=='poweredBy'">
+            <a ng-href="{{sponsor.url ? sponsor.url : ''}}" target="_blank" ng-mouseenter="active=true"
+               ng-mouseleave="active=false"
+               ng-class="active ? 'active-logo' : 'logo'">
+                <img ng-src="{{sponsor.path}}"/>
+            </a>
+        </md-grid-tile>
+
+    </md-grid-list>
+</div>
+
 <!--</div>-->

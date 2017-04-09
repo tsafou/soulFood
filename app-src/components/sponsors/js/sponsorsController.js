@@ -25,6 +25,11 @@ function sponsorsController($scope, $mdSidenav, $state) {
             category: 'mediaSponsor'
         },
         {
+            path: 'assets/img/sponsors/athensVoice.png',
+            url: 'http://www.athensvoice.gr',
+            category: 'mediaSponsor'
+        },
+        {
             path: 'assets/img/sponsors/ttf.png',
             url: 'http://foodfestival.thessaloniki.gr',
             category: 'auspices'
@@ -43,6 +48,21 @@ function sponsorsController($scope, $mdSidenav, $state) {
             path: 'assets/img/sponsors/owl.png',
             url: 'http://www.owlclothes.com',
             category: 'clothing'
+        },
+        {
+            path: 'assets/img/sponsors/upnloud.png',
+            url: 'http://www.facebook.com/upnloud.gr/',
+            category: 'poweredBy'
+        },
+        {
+            path: 'assets/img/sponsors/blackBerlin.png',
+            url: 'http://www.mixcloud.com/blackradioberlin',
+            category: 'poweredBy'
+        },
+        {
+            path: 'assets/img/sponsors/fleamarket.png',
+            url: 'http://www.thefleamarketskg.com',
+            category: 'poweredBy'
         },
     ];
     
