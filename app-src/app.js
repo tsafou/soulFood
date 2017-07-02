@@ -15,7 +15,7 @@ angular.module('soulFood', [
     'pascalprecht.translate',
     'uiGmapgoogle-maps'
 ]).config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$mdThemingProvider', 'cfpLoadingBarProvider', '$translateProvider', 'uiGmapGoogleMapApiProvider', function ($locationProvider, $urlRouterProvider, $stateProvider, $mdThemingProvider, cfpLoadingBarProvider, $translateProvider, uiGmapGoogleMapApiProvider) {
-    $locationProvider.hashPrefix('!');
+    // $locationProvider.hashPrefix('!');
     cfpLoadingBarProvider.includeSpinner = false;
 
     $urlRouterProvider.otherwise('home');
@@ -29,7 +29,8 @@ angular.module('soulFood', [
             controller: 'homeController',
             controllerAs: 'homeCtrl',
             data: {
-                title: 'Home'
+                title: 'Home',
+                description: "The creative team of SoulFood Thessaloniki (Upnloud & Black Radio Berlin) proudly presents the 1st Thessaloniki Street Food Festival! The dates of the Festival are Saturday 29 & Sunday 30 April from 10 a.m. until 10 p.m. and it will take place at the new Town Hall of Thessaloniki.",
             }
             // views: {
             //     "viewA": { templateUrl: "components/home/tpl/partial-home-list.html",
@@ -55,7 +56,8 @@ angular.module('soulFood', [
             controller: 'aboutController',
             controllerAs: 'aboutCtrl',
             data: {
-                title: 'About'
+                title: 'About',
+                description: "Our objective is to create a two-day celebration, open to everyone! Through flavours, we want to search for and present the common identity, but also meet something foreign, and explore new flavours. A “tasteful” village will be established for 2 days, with different cuisines and music from our city’s DJs.",
             }
         })
 
@@ -65,7 +67,8 @@ angular.module('soulFood', [
             controller: 'accommodationController',
             controllerAs: 'accommodationCtrl',
             data: {
-                title: 'Accommodation'
+                title: 'Accommodation',
+                description: "Here you can find recommended accomodation for a pleasant stay in the city of Thessaloniki.",
             }
         })
 
@@ -75,7 +78,8 @@ angular.module('soulFood', [
             controller: 'sponsorsController',
             controllerAs: 'sponsorsCtrl',
             data: {
-                title: 'Sponsors'
+                title: 'Sponsors',
+                description: "Find out the sponsors of this event - we are thankful to all of them!",
             }
         })
 
@@ -85,7 +89,8 @@ angular.module('soulFood', [
             controller: 'contactController',
             controllerAs: 'contactCtrl',
             data: {
-                title: 'Contact'
+                title: 'Contact',
+                description: "Have a question or suggestion? Find out the contact form and we'll try to get back to you as soon as possible.",
             }
         })
 
@@ -95,7 +100,8 @@ angular.module('soulFood', [
             controller: 'locationController',
             controllerAs: 'locationCtrl',
             data: {
-                title: 'Location'
+                title: 'Location',
+                description: "Check out the location of the 1st Thessaloniki Street Food Festival, and the various means of transport to reach it. Google maps included.",
             }
         })
 
@@ -105,7 +111,8 @@ angular.module('soulFood', [
             controller: 'applicationController',
             controllerAs: 'applicationCtrl',
             data: {
-                title: 'Application'
+                title: 'Application',
+                description: "Fill out the following application form in order to participate in this event!",
             }
         });
 
@@ -184,7 +191,7 @@ angular.module('soulFood', [
         CITYHALL_TEXT1B: 'Leoforos Vasileos Georgiou 1',
         CITYHALL_TEXT1C: 'Thessaloniki 546 40',
         CITYHALL_TEXT1D: '231 331 7777',
-        CONTACT_HEADER: 'Talk to our team',
+        CONTACT_HEADER: 'Contact',
         CONTACT_LABEL_NAME: 'Your name',
         CONTACT_LABEL_NAME_ERROR: '* You forgot to fill in your name!',
         CONTACT_EMAIL: 'Your email',
@@ -202,6 +209,7 @@ angular.module('soulFood', [
         SPONSORS_HEADER_SUPPORT: 'Under the auspices of',
         SPONSORS_HEADER_CLOTHING: 'Official clothing partner',
         SPONSORS_HEADER_POWERED_BY: 'Powered By',
+        ABOUT_HEADER_MAIN: 'About',
         ABOUT_HEADER_TOP: 'Thessaloniki Street Food Festival',
         ABOUT_HEADER_TOP_TEXT: 'The creative team of SoulFood Thessaloniki (Upnloud & Black Radio Berlin) proudly presents the 1st Thessaloniki Street Food Festival! The dates of the Festival are Saturday 29 & Sunday 30 April from 10 a.m. until 10 p.m. and it will take place at the new Town Hall of Thessaloniki, under the auspices of the Municipality of Thessaloniki and, in particular, within the framework of the 7th Thessaloniki Food Festival, which is organised by the Deputy Mayoralty of Culture and International Relations. Entrance is free, which the area, located in the town centre, is easily identifiable and accessible (public transport, car, motorbike, bike or on foot) for the general public.',
         ABOUT_HEADER_WHAT: 'What is Thessaloniki Street Food Festival?',
@@ -239,7 +247,7 @@ angular.module('soulFood', [
             CITYHALL_TEXT1B: 'Λεωφόρος Βασιλέως Γεωργίου 1',
             CITYHALL_TEXT1C: 'Θεσσαλονίκη 546 40',
             CITYHALL_TEXT1D: '231 331 7777',
-            CONTACT_HEADER: 'Μιλα με την ομαδα μας',
+            CONTACT_HEADER: 'Επικοινωνια',
             CONTACT_LABEL_NAME: 'Το όνομά σου',
             CONTACT_LABEL_NAME_ERROR: '* Ξέχασες να συμπληρώσεις το όνομά σου!',
             CONTACT_EMAIL: 'Το email σου',
@@ -257,6 +265,7 @@ angular.module('soulFood', [
             SPONSORS_HEADER_SUPPORT: 'Με την υποστήριξη',
             SPONSORS_HEADER_CLOTHING: 'Επίσημος χορηγός ένδυσης',
             SPONSORS_HEADER_POWERED_BY: 'Με την δύναμη',
+            ABOUT_HEADER_MAIN: 'Σχετικά',
             ABOUT_HEADER_TOP: 'Thessaloniki Street Food Festival',
             ABOUT_HEADER_TOP_TEXT: 'Η δημιουργική ομάδα του SoulFood Thessaloniki (Upnloud & Black Radio Berlin) παρουσιάζει το 1st Thessaloniki Street Food Festival το Σάββατο 29 & Κυριακή 30 Απριλίου, από τις 10 π.μ μέχρι και τις 10 μ.μ., στο νέο Δημαρχείο Θεσσαλονίκης.',
             ABOUT_HEADER_WHAT: 'Τί είναι το Thessaloniki Street Food Festival?',
@@ -280,6 +289,7 @@ angular.module('soulFood', [
     .run(['$rootScope', '$document', '$timeout', '$state', function ($rootScope, $document, $timeout, $state) {
         $rootScope.$on('$stateChangeSuccess', function() {
             $rootScope.title = $state.current.data.title;
+            $rootScope.description = $state.current.data.description;
         });
 
         // Get the start time in order for the loader to stay on for a standard amount of time - close it in mainCtrl
@@ -305,14 +315,14 @@ angular.module('soulFood', [
             // Find the elapsed difference between the present time and the startTime set in our config
             diff = new Date() - $rootScope.startTime;
 
-            // If 1500ms has elapsed, the loading splash can be hidden
+            // If 1000ms has elapsed, the loading splash can be hidden
             // else create a timeout to hide the loading splash after 800ms has elapsed since the startTime was set
-            if (diff > 4000) {
+            if (diff > 1000) {
                 $rootScope.loading_screen.finish();
             } else {
                 $timeout(function () {
                     $rootScope.loading_screen.finish();
-                }, 4000 - diff);
+                }, 1000 - diff);
             }
         });
 

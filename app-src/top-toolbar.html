@@ -25,7 +25,7 @@
 </div>
 
 
-<div class="md-toolbar-tools" layout-align="center center" hide-xs layout-wrap>
+<div class="md-toolbar-tools" layout-align="center center" hide-xs layout-wrap itemprop="breadcrumb">
     <md-button ng-repeat="state in mainCtrl.states"
                ng-click="mainCtrl.goToState(state.name);" md-ink-ripple="false"
                ui-sref="{{state.name}}" ui-sref-active="active" class="menu-toolbar-button white"

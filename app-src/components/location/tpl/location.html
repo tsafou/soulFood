@@ -1,4 +1,4 @@
-<div layout="row" layout-xs="column">
+<div layout="row" layout-xs="column" itemscope itemtype="http://schema.org/Place">
     <div flex="60" flex-xs="100">
         <div>
             <md-grid-list
@@ -13,7 +13,7 @@
             </md-grid-list>
         </div>
 
-        <div class="map-wrapper margin-top-2em" id="map">
+        <div class="map-wrapper margin-top-2em" id="map" itemprop="hasMap" >
             <ui-gmap-google-map ng-if="mapReady" center='map.center' zoom='map.zoom'
                                 options="map.options" refresh="contact">
                 <ui-gmap-markers models="markers" coords="'self'" fit='false'></ui-gmap-markers>
@@ -25,11 +25,11 @@
 
     <div flex="35" flex-xs="100">
         <div>
-            <h2 class="md-title" ng-class="$mdMedia('gt-xs') ? 'no-margin-top' : ''">{{'LOCATION_HEADER' | translate}}</h2>
-            <p>{{'CITYHALL_TEXT1A' | translate}}<br>
+            <h1 class="md-title" itemprop="location" ng-class="$mdMedia('gt-xs') ? 'no-margin-top' : ''">{{'LOCATION_HEADER' | translate}}</h1>
+            <p itemprop="address">{{'CITYHALL_TEXT1A' | translate}}<br>
                 {{'CITYHALL_TEXT1B' | translate}}<br/>
                 {{'CITYHALL_TEXT1C' | translate}}<br/>
-                {{'CITYHALL_TEXT1D' | translate}}<br/>
+                <span itemprop="telephone">{{'CITYHALL_TEXT1D' | translate}}</span><br/>
             </p>
         </div>
 

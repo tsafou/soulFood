@@ -329,6 +329,9 @@ module.exports = function (grunt) {
 
         imagemin: {
             dist: {
+                options: {
+                    optimizationLevel: 7
+                },
                 files: [{
                     expand: true,
                     // cwd: '/assets',
@@ -538,7 +541,15 @@ module.exports = function (grunt) {
                 configFile: 'test/karma.conf.js',
                 singleRun: true
             }
-        }
+        },
+
+        prerender: {
+            options: {
+                sitemap: 'http://www.thessalonikistreetfoodfestival.com/sitemap.xml',
+                dest: 'snapshots/',
+                hashPrefix: '!'
+            }
+        },
     });
 
     grunt.registerTask('useminPrepareGuest', function () {
@@ -584,6 +595,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        // 'prerender',
         // 'wiredep',
         // 'ngAnnotate',
         'useminPrepare',

@@ -29,9 +29,9 @@ function mainController($scope, $mdSidenav, $state, $mdMedia, $mdDialog, $transl
         {
             name: 'location'
         },
-        {
-            name: 'accommodation'
-        },
+        // {
+        //     name: 'accommodation'
+        // },
         {
             name: 'sponsors'
         },

@@ -1,6 +1,6 @@
 <!--<div flex="80" flex-xs="100" layout="column" class="bullet-list">-->
-<div>
-    <h2 class="margin-top md-title">{{'SPONSORS_HEADER_SPONSORED_BY' |translate}}</h2>
+<div itemscope itemtype="http://schema.org/Event">
+    <h1 class="margin-top md-title">{{'SPONSORS_HEADER_SPONSORED_BY' |translate}}</h1>
     <md-divider></md-divider>
 
     <md-grid-list
@@ -12,7 +12,8 @@
                       ng-if="sponsor.category=='sponsoredBy'">
             <a ng-href="{{sponsor.url ? sponsor.url : ''}}" target="_blank" ng-mouseenter="active=true"
                ng-mouseleave="active=false"
-               ng-class="active ? 'active-logo' : 'logo'">
+               ng-class="active ? 'active-logo' : 'logo'"
+               itemprop="sponsor">
                 <img ng-src="{{sponsor.path}}"/>
             </a>
         </md-grid-tile>
@@ -32,7 +33,8 @@
                       ng-if="sponsor.category=='mediaSponsor'">
             <a ng-href="{{sponsor.url ? sponsor.url : ''}}" target="_blank" ng-mouseenter="active=true"
                ng-mouseleave="active=false"
-               ng-class="active ? 'active-logo' : 'logo'">
+               ng-class="active ? 'active-logo' : 'logo'"
+               itemprop="sponsor">
                 <img ng-src="{{sponsor.path}}"/>
             </a>
         </md-grid-tile>
@@ -53,7 +55,8 @@
                       ng-if="sponsor.category=='auspices'">
             <a ng-href="{{sponsor.url ? sponsor.url : ''}}" target="_blank" ng-mouseenter="active=true"
                ng-mouseleave="active=false"
-               ng-class="active ? 'active-logo' : 'logo'">
+               ng-class="active ? 'active-logo' : 'logo'"
+               itemprop="sponsor">
                 <img ng-src="{{sponsor.path}}"/>
             </a>
         </md-grid-tile>
@@ -74,7 +77,8 @@
                       ng-if="sponsor.category=='clothing'">
             <a ng-href="{{sponsor.url ? sponsor.url : ''}}" target="_blank" ng-mouseenter="active=true"
                ng-mouseleave="active=false"
-               ng-class="active ? 'active-logo' : 'logo'">
+               ng-class="active ? 'active-logo' : 'logo'"
+               itemprop="sponsor">
                 <img ng-src="{{sponsor.path}}"/>
             </a>
         </md-grid-tile>
@@ -95,7 +99,8 @@
                       ng-if="sponsor.category=='poweredBy'">
             <a ng-href="{{sponsor.url ? sponsor.url : ''}}" target="_blank" ng-mouseenter="active=true"
                ng-mouseleave="active=false"
-               ng-class="active ? 'active-logo' : 'logo'">
+               ng-class="active ? 'active-logo' : 'logo'"
+               itemprop="sponsor">
                 <img ng-src="{{sponsor.path}}"/>
             </a>
         </md-grid-tile>

@@ -19,7 +19,7 @@ body {
 #main-content {
     /*margin-top: 4%;*/
     /*background-color: transparent;*/
-    background-image:url('http://devsoulfood.tsafaris.com/assets/img/soulFoodBgLandscape2.png');
+    background-image:url('../assets/img/soulFoodBgLandscape2.png');
     background-size:cover;
     background-position: center center;
     min-height:calc(100vh - 88px);
@@ -35,7 +35,7 @@ body {
 }
 
 #main-content-portrait {
-    background-image:url('http://devsoulfood.tsafaris.com/assets/img/soulFoodBG2.png');
+    background-image:url('../assets/img/soulFoodBG2.png');
     background-size:cover;
     background-position: center center;
 }
@@ -45,7 +45,7 @@ body {
     z-index: 99;
     /*background-color: transparent;*/
     /*background-color: #fbbd00;*/
-    /*background: url('assets/img/motivoTr.jpg');*/
+    /*background: url('../assets/img/motivoTr.jpg');*/
     /*background-size: contain;*/
 }
 
