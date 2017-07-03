@@ -441,7 +441,8 @@ module.exports = function (grunt) {
                             // 'error/*',
                             // 'assets/**/*',
                             'php/**/*',
-                            '*.pdf'
+                            '*.pdf',
+                            'assets/videos/**'
                         ]
                     },
                     // {
